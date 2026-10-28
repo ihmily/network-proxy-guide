@@ -1,8 +1,8 @@
 site_name: 科学上网完全指南
-site_url: https://ihmily.github.io/proxy-guide
+site_url: https://ihmily.github.io/network-proxy-guide
 site_description: 专业的科学上网技术文档 - 涵盖代理协议、客户端工具、服务器搭建、安全防护等完整知识体系
 site_author: 科学上网指南
-repo_url: https://github.com/ihmily/proxy-guide
+repo_url: https://github.com/ihmily/network-proxy-guide
 repo_name: GitHub
 edit_uri: edit/main/
 
@@ -98,7 +98,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ihmily/proxy-guide
+      link: https://github.com/ihmily/network-proxy-guide
   
   analytics:
     feedback:

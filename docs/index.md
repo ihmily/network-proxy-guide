@@ -2,10 +2,10 @@
 
 > 一本从零基础到精通的科学上网技术完整教程
 
-[![GitHub](https://img.shields.io/badge/GitHub-科学上网完全指南-blue)](https://github.com/ihmily/proxy-guide)
-[![License](https://img.shields.io/badge/License-Educational-green)](https://github.com/ihmily/proxy-guide/blob/main/LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0-orange)](https://github.com/ihmily/proxy-guide)
-[![Updated](https://img.shields.io/badge/Updated-2025-01-brightgreen)](https://github.com/ihmily/proxy-guide)
+[![GitHub](https://img.shields.io/badge/GitHub-科学上网完全指南-blue)](https://github.com/ihmily/network-proxy-guide)
+[![License](https://img.shields.io/badge/License-Educational-green)](https://github.com/ihmily/network-proxy-guide/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.0-orange)](https://github.com/ihmily/network-proxy-guide)
+[![Updated](https://img.shields.io/badge/Updated-2025-01-brightgreen)](https://github.com/ihmily/network-proxy-guide)
 
 ---
 
