@@ -1,0 +1,2682 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="专业的科学上网技术文档 - 涵盖代理协议、客户端工具、服务器搭建、安全防护等完整知识体系">
+      
+      
+        <meta name="author" content="科学上网指南">
+      
+      
+        <link rel="canonical" href="https://ihmily.github.io/network-proxy-guide/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/">
+      
+      
+        <link rel="prev" href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/">
+      
+      
+        <link rel="next" href="../%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>第14章 网络安全防护 - 科学上网完全指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="科学上网完全指南" class="md-header__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科学上网完全指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第14章 网络安全防护
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="科学上网完全指南" class="md-nav__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    科学上网完全指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%E5%85%A8%E4%B9%A6%E5%A4%A7%E7%BA%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全书大纲
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础知识篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础知识篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC01%E7%AB%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第01章 什么是科学上网
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC02%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第02章 网络基础知识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC03%E7%AB%A0-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第03章 核心技术原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 主流协议与工具篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 主流协议与工具篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC04%E7%AB%A0-%E5%B8%B8%E8%A7%81%E4%BB%A3%E7%90%86%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第04章 常见代理协议详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC05%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第05章 客户端工具使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC06%E7%AB%A0-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第06章 浏览器与插件方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 高级配置篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 高级配置篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC07%E7%AB%A0-%E8%AE%A2%E9%98%85%E4%B8%8E%E8%8A%82%E7%82%B9%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第07章 订阅与节点管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC08%E7%AB%A0-%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第08章 分流规则详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 服务器搭建篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 服务器搭建篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC09%E7%AB%A0-VPS%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第09章 VPS选购指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 服务器环境配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 一键脚本部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC12%E7%AB%A0-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 手动搭建教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 多用户管理方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 安全与隐私篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 安全与隐私篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 网络安全防护
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 网络安全防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="本章大纲">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      本章大纲
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 常见攻击方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.1 常见攻击方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1411" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.1 主动探测攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1412-ddos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.2 DDoS攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1413" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.3 暴力破解与凭据泄露
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1414" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.4 中间人攻击与身份验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1415" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.5 流量分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 端口与入口分流
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.2 端口与入口分流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1421" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2.1 端口选择策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1422-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2.2 HTTP路径分流与协议回落
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1423-sniech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2.3 SNI分流与ECH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 传输封装及其边界
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.3 传输封装及其边界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1431-websocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3.1 WebSocket传输
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1432-http2xhttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3.2 HTTP/2与XHTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1433-grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3.3 gRPC传输
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1434-mkcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3.4 mKCP与伪装头
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-dpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 DPI及流量特征防护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.4 DPI及流量特征防护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1441-dpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4.1 DPI的观察范围
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1442-tlsutls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4.2 TLS指纹与uTLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1443" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4.3 填充与性能选项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1444-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4.4 REALITY的安全边界
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 服务器安全加固
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.5 服务器安全加固">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1451" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.1 最小权限与配置变更
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1452" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.2 完整性检查与审计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1453" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.3 自动化安全检查
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1454" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.4 备份、恢复与事件处置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 隐私保护实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 审计与日志管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 故障排查篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 故障排查篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 常见问题诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 网络测试工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 最佳实践篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 最佳实践篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC19%E7%AB%A0-%E4%B8%8D%E5%90%8C%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 不同场景应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC20%E7%AB%A0-%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 成本优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC21%E7%AB%A0-%E5%90%88%E8%A7%84%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 合规使用建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95A-%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95C-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95D-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="14">第14章 网络安全防护<a class="headerlink" href="#14" title="Permanent link">&para;</a></h1>
+<p>网络安全防护需要先明确保护对象：代理凭据、管理入口、服务器数据和运行中的连接，面临的威胁并不相同。加密可以保护通信内容，访问控制可以限制入口，备份可以支持恢复；单独更换端口、增加回落网站或套用某种传输方式，都不能代替这些基础工作。</p>
+<p>本章沿用第10—13章的Linux与systemd环境。Nginx示例面向支持相应模块的版本，V2Ray兼容示例采用<code>v5.53.0</code>，涉及Xray的版本差异以<code>v26.10.21</code>为例。配置中的<code>proxy.example.com</code>、证书路径和服务名均需按实际部署替换。修改管理入口或防火墙前，应保留有效SSH会话和云控制台恢复路径。</p>
+<h2 id="141">14.1 常见攻击方式<a class="headerlink" href="#141" title="Permanent link">&para;</a></h2>
+<h3 id="1411">14.1.1 主动探测攻击<a class="headerlink" href="#1411" title="Permanent link">&para;</a></h3>
+<p>主动探测是观察者向目标服务发起连接，根据握手、认证失败、回落和超时等行为判断服务类型。它可以与被动流量分析配合，也可以来自普通互联网扫描；不能把每一次扫描或连接失败都归因于同一审查系统。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[被动观察或互联网扫描] --&gt; B[选定目标IP与端口]
+    B --&gt; C[发送不同握手与认证请求]
+    C --&gt; D[比较响应、超时和后续行为]
+    D --&gt; E[形成服务类型判断]
+    E --&gt; F[可能触发限制或进一步检查]</code></pre>
+<p><em>图14-1 主动探测依靠多种可观察行为，识别与封锁并非必然连续发生</em></p>
+<p>TLS并不自动消除可识别特征。目标IP、连接时序、握手参数以及服务对异常请求的响应仍可能被观察；WebSocket和gRPC使用标准应用协议，也不意味着承载的代理流量与浏览器访问完全相同。</p>
+<p>回落机制用于把特定的不匹配流量交给另一个服务。VLESS或Trojan的回落触发条件、TLS终止位置和后端协议均与实现有关，不能笼统地写成“任何错误密码都返回正常网页”。如果前端已经完成TLS握手，转发给后端的可能是解密后的字节，后端就不应再次要求相同的TLS握手。</p>
+<p>防护重点是使用受维护实现、独立高熵凭据和正确的协议认证，限制管理接口，并核对异常连接的实际行为。VMess等协议中的时间验证和重放防护属于协议机制，不能把某个固定秒数当作所有实现的统一安全边界；服务器仍应保持可靠的时间同步。</p>
+<h3 id="1412-ddos">14.1.2 DDoS攻击<a class="headerlink" href="#1412-ddos" title="Permanent link">&para;</a></h3>
+<p>分布式拒绝服务攻击可能耗尽带宽、连接状态、CPU或应用资源。处置前先区分瓶颈，否则应用层封禁可能来不及生效，简单限速也可能先影响正常使用者。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>常见受影响资源</th>
+<th>主要应对位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SYN Flood</td>
+<td>握手队列、连接状态和处理能力</td>
+<td>内核、边界设备与上游防护</td>
+</tr>
+<tr>
+<td>UDP Flood、反射放大</td>
+<td>入站带宽、包处理能力</td>
+<td>提供商网络、清洗与访问控制</td>
+</tr>
+<tr>
+<td>HTTP请求洪泛</td>
+<td>Web处理、认证、后端和数据库</td>
+<td>兼容的反向代理、WAF与应用限制</td>
+</tr>
+<tr>
+<td>高成本长连接</td>
+<td>文件描述符、内存、核心与出口资源</td>
+<td>已认证用户配额、并发限制与容量规划</td>
+</tr>
+</tbody>
+</table>
+<p>Linux的SYN cookies用于缓解特定的SYN队列压力，不会增加线路容量，也不能处理所有TCP或UDP攻击。可以先读取现状，不反复向系统配置文件追加同一参数：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sysctl<span class="w"> </span>net.ipv4.tcp_syncookies
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ss<span class="w"> </span>-s
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ip<span class="w"> </span>-s<span class="w"> </span>link
+</span></code></pre></div>
+<p>Fail2Ban依赖可识别的失败日志和本地封禁，适合减少部分重复认证尝试，无法替代上游流量清洗。对所有来源共用的极低连接速率限制，还可能让少量连接就耗尽全站额度；增加一条匹配后放行的规则，也不代表超额流量已经被拒绝。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[发现访问异常或资源激增] --&gt; B{入口带宽是否已饱和?}
+    B --&gt;|是| C[联系提供商处理上游清洗或限流]
+    B --&gt;|否| D[区分握手、应用与已认证连接压力]
+    D --&gt; E[在对应入口实施有范围的限制]
+    C --&gt; F[持续观察管理入口与业务恢复]
+    E --&gt; F
+    F --&gt; G[复核误封、费用及残余风险]</code></pre>
+<p><em>图14-2 DDoS处置应先定位资源瓶颈，再选择能够覆盖该路径的防护</em></p>
+<p><strong>CDN的保护范围</strong></p>
+<p>Cloudflare等CDN的普通反向代理主要面向支持的HTTP与HTTPS业务。兼容的WebSocket或gRPC连接还受端口、TLS、HTTP版本、功能开关、连接限制和服务条款约束；不能把直连VLESS、REALITY、任意UDP服务或SSH直接当作普通网站接入。通用TCP、UDP代理属于另外的产品能力和套餐范围。</p>
+<p>接入时应同时验证客户端到边缘、边缘到源站两段连接。Cloudflare源站TLS可采用<code>Full (strict)</code>验证证书，不使用只加密到边缘的方式来承载敏感连接。源站还需限制直接访问，核对历史DNS、AAAA记录和其他同机服务是否暴露地址；CDN不会自动消除已经泄露的源站IP。</p>
+<p>浏览器质询可能使代理客户端失败，不能把整站质询无条件套到代理入口。Cloudflare对WebSocket的WAF检查主要发生在初始升级请求阶段，连接建立后不会持续检查其所有消息。官方文档也说明，反向代理上的gRPC不能依赖Cloudflare Access完成认证，应另行验证访问控制方式。隐藏邮箱、地理位置请求头和强制HTTPS均不能充当DDoS防护开关。</p>
+<h3 id="1413">14.1.3 暴力破解与凭据泄露<a class="headerlink" href="#1413" title="Permanent link">&para;</a></h3>
+<p>暴力破解只是凭据失守的一种原因。共享订阅、截图、公开配置仓库、恶意客户端和被盗面板令牌，往往能够直接提供有效秘密，不需要攻击者逐个猜测。</p>
+<p>SSH应沿用第10章已经验证的密钥认证与管理来源限制。修改端口可以减少部分背景扫描，但不能增强密钥本身。使用systemd journal的Debian或Ubuntu环境，可先检查实际服务日志：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh.service<span class="w"> </span>--since<span class="w"> </span><span class="s1">'1 hour ago'</span><span class="w"> </span>-n<span class="w"> </span><span class="m">100</span><span class="w"> </span>--no-pager
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>status<span class="w"> </span>sshd
+</span></code></pre></div>
+<p>服务名和日志位置取决于发行版；没有<code>/var/log/auth.log</code>不等于没有认证日志。Fail2Ban还需要正确的过滤器、日志后端、实际SSH端口以及IPv4和IPv6封禁路径；不能假定代理核心的任意错误都能被SSH过滤器识别。</p>
+<table>
+<thead>
+<tr>
+<th>凭据</th>
+<th>生成与保管原则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLESS、VMess账号</td>
+<td>使用核心工具或可信随机源生成独立UUID，避免多人共用</td>
+</tr>
+<tr>
+<td>Trojan等口令</td>
+<td>使用实现支持的高熵随机秘密，不依靠固定词组加符号</td>
+</tr>
+<tr>
+<td>Shadowsocks密钥</td>
+<td>按加密方法规定生成；2022方法使用对应长度的随机密钥</td>
+</tr>
+<tr>
+<td>面板与API凭据</td>
+<td>独立任务、必要权限、受限存储，避免放进普通日志</td>
+</tr>
+<tr>
+<td>订阅链接</td>
+<td>视作可获取连接秘密的凭据，泄露后检查实际节点凭据</td>
+</tr>
+</tbody>
+</table>
+<p>UUID的安全性依赖随机生成与保密，不是只要符合格式就比密码安全。轮换应由泄露、人员变化或明确的管理策略驱动，并核对旧凭据确实失效；机械地每月替换全部凭据会增加分发风险，也不能挽回已经泄露的数据。撤销订阅链接不一定撤销已下载的UUID或密码。面板中的用户启停与删除操作见第13章，订阅入口与节点凭据是否失效需分别验证。</p>
+<h3 id="1414">14.1.4 中间人攻击与身份验证<a class="headerlink" href="#1414" title="Permanent link">&para;</a></h3>
+<p>中间人攻击要获得明文，通常还需要让客户端接受错误的服务端身份，或攻陷实际终端。DNS劫持、恶意网关可以改变连接路径，但在域名、信任链和证书验证正确时，单独返回攻击者IP并不足以通过TLS认证。自签名证书本身也不等于攻击，关键在于是否通过可信渠道预先建立了正确的信任。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[连接配置指定服务端身份] --&gt; B[建立TLS握手]
+    B --&gt; C{信任链、有效期和名称是否通过?}
+    C --&gt;|否| D[终止连接并检查原因]
+    C --&gt;|是| E[完成加密与协议认证]
+    E --&gt; F[代理服务器转发到目标服务]
+    F --&gt; G[目标网站HTTPS仍需独立验证]</code></pre>
+<p><em>图14-3 代理入口认证与目标网站HTTPS认证分别保护不同的连接</em></p>
+<p>普通域名证书应核对Subject Alternative Name（SAN）中的名称、有效期和信任链，不能只看证书Common Name。连接目标使用IP时，也不能随意填入另一个域名来绕过身份校验。排障应修复时间、证书链、名称或可信根问题，不启用<code>allowInsecure</code>、<code>skip-cert-verify</code>等跳过验证选项作为长期方案。Xray <code>v26.10.21</code>已拒绝将<code>allowInsecure</code>设为<code>true</code>；其他实现和版本的行为需要分别核对。</p>
+<p>证书固定是预先信任特定证书或公钥，并按客户端实现核对固定值；它需要可信的初始分发和续期、换钥方案。Xray配置中的<code>fingerprint: "chrome"</code>用于选择TLS ClientHello特征，<strong>不是证书SHA-256摘要，也不实现证书固定</strong>。不同软件的固定字段、对象及校验顺序可能不同，不能把浏览器显示的任意指纹直接复制到<code>fingerprint</code>。</p>
+<p>HSTS作用于支持它的HTTP客户端。确认网站已正确提供HTTPS后，可以先在该HTTPS站点的Nginx <code>server</code>块中采用较短有效期测试：</p>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">add_header</span><span class="w"> </span><span class="s">Strict-Transport-Security</span><span class="w"> </span><span class="s">"max-age=300"</span><span class="w"> </span><span class="s">always</span><span class="p">;</span>
+</span></code></pre></div>
+<p>验证访问及证书续期后再考虑延长有效期。<code>includeSubDomains</code>会影响全部子域，预加载还涉及额外条件和较长的撤销周期，不能未经检查就启用。HSTS通常不能修复首次访问风险，也不会自动约束普通代理核心的TLS连接。</p>
+<p>DoH、DoT可以保护客户端到所选解析器的查询链路，但仍需验证解析器身份，并信任其处理查询。它们不替代代理或网站的证书验证，也不能阻止被攻陷终端读取明文。</p>
+<h3 id="1415">14.1.5 流量分析<a class="headerlink" href="#1415" title="Permanent link">&para;</a></h3>
+<p>加密后仍可观察到端点、连接持续时间、方向、大小和时序。观察者有时可以据此推断服务类别或与其他记录关联；推断精度取决于观察位置、训练条件、同时可见的流量和用户行为，不能写成“加密后仍一定能知道观看的具体视频”。</p>
+<table>
+<thead>
+<tr>
+<th>措施</th>
+<th>可能改变的特征</th>
+<th>代价与边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>协议支持的填充</td>
+<td>某些报文或请求的长度分布</td>
+<td>增加流量，不保证改变全部统计特征</td>
+</tr>
+<tr>
+<td>多路复用</td>
+<td>连接数量和部分时序</td>
+<td>影响隔离、队头阻塞和拥塞，不能等同匿名保护</td>
+</tr>
+<tr>
+<td>延迟或额外流量</td>
+<td>一部分时间与体积分布</td>
+<td>增加时延、成本和可识别行为，需有具体实现依据</td>
+</tr>
+<tr>
+<td>Tor等匿名网络</td>
+<td>分离部分观察位置和通信关系</td>
+<td>仍受终端、登录身份及流量关联等因素影响</td>
+</tr>
+</tbody>
+</table>
+<p>不要把任意“VPN套Tor再套VPN”作为隐私上限。增加中间层也增加信任方、故障点和配置错误；是否有收益应从威胁模型判断。代理保护的是特定通信路径，浏览器登录、Cookies和应用标识仍可以识别同一使用者，相关实践将在第15章讨论。</p>
+<h2 id="142">14.2 端口与入口分流<a class="headerlink" href="#142" title="Permanent link">&para;</a></h2>
+<h3 id="1421">14.2.1 端口选择策略<a class="headerlink" href="#1421" title="Permanent link">&para;</a></h3>
+<p>端口号表达约定用途，不提供密码学保护。TCP 443常用于HTTPS，但端口本身不会让任意字节变成HTTPS；8443也不会因为不是443就天然更不安全。高端口可能减少部分常规扫描，却仍可被完整扫描，也可能受到网络出口策略限制。</p>
+<table>
+<thead>
+<tr>
+<th>入口</th>
+<th>选择依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH与面板</td>
+<td>限定管理来源或受保护通道，保留恢复路径</td>
+</tr>
+<tr>
+<td>公网HTTPS</td>
+<td>依据证书、客户端支持和网络策略选择，通常使用TCP 443</td>
+</tr>
+<tr>
+<td>HTTP验证入口</td>
+<td>仅在HTTP-01等实际需要时开放TCP 80，配置正确的验证路径</td>
+</tr>
+<tr>
+<td>QUIC或其他UDP协议</td>
+<td>分别确认UDP监听、云侧与主机规则，不由同号TCP规则替代</td>
+</tr>
+<tr>
+<td>回落与内部后端</td>
+<td>优先绑定回环或受控内部网络，不额外暴露公网</td>
+</tr>
+</tbody>
+</table>
+<p>Cloudflare支持2053、2083、2087、2096、8443等部分HTTPS端口，但这是HTTP代理的端口范围，不是任意协议均可穿透的许可。gRPC还有独立要求，不能从通用端口列表推导所有功能都可使用。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[为入口选择端口] --&gt; B{它承担管理还是业务功能?}
+    B --&gt;|管理| C[限制来源并验证恢复入口]
+    B --&gt;|业务| D[核对协议、TCP或UDP及客户端支持]
+    D --&gt; E{是否经过反向代理或CDN?}
+    E --&gt;|是| F[核对该产品的协议、端口与认证条件]
+    E --&gt;|否| G[验证直接监听与访问控制]
+    F --&gt; H[分别测试所用地址族和传输路径]
+    G --&gt; H</code></pre>
+<p><em>图14-4 端口选择服从入口职责和实际协议，不以端口号代替安全设计</em></p>
+<h3 id="1422-http">14.2.2 HTTP路径分流与协议回落<a class="headerlink" href="#1422-http" title="Permanent link">&para;</a></h3>
+<p><strong>Nginx终止TLS后按HTTP路径分流</strong></p>
+<p>本例采用第12章中Nginx终止TLS、V2Ray提供本地WebSocket后端的结构，以下片段按V2Ray <code>v5.53.0</code>说明，不代表第12章的安装版本。后端监听<code>127.0.0.1:10000</code>、路径为<code>/v2ray</code>、后端不再启用TLS，并保留独立VMess认证。公网TLS由Nginx终止，网站与代理升级请求共享一个TCP 443入口。以下是<code>http</code>上下文中的配置片段，应合并到现有配置，不能另起一个服务争抢同一监听地址。</p>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">map</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="w"> </span><span class="nv">$guide_connection_upgrade</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kn">default</span><span class="w"> </span><span class="s">upgrade</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kn">''</span><span class="w"> </span><span class="s">close</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">proxy.example.com</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kn">ssl_certificate</span><span class="w"> </span><span class="s">/etc/proxy-certs/proxy.example.com/fullchain.pem</span><span class="p">;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="kn">ssl_certificate_key</span><span class="w"> </span><span class="s">/etc/proxy-certs/proxy.example.com/privkey.pem</span><span class="p">;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="kn">ssl_protocols</span><span class="w"> </span><span class="s">TLSv1.2</span><span class="w"> </span><span class="s">TLSv1.3</span><span class="p">;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="kn">root</span><span class="w"> </span><span class="s">/var/www/proxy-site</span><span class="p">;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="kn">index</span><span class="w"> </span><span class="s">index.html</span><span class="p">;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/v2ray</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://127.0.0.1:10000</span><span class="p">;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="nv">$guide_connection_upgrade</span><span class="p">;</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">        </span><span class="kn">proxy_buffering</span><span class="w"> </span><span class="no">off</span><span class="p">;</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">        </span><span class="kn">proxy_read_timeout</span><span class="w"> </span><span class="s">300s</span><span class="p">;</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="kn">try_files</span><span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri/</span><span class="w"> </span><span class="p">=</span><span class="mi">404</span><span class="p">;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>proxy_pass</code>未附加URI，保留请求路径；客户端和后端必须与之匹配。Upgrade等逐跳头不会自动传递，所以需要显式设置。读取超时是两次上游读取之间的超时，不是连接总寿命；应按真实空闲时间和心跳能力调试。</p>
+<p>本例不要求开启HTTP/2，也不自动提供IPv6监听或HTTP-01验证站点。域名与证书申请可参阅第12章，IPv6监听和证书验证入口需按实际部署另行确认。确认后端与证书均就绪，再执行：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx.service
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-lntp<span class="w"> </span><span class="s1">'sport = :443'</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-lntp<span class="w"> </span><span class="s1">'sport = :10000'</span>
+</span></code></pre></div>
+<p>从正常客户端验证认证连接，并检查错误路径、错误凭据和空闲连接。秘密路径只能减少误入，不能代替账号认证；普通HTTP请求到达代理路径时也不保证会得到一个真实聊天应用页面。</p>
+<p><strong>由代理核心终止TLS并回落</strong></p>
+<p>第12章的VLESS或Trojan回落是另一种拓扑：核心占用公网端口，符合回落条件的内容再交给本地Web服务。它不能与上例的Nginx公网443配置同时照搬使用。不同入站和版本的回落支持范围不同，应核对触发条件、解密后的协议与后端能力。</p>
+<p>路径分流处理的是可解析的HTTP请求。直接Trojan或VLESS字节不会因为写了<code>/trojan</code>、<code>/vmess</code>就变成HTTP路径。<code>xver</code>表示传递PROXY protocol的版本；只有后端显式支持并配置该协议时才能启用，不需要传递时保持关闭。错误的PROXY头会破坏后端握手，它也不提供新的加密或认证。</p>
+<h3 id="1423-sniech">14.2.3 SNI分流与ECH<a class="headerlink" href="#1423-sniech" title="Permanent link">&para;</a></h3>
+<p>Nginx <code>stream</code>层的<code>ssl_preread</code>可以在不终止TLS的情况下读取可见ClientHello中的SNI，将原始连接转发给相应后端。后端必须自行终止TLS；不能把完整TLS字节流交给只监听明文HTTP的端口。</p>
+<p>下面是与15.2.2**二选一**的拓扑片段。需要安装并加载stream及ssl_preread模块；<code>stream</code>与<code>http</code>同属Nginx主配置下的上下文，不能把它放进仅从<code>http</code>包含的站点文件。</p>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">stream</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kn">map</span><span class="w"> </span><span class="nv">$ssl_preread_server_name</span><span class="w"> </span><span class="nv">$guide_tls_backend</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="kn">proxy.example.com</span><span class="w"> </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">10443</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="kn">www.example.com</span><span class="w">   </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">11443</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="kn">default</span><span class="w">           </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">11443</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="p">;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="kn">ssl_preread</span><span class="w"> </span><span class="no">on</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="kn">proxy_connect_timeout</span><span class="w"> </span><span class="s">5s</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="kn">proxy_timeout</span><span class="w"> </span><span class="s">300s</span><span class="p">;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="nv">$guide_tls_backend</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>部署前先准备好两个TLS后端：10443处理代理入口，11443处理网站及默认流量，各自持有正确证书或对应的认证配置。这个示例不发送PROXY protocol；后端看到的网络对端通常是本机转发者，不能据此直接对真实使用者按IP计数或封禁。</p>
+<pre class="mermaid"><code>flowchart LR
+    A[客户端TLS连接] --&gt; B[stream读取可见SNI]
+    B --&gt;|proxy.example.com| C[回环10443 TLS代理后端]
+    B --&gt;|www.example.com或默认| D[回环11443 TLS网站后端]
+    C --&gt; E[后端终止TLS并认证]
+    D --&gt; F[后端终止TLS并响应网站]</code></pre>
+<p><em>图14-5 SNI透传分流不解密连接，所有目标后端仍需正确处理TLS</em></p>
+<p>SNI是路由提示，不是访问授权，任意客户端都可以填写名称。ECH（Encrypted Client Hello，RFC 9849）用于加密内部ClientHello的敏感信息，包括实际目标SNI；启用后，中间层可能只能读到外层公开名称，不能继续假定按内部名称分流。实际使用还需要客户端、服务端和配置获取链路支持，应把ECH终止及路由位置纳入设计，而不是要求用户关闭证书验证。ECH不隐藏目标IP，也不覆盖连接时序等全部元数据。</p>
+<h2 id="143">14.3 传输封装及其边界<a class="headerlink" href="#143" title="Permanent link">&para;</a></h2>
+<h3 id="1431-websocket">14.3.1 WebSocket传输<a class="headerlink" href="#1431-websocket" title="Permanent link">&para;</a></h3>
+<p>经典WebSocket通过HTTP/1.1 Upgrade建立双向连接，见14.2.2。它提供一种可由兼容HTTP基础设施转发的传输方式；路径名叫<code>/chat</code>、添加浏览器User-Agent，并不会使代理核心具备真实浏览器的全部握手与业务行为。</p>
+<p>对于V2Ray <code>v5.53.0</code>客户端，以下是已完成账号配置的VMess outbound中使用的<code>streamSettings</code>片段，<strong>不能单独作为完整配置启动</strong>：</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">"streamSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ws"</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">"security"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tls"</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">"tlsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="nt">"serverName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proxy.example.com"</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="nt">"allowInsecure"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">"wsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v2ray"</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>客户端实际连接Nginx公网地址和443端口，并验证<code>proxy.example.com</code>证书；服务端回环WS后端则不重复启用TLS。若改成另一种核心或客户端，应核对其字段和支持状态，不能把这段JSON直接用于sing-box或Mihomo。</p>
+<p>Xray <code>v26.10.21</code>仍接受WebSocket，但会输出弃用提示并指向XHTTP；这不等于其他项目同时移除了WebSocket，也不意味着现有部署可以只改一个<code>network</code>字段完成迁移。连接稳定性还受CDN重启、空闲超时和重连策略影响。</p>
+<h3 id="1432-http2xhttp">14.3.2 HTTP/2与XHTTP<a class="headerlink" href="#1432-http2xhttp" title="Permanent link">&para;</a></h3>
+<p>HTTP/2提供二进制分帧、多路复用等能力，但它不是统一的“代理混淆协议”。ALPN协商出<code>h2</code>，不代表对端接受任意代理请求；普通网站、gRPC和特定核心的HTTP传输还各自定义了应用语义。</p>
+<p>在Xray <code>v26.10.21</code>中，旧<code>network: "h2"</code>、<code>"http"</code>及相应旧式HTTP传输已移除，不能继续使用旧<code>httpSettings</code>示例。该版本提供XHTTP，具体模式、上下行路径、TLS和代理兼容性需按其文档配置。这里不把Xray的移除状态推及V2Ray，也不把XHTTP当成其他核心的通用字段。</p>
+<p>Nginx提供HTTP/2服务与代理核心选择哪种传输是两件事。Nginx <code>1.25.1</code>起可以使用<code>http2 on</code>，较早版本语法不同；<code>proxy_pass</code>与<code>grpc_pass</code>也不能互相替代。部署前检查<code>nginx -v</code>、<code>nginx -V</code>和对应版本模块文档。</p>
+<h3 id="1433-grpc">14.3.3 gRPC传输<a class="headerlink" href="#1433-grpc" title="Permanent link">&para;</a></h3>
+<p>gRPC通常通过HTTP/2承载RPC，代理实现可以用它封装数据流。两端仍需匹配服务名、模式、TLS、ALPN及账号；伪装成<code>UserService</code>不会自动形成正常用户服务，也不构成认证。</p>
+<p>以Cloudflare的gRPC反向代理为例，官方要求端点使用443、TLS、HTTP/2及相应ALPN和Content-Type，并按要求启用代理和gRPC功能。还应验证源站证书及访问控制，不能只凭“支持HTTP/2”判断能用。普通浏览器交互式质询不适合直接用于这类客户端。</p>
+<p>Xray <code>v26.10.21</code>对gRPC仍保留兼容，但会输出弃用提示并指向XHTTP对应模式。维护现有gRPC部署时先确认两端版本与连接行为，规划迁移后再调整；不把<code>multiMode: true</code>作为普遍的安全或性能开关。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[选择或迁移传输方式] --&gt; B[核对客户端与服务端实现和版本]
+    B --&gt; C[确认TLS、认证及应用语义]
+    C --&gt; D[逐段核对Nginx或CDN兼容条件]
+    D --&gt; E[在测试入口验证连接、超时与重连]
+    E --&gt; F[记录基线后迁移并保留回退方案]</code></pre>
+<p><em>图14-6 传输兼容性需要逐段验证，标准名称相同不等于端到端配置相同</em></p>
+<h3 id="1434-mkcp">14.3.4 mKCP与伪装头<a class="headerlink" href="#1434-mkcp" title="Permanent link">&para;</a></h3>
+<p>mKCP是一类基于UDP的传输实现。部分实现提供<code>none</code>、<code>srtp</code>、<code>utp</code>、<code>wechat-video</code>、<code>dtls</code>、<code>wireguard</code>等历史头部选项；它们可能改变部分报文外观，但不会因此实现完整的微信视频、DTLS或WireGuard协议状态与安全属性。</p>
+<p>Xray本章版本仍有mKCP相关配置。是否使用应依据两端支持、网络丢包、带宽成本和实际测试，不采用“国内推荐wechat-video、国外推荐dtls”的固定规则。UDP拥塞、重传和参数设置还可能增加流量或延迟；伪装头不能代替加密与认证，也不能绕过普通HTTP CDN的协议限制。</p>
+<h2 id="144-dpi">14.4 DPI及流量特征防护<a class="headerlink" href="#144-dpi" title="Permanent link">&para;</a></h2>
+<h3 id="1441-dpi">14.4.1 DPI的观察范围<a class="headerlink" href="#1441-dpi" title="Permanent link">&para;</a></h3>
+<p>深度包检测（DPI）可以结合端口、协议字段、可见握手、流量大小和时序判断连接类型。TLS加密后的应用内容不能由普通旁路观察者直接读取，但未加密元数据、端点和统计特征仍可能参与分类；被动分类与主动探测也应分开理解。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[观察连接] --&gt; B[地址、端口和传输协议]
+    A --&gt; C[可见握手与协议字段]
+    A --&gt; D[大小、方向、持续时间与时序]
+    B --&gt; E[结合规则、统计模型与历史信息]
+    C --&gt; E
+    D --&gt; E
+    E --&gt; F[分类、记录或触发进一步探测]</code></pre>
+<p><em>图14-7 分类可以综合多个信号，消除某一个字段不等于消除可识别性</em></p>
+<p>加密、封装、指纹调整和匿名性是不同问题。某个网络下暂时连接成功，只证明该次测试路径可用，不能据此保证长期抗封锁、无法识别或匿名。排障还应区分证书失败、配置错误、路由故障、拥塞和访问限制。</p>
+<h3 id="1442-tlsutls">14.4.2 TLS指纹与uTLS<a class="headerlink" href="#1442-tlsutls" title="Permanent link">&para;</a></h3>
+<p>TLS ClientHello包含版本、密码套件、扩展、支持组等信息。JA3、JA4等指纹方法会归纳其中部分特征，帮助分类；同一指纹也可能由多种应用共享，不能只凭指纹就认定某个连接必然是代理。</p>
+<p>uTLS是在Go TLS实现基础上提供ClientHello控制与指纹调整能力的库。在支持它的客户端中，选择<code>chrome</code>等指纹会调整部分握手外观，并不把整个软件变成Chrome：HTTP行为、连接复用、版本变化及其他流量特征仍可能不同。</p>
+<p>以Xray <code>v26.10.21</code>客户端为例，<code>tlsSettings</code>或<code>realitySettings</code>中的<code>fingerprint</code>应使用该版本支持的值，并与实际传输、ALPN和扩展兼容。它不是证书固定选项，也不能替代服务端身份验证。盲目随机切换指纹还可能降低兼容性或形成新的异常行为。</p>
+<h3 id="1443">14.4.3 填充与性能选项<a class="headerlink" href="#1443" title="Permanent link">&para;</a></h3>
+<p>填充需要协议或实现真正添加可被对端正确处理的数据。TCP Fast Open用于连接建立优化，<code>tproxy</code>用于透明代理相关行为，两者均不是填充开关；设置它们不会自动统一报文长度或随机化时序。</p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>需要确认的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>协议支持</td>
+<td>填充字段作用于握手、请求、数据块还是其他位置</td>
+</tr>
+<tr>
+<td>两端解析</td>
+<td>对端是否理解相同封装及长度规则</td>
+</tr>
+<tr>
+<td>中间路径</td>
+<td>代理、CDN和MTU是否限制报文大小或请求形式</td>
+</tr>
+<tr>
+<td>资源成本</td>
+<td>增加的流量、CPU、时延和失败率是否可接受</td>
+</tr>
+<tr>
+<td>验证方法</td>
+<td>在同一测试条件下比较实际分布，而非只看选项名称</td>
+</tr>
+</tbody>
+</table>
+<p>某些XHTTP、Vision或其他协议实现会在特定阶段处理填充，但配置不能跨协议照搬。填充不会天然统一全部网络包大小，也不必然改变时序；手工追加任意随机字节可能直接破坏认证或协议解析。对生产连接的抓包、TLS密钥日志和调试输出也应按敏感数据管理。</p>
+<h3 id="1444-reality">14.4.4 REALITY的安全边界<a class="headerlink" href="#1444-reality" title="Permanent link">&para;</a></h3>
+<p>REALITY是Xray生态中的传输安全机制，通常与VLESS、Vision等组合使用，不能仅把它等同于某种完整代理协议。典型部署不需要为代理入口自行申请网站证书，但仍需要正确配置服务端密钥、客户端验证参数、允许的名称和用户身份。</p>
+<p>目标地址应按所用版本要求，从VPS实际验证TLS 1.3、HTTP/2、名称与证书等兼容条件，不能长期复制某个“大站推荐名单”。客户端连接实际代理服务器地址，由对应实现完成握手验证；它不是先登录目标网站再自动获得代理权限。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[连接到REALITY入口] --&gt; B[按实现处理握手与验证参数]
+    B --&gt; C{是否通过REALITY验证?}
+    C --&gt;|是| D[继续VLESS等协议的用户认证]
+    D --&gt; E{用户认证是否通过?}
+    E --&gt;|是| F[按权限处理代理连接]
+    E --&gt;|否| G[按入站规则拒绝或结束]
+    C --&gt;|否| H[按实现及配置处理目标转发或失败]</code></pre>
+<p><em>图14-8 REALITY握手验证与代理用户认证是不同环节，异常处理取决于实际实现</em></p>
+<p>本章版本的配置使用<code>target</code>等字段，旧配置可能保留<code>dest</code>名称；客户端公钥相关字段也应按版本核对。服务端私钥不能分发给客户端，short ID不能替代UUID，空short ID更不是通用的安全推荐。第13章介绍面板配置的核对流程；具体字段名称仍应以当前核心和面板文档为准。</p>
+<p>REALITY不隐藏代理服务器IP，不自动保护面板，不阻止带宽耗尽，也不能保证无法识别。异常流量到目标的转发还可能消耗服务端和目标资源，应核对版本提供的限制、监控和资源边界。</p>
+<h2 id="145">14.5 服务器安全加固<a class="headerlink" href="#145" title="Permanent link">&para;</a></h2>
+<h3 id="1451">14.5.1 最小权限与配置变更<a class="headerlink" href="#1451" title="Permanent link">&para;</a></h3>
+<p>服务进程需要读取配置和密钥，不意味着它应能修改自身程序、systemd单元或全部配置目录。第12章的手动systemd示例使用root；若改为专用服务用户，应另行配置必要的读取权限，并由root维护程序和服务文件。不要把二进制与配置目录递归改为服务用户所有，否则进程失守后可能修改启动内容并长期驻留。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>所有权与访问原则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核心程序、部署脚本和服务单元</td>
+<td>由root维护，服务用户不可写</td>
+</tr>
+<tr>
+<td>含秘密的配置</td>
+<td>root所有，按必要服务组只读，常用模式为0640</td>
+</tr>
+<tr>
+<td>运行状态与缓存</td>
+<td>仅授权服务用户写入明确的专用目录</td>
+</tr>
+<tr>
+<td>私钥副本</td>
+<td>仅授权服务读取，不向所有本地用户开放</td>
+</tr>
+<tr>
+<td>日志、报告与备份</td>
+<td>按敏感信息限制读取，设置容量与保留策略</td>
+</tr>
+</tbody>
+</table>
+<p>例如，若为第12章的V2Ray原生服务另行创建了<code>v2ray</code>组，并授予服务用户该组的读取权限，可核对并设置单个文件，而不是递归接管整个目录：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>root:v2ray<span class="w"> </span>/usr/local/etc/v2ray/config.json
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">0640</span><span class="w"> </span>/usr/local/etc/v2ray/config.json
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>sudo<span class="w"> </span>-u<span class="w"> </span>v2ray<span class="w"> </span>/usr/local/bin/v2ray<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-format<span class="w"> </span>json<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>-c<span class="w"> </span>/usr/local/etc/v2ray/config.json
+</span></code></pre></div>
+<p>这不适用于所有面板管理的文件，应先确认唯一管理者与实际路径。证书申请与续期可参考第12章，部署副本权限和续期后的重载或重启操作需匹配实际服务用户，不通过扩大整个<code>/etc/letsencrypt</code>树的权限解决读取失败。容器内的root、宿主机权限、挂载目录和能力也需要分别核对。</p>
+<p>systemd的<code>User</code>、<code>NoNewPrivileges</code>、<code>ProtectSystem</code>和目录限制应按服务需求逐项验证。只有直接绑定低端口且确实需要时才授予<code>CAP_NET_BIND_SERVICE</code>；使用回环高端口、由Nginx监听443的核心通常不需要该能力。透明代理、TUN或自动更新功能可能需要其他权限，不能照抄一组沙箱选项后忽略启动失败。</p>
+<p>检查实际监听和运行服务，再决定是否停用：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-lntup
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>systemctl<span class="w"> </span>list-units<span class="w"> </span>--type<span class="o">=</span>service<span class="w"> </span>--state<span class="o">=</span>running
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>systemctl<span class="w"> </span>list-unit-files<span class="w"> </span>--state<span class="o">=</span>enabled
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>systemctl<span class="w"> </span>list-timers<span class="w"> </span>--all
+</span></code></pre></div>
+<p>启用和运行是不同状态，socket或timer也可能重新触发服务。不要仅凭名称删除网络、时间同步、日志或云代理组件；更新受维护的软件与系统包后，检查服务是否需要重启、内核是否需要重启，并验证管理及业务连接。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[记录版本、监听与可恢复配置] --&gt; B[检查改动所需权限和依赖]
+    B --&gt; C[验证语法及服务用户读取权限]
+    C --&gt; D[在测试入口应用单项改动]
+    D --&gt; E{管理与业务验证是否通过?}
+    E --&gt;|否| F[恢复匹配配置并排查原因]
+    E --&gt;|是| G[保存变更记录与监控基线]</code></pre>
+<p><em>图14-9 权限加固需要与可用性验证和回退方法一起完成</em></p>
+<h3 id="1452">14.5.2 完整性检查与审计<a class="headerlink" href="#1452" title="Permanent link">&para;</a></h3>
+<p>AIDE根据可信基线比较文件变化。它能发现受监控对象的差异，但不能单独证明系统从未被入侵；若攻击者控制了本机检查程序和数据库，结果也可能被篡改。基线应在已知可信状态建立，并保存受保护的独立副本，软件升级后的变化需要核对来源。</p>
+<p>在使用发行版软件包的Debian或Ubuntu环境，可先安装所需工具；包安装可能启动审计服务，应纳入变更安排：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>aide<span class="w"> </span>auditd
+</span></code></pre></div>
+<p>Debian的<code>aideinit</code>包装程序依据实际配置确定输入和输出数据库，并可能提示是否替换基线。先检查配置、覆盖路径和已有数据库，再初始化：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>aideinit
+</span></code></pre></div>
+<p>不要固定复制某个<code>aide.db.new</code>文件覆盖基线，也不要发现差异就自动接受。后续检查使用该发行包提供的检查任务或已核实配置路径的<code>aide --check</code>；确认是否有预置timer，避免重复安排。证书续期、日志和缓存等正常变化应通过适当规则处理，而不是全部忽略。</p>
+<p>auditd用于记录所选文件和系统操作，不能代替防火墙或完整性检查。下例仅用于**x86-64原生进程、实际存在第12章V2Ray配置目录**的Linux测试机；保存为<code>/etc/audit/rules.d/proxy-config.rules</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>-a always,exit -F arch=b64 -F dir=/usr/local/etc/v2ray/ -F perm=wa -k proxy_config
+</span></code></pre></div>
+<p>这是系统调用形式的目录审计规则，用于写入和属性变更，避免沿用已弃用的<code>-w</code>形式。若需要覆盖32位兼容进程或其他架构，应核对内核支持后补齐对应规则；跨挂载点和目录替换也需单独验证。不要把只读配置目录与高频日志目录一起无范围审计。</p>
+<p>检查现有策略，确认允许在线更新后再加载：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>auditctl<span class="w"> </span>-s
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo<span class="w"> </span>auditctl<span class="w"> </span>-l
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo<span class="w"> </span>augenrules<span class="w"> </span>--load
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>sudo<span class="w"> </span>auditctl<span class="w"> </span>-l
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>sudo<span class="w"> </span>ausearch<span class="w"> </span>-k<span class="w"> </span>proxy_config<span class="w"> </span>-ts<span class="w"> </span>today<span class="w"> </span>-i
+</span></code></pre></div>
+<p><code>augenrules --load</code>会加载整套持久规则，不只是上面新增的一行，必须先审阅其他规则。启用不可变审计策略时不能在线修改，不应为照搬示例清空现有规则。测试可使用受控的临时文件变更，避免改坏真实配置；同时关注丢失事件、磁盘空间和日志权限。审计结果可能包含用户名、路径和命令参数，日志管理见第16章。</p>
+<h3 id="1453">14.5.3 自动化安全检查<a class="headerlink" href="#1453" title="Permanent link">&para;</a></h3>
+<p>自动化检查应明确检查了什么、哪些项目失败，以及报告由谁查看。端口和资源快照不会自动判断系统是否安全；“没有输出”也不能替代对退出状态的检查。</p>
+<p>下面是Debian或Ubuntu systemd主机的只读巡检脚本，依赖<code>coreutils</code>中的<code>timeout</code>、<code>iproute2</code>、<code>procps</code>与APT工具。它不修改防火墙、不更新软件、不封禁来源，也不自动外发报告。报告可能包含网络地址、认证记录和软件版本，保存在受限目录。</p>
+<p>先创建仅root可访问的报告目录：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>install<span class="w"> </span>-d<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0700</span><span class="w"> </span>/var/log/proxy-security
+</span></code></pre></div>
+<p>在受控工作目录保存<code>security-check.sh</code>：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="ch">#!/bin/sh</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">set</span><span class="w"> </span>-eu
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nv">PATH</span><span class="o">=</span>/usr/sbin:/usr/bin:/sbin:/bin
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">export</span><span class="w"> </span>PATH
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nb">umask</span><span class="w"> </span><span class="m">077</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="s2">"</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%s\n'</span><span class="w"> </span><span class="s1">'请以root运行，并先准备受限报告目录'</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">fi</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="nv">report_dir</span><span class="o">=</span>/var/log/proxy-security
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="nv">report</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="w"> </span><span class="s2">"</span><span class="nv">$report_dir</span><span class="s2">/check.XXXXXXXX"</span><span class="k">)</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="nv">failed</span><span class="o">=</span><span class="m">0</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>run_check<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">    </span><span class="nv">title</span><span class="o">=</span><span class="nv">$1</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">    </span><span class="nb">shift</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\n[%s]\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$title</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>timeout<span class="w"> </span>20s<span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">        </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%s\n'</span><span class="w"> </span><span class="s1">'exit=0'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">        </span><span class="nv">status</span><span class="o">=</span><span class="nv">$?</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">        </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'exit=%s，需人工核对\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$status</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="w">        </span><span class="nv">failed</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">    </span><span class="k">fi</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="o">}</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="nb">printf</span><span class="w"> </span><span class="s1">'巡检时间：%s\n'</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>date<span class="w"> </span>-u<span class="w"> </span><span class="s1">'+%Y-%m-%dT%H:%M:%SZ'</span><span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>run_check<span class="w"> </span><span class="s1">'监听套接字'</span><span class="w"> </span>ss<span class="w"> </span>-lntup
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>run_check<span class="w"> </span><span class="s1">'失败的服务单元'</span><span class="w"> </span>systemctl<span class="w"> </span>--failed<span class="w"> </span>--no-pager
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>run_check<span class="w"> </span><span class="s1">'SSH最近一小时日志'</span><span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh.service<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="w">    </span>--since<span class="w"> </span><span class="s1">'1 hour ago'</span><span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>--no-pager
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>run_check<span class="w"> </span><span class="s1">'本地APT索引中的可升级包'</span><span class="w"> </span>apt<span class="w"> </span>list<span class="w"> </span>--upgradable
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>run_check<span class="w"> </span><span class="s1">'磁盘空间'</span><span class="w"> </span>df<span class="w"> </span>-h
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>run_check<span class="w"> </span><span class="s1">'内存'</span><span class="w"> </span>free<span class="w"> </span>-h
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>
+</span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="nb">printf</span><span class="w"> </span><span class="s1">'\n至少一项命令失败：%s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$failed</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span>
+</span><span id="__span-14-39"><a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="nb">printf</span><span class="w"> </span><span class="s1">'报告已保存：%s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$report</span><span class="s2">"</span>
+</span><span id="__span-14-40"><a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="nb">exit</span><span class="w"> </span><span class="s2">"</span><span class="nv">$failed</span><span class="s2">"</span>
+</span></code></pre></div>
+<p>按实际路径安装并手动验证：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>install<span class="w"> </span>-d<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>/usr/local/libexec
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0750</span><span class="w"> </span>security-check.sh<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span>/usr/local/libexec/security-check.sh
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>sudo<span class="w"> </span>/usr/local/libexec/security-check.sh
+</span></code></pre></div>
+<p>脚本使用唯一文件名，避免在公共<code>/tmp</code>中反复覆盖固定报告；报告目录须保持root所有且不可由普通用户写入。完成巡检后，退出码1表示至少一条命令执行失败，<strong>不代表发现入侵</strong>；反之退出码0只说明命令成功，报告仍可能列出失败服务、危险监听或异常日志。APT结果依赖本地索引是否新鲜，本脚本不刷新索引；<code>apt</code>命令的输出只供人工阅读，不作为稳定机器接口。</p>
+<p>确认报告内容后再使用systemd service/timer等方式调度，另外监控任务失败、磁盘用量与报告保留期限。Fail2Ban若已安装，可单独检查实际jail；没有安装时不能把缺少命令解释成攻击。SSH日志服务名也应按系统修改。需要告警时明确接收方、凭据和脱敏范围，不在通用示例中内置邮箱或聊天机器人令牌。</p>
+<h3 id="1454">14.5.4 备份、恢复与事件处置<a class="headerlink" href="#1454" title="Permanent link">&para;</a></h3>
+<p>备份应覆盖配置、数据库、证书、必要的解密密钥和恢复说明，并与程序版本配套。配置可能持续变化，运行中的SQLite还可能存在已提交WAL数据；把<code>tar /etc/x-ui</code>或复制主<code>.db</code>文件当作一致性备份，可能得到无法恢复或数据不完整的副本。</p>
+<p>第13章说明面板备份与恢复流程；直接复制运行中的SQLite数据库主文件不能保证备份一致性。应使用SQLite在线备份接口或面板支持的备份功能，并验证恢复；配置与密钥另行记录来源、所有权、路径和版本。证书目录常含符号链接，恢复时必须保留有效的链接目标与权限，不能只保存<code>live</code>目录中的链接。备份输出应检查退出状态及完整性，不用<code>2&gt;/dev/null</code>掩盖缺失文件后仍输出“备份成功”。</p>
+<table>
+<thead>
+<tr>
+<th>材料</th>
+<th>验证重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据库与配置</td>
+<td>一致性、配套版本、导出结果与必要依赖</td>
+</tr>
+<tr>
+<td>私钥、令牌加密密钥</td>
+<td>受限保存、加密副本及独立保管的解密材料</td>
+</tr>
+<tr>
+<td>服务与访问控制</td>
+<td>单元、用户组、监听、云端规则和恢复顺序</td>
+</tr>
+<tr>
+<td>证书与续期机制</td>
+<td>链接目标、有效期、权限及续期后部署动作</td>
+</tr>
+<tr>
+<td>异地备份</td>
+<td>独立故障域、访问隔离、保留策略和可恢复测试</td>
+</tr>
+</tbody>
+</table>
+<p>备份加密不能代替访问隔离：若同一失守账号能修改或删除所有历史副本，勒索或误操作仍可能毁掉恢复能力。保留策略应依据恢复目标和已验证副本设置，清理前生成预览，不直接照抄通配删除命令。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[发现疑似入侵或严重异常] --&gt; B[通过可信管理路径限制影响]
+    B --&gt; C[按需要保全日志、快照与时间线]
+    C --&gt; D[在可信设备轮换失守凭据]
+    D --&gt; E[评估系统与备份可信度]
+    E --&gt; F[必要时从可信镜像重建并修补入口]
+    F --&gt; G[恢复已验证数据及最小必要权限]
+    G --&gt; H[测试入口、认证、续期与监控后恢复服务]</code></pre>
+<p><em>图14-10 事件恢复要先控制影响并判断可信度，再决定重建和数据恢复方式</em></p>
+<p>事件处置应兼顾业务影响和证据保全，避免先清日志、盲目重启或删除文件。若怀疑系统已被控制，应从可信设备和管理平面操作；仅删除可疑进程、恢复旧配置不代表清除了持久化入口。恢复演练还应阻断真实节点同步和外发通知，避免测试环境改动正常业务。</p>
+<h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>安全防护建立在正确认证、最小暴露、受维护软件、权限隔离、监控和可恢复数据之上。端口、传输封装、TLS指纹、回落和REALITY各有用途，不能互相替代，也不能导出无法识别或绝对匿名的保证。</p>
+<p>DDoS需要在实际瓶颈所在的位置应对；CDN只保护其支持且实际经过的路径。备份与审计同样要验证执行结果、权限和恢复能力。下一章将讨论客户端、浏览器及使用行为中的隐私保护。</p>
+<p><strong>实践任务：</strong></p>
+<ol>
+<li>画出实际部署的管理、业务、DNS和回落路径，列出每段的认证、TLS终止位置和公网暴露入口。</li>
+<li>在测试环境验证错误证书、错误账号和错误路径的行为，保持证书验证开启，不对第三方目标发起探测。</li>
+<li>对照所用核心版本检查传输支持状态，说明HTTP路径分流、SNI透传与协议回落的区别。</li>
+<li>核对服务用户对程序、配置、私钥与状态目录的读写权限，测试一项加固改动及回退。</li>
+<li>运行只读巡检，区分命令执行失败与报告中的安全问题，制定受限的报告保留和告警方法。</li>
+<li>在隔离环境恢复一次一致性备份，并设计凭据泄露、上游带宽耗尽与系统疑似失守时的不同处置步骤。</li>
+</ol>
+<p><strong>参考资料：</strong></p>
+<ul>
+<li><a href="https://docs.kernel.org/networking/ip-sysctl.html">Linux内核IP sysctl参数</a></li>
+<li><a href="https://nginx.org/en/docs/http/websocket.html">Nginx WebSocket代理</a></li>
+<li><a href="https://nginx.org/en/docs/stream/ngx_stream_ssl_preread_module.html">Nginx TLS预读取模块</a></li>
+<li><a href="https://nginx.org/en/docs/http/ngx_http_v2_module.html">Nginx HTTP/2模块</a></li>
+<li><a href="https://developers.cloudflare.com/fundamentals/reference/network-ports/">Cloudflare代理端口范围</a></li>
+<li><a href="https://developers.cloudflare.com/network/websockets/">Cloudflare WebSocket支持与限制</a></li>
+<li><a href="https://developers.cloudflare.com/network/grpc-connections/">Cloudflare gRPC要求与限制</a></li>
+<li><a href="https://developers.cloudflare.com/fundamentals/security/protect-your-origin-server/">Cloudflare源站保护</a></li>
+<li><a href="https://github.com/v2fly/v2ray-core/tree/v5.53.0">V2Ray v5.53.0源码</a></li>
+<li><a href="https://github.com/XTLS/Xray-core/blob/v26.10.21/infra/conf/transport_internet.go">Xray v26.10.21传输支持状态</a></li>
+<li><a href="https://github.com/XTLS/Xray-core/blob/v26.10.21/infra/conf/transport_security.go">Xray v26.10.21 TLS与REALITY配置实现</a></li>
+<li><a href="https://github.com/XTLS/REALITY">REALITY项目说明</a></li>
+<li><a href="https://github.com/refraction-networking/utls">uTLS项目说明</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9849.html">RFC 9849：TLS Encrypted Client Hello</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9525.html">RFC 9525：TLS服务端身份验证</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc6797.html">RFC 6797：HTTP Strict Transport Security</a></li>
+<li><a href="https://man7.org/linux/man-pages/man8/auditctl.8.html">auditctl规则说明</a></li>
+<li><a href="https://manpages.debian.org/trixie/aide-common/aideinit.8.en.html">Debian aideinit说明</a></li>
+<li><a href="https://www.sqlite.org/backup.html">SQLite Online Backup API</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！我们会持续改进。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第13章 多用户管理方案">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                第13章 多用户管理方案
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第15章 隐私保护实践">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                第15章 隐私保护实践
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 科学上网完全指南
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ihmily/network-proxy-guide" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

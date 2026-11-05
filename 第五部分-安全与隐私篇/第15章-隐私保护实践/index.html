@@ -1,0 +1,2667 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="专业的科学上网技术文档 - 涵盖代理协议、客户端工具、服务器搭建、安全防护等完整知识体系">
+      
+      
+        <meta name="author" content="科学上网指南">
+      
+      
+        <link rel="canonical" href="https://ihmily.github.io/network-proxy-guide/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/">
+      
+      
+        <link rel="prev" href="../%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/">
+      
+      
+        <link rel="next" href="../%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>第15章 隐私保护实践 - 科学上网完全指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#15" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="科学上网完全指南" class="md-header__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科学上网完全指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第15章 隐私保护实践
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="科学上网完全指南" class="md-nav__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    科学上网完全指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%E5%85%A8%E4%B9%A6%E5%A4%A7%E7%BA%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全书大纲
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础知识篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础知识篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC01%E7%AB%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第01章 什么是科学上网
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC02%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第02章 网络基础知识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC03%E7%AB%A0-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第03章 核心技术原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 主流协议与工具篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 主流协议与工具篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC04%E7%AB%A0-%E5%B8%B8%E8%A7%81%E4%BB%A3%E7%90%86%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第04章 常见代理协议详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC05%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第05章 客户端工具使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC06%E7%AB%A0-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第06章 浏览器与插件方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 高级配置篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 高级配置篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC07%E7%AB%A0-%E8%AE%A2%E9%98%85%E4%B8%8E%E8%8A%82%E7%82%B9%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第07章 订阅与节点管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC08%E7%AB%A0-%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第08章 分流规则详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 服务器搭建篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 服务器搭建篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC09%E7%AB%A0-VPS%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第09章 VPS选购指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 服务器环境配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 一键脚本部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC12%E7%AB%A0-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 手动搭建教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 多用户管理方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 安全与隐私篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 安全与隐私篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 网络安全防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 隐私保护实践
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 隐私保护实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="本章大纲">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      本章大纲
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#151-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 DNS泄漏防护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.1 DNS泄漏防护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1511-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.1 什么是DNS泄漏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1512-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.2 检测DNS泄漏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1513" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.3 解析加密、代理与系统接管
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 WebRTC泄漏预防
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.2 WebRTC泄漏预防">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1521-webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2.1 WebRTC的地址与连接路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1522-webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2.2 检测WebRTC路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1523-webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2.3 按需求限制WebRTC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 IPv6泄漏处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.3 IPv6泄漏处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1531-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3.1 IPv6泄漏的条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1532-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3.2 检测IPv6路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1533" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3.3 代理、阻断与回退
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 支付信息隐私
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.4 支付信息隐私">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1541" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4.1 支付链路中的信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1542" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4.2 不同支付工具的能力与限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1543" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4.3 最小披露与账号恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 数字足迹管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.5 数字足迹管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1551" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5.1 浏览器指纹防护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1552" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5.2 浏览器数据与会话隔离
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1553" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5.3 系统数据、缓存与日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1554" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5.4 文件元数据与安全分享
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1555" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5.5 数字足迹最小化与数据生命周期
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 审计与日志管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 故障排查篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 故障排查篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 常见问题诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 网络测试工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 最佳实践篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 最佳实践篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC19%E7%AB%A0-%E4%B8%8D%E5%90%8C%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 不同场景应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC20%E7%AB%A0-%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 成本优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC21%E7%AB%A0-%E5%90%88%E8%A7%84%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 合规使用建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95A-%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95C-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95D-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="15">第15章 隐私保护实践<a class="headerlink" href="#15" title="Permanent link">&para;</a></h1>
+<p>隐私保护首先要回答两个问题：哪些信息不希望被谁看到，以及哪些通信原本就允许直连。网络运营者、代理提供者、DNS解析器、网站、支付机构与本机其他使用者看到的信息不同；一次出口IP测试不能证明这些环节都符合预期。</p>
+<p>本章围绕DNS、WebRTC、IPv6、支付信息和数字足迹展开。测试前先记录预期路径，区分浏览器代理、系统代理与TUN/VPN接管，避免把某个应用的测试结果推广到整台设备。涉及真实公网地址、候选地址、支付记录或文件元数据的结果，应在受控位置保存，不把完整截图或原始文件公开上传。</p>
+<h2 id="151-dns">15.1 DNS泄漏防护<a class="headerlink" href="#151-dns" title="Permanent link">&para;</a></h2>
+<h3 id="1511-dns">15.1.1 什么是DNS泄漏<a class="headerlink" href="#1511-dns" title="Permanent link">&para;</a></h3>
+<p>DNS泄漏是原本应受保护或经指定路径处理的查询，实际交给了非预期的解析器或从非预期网络发出。它不只等于“用了明文DNS”，也不能通过“解析器在本地还是国外”简单判断。若分流策略明确允许某些查询直连，应按该策略评估暴露范围。</p>
+<p>应用访问域名时，可能使用系统解析、浏览器内置DoH、应用自己的DNS模块，或把域名交给代理端解析。这些查询不一定跟随网页连接经过同一出口。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[应用访问域名] --&gt; B{域名由谁解析?}
+    B --&gt;|系统解析器| C[本地转发器或系统配置的上游]
+    B --&gt;|浏览器或应用内置DNS| D[应用自行连接解析服务]
+    B --&gt;|交给代理| E[代理端按自身配置解析]
+    C --&gt; F[核对查询传输、路由与接收方]
+    D --&gt; F
+    E --&gt; F
+    F --&gt; G[与业务连接的实际出口分别比较]</code></pre>
+<p><em>图15-1 DNS解析与业务连接是两条需要分别验证的路径</em></p>
+<p>DNS查询通常表明某个应用请求了解析，不能单凭一条查询就断言用户实际打开了相应页面；预取、缓存刷新和后台程序也可能触发查询。反过来，没有观察到查询，也可能是命中了缓存，不能据此证明没有访问。</p>
+<p>代理客户端与节点之间是否加密、节点到目标是否使用HTTPS，也应分别判断。不能把“用户经过代理访问网站”画成天然全程加密：如果目标是明文HTTP，代理出口到网站的内容仍可能被沿途观察。</p>
+<h3 id="1512-dns">15.1.2 检测DNS泄漏<a class="headerlink" href="#1512-dns" title="Permanent link">&para;</a></h3>
+<p>检测应同时使用应用测试、客户端记录和系统网络状态，而不是只看检测网站标注的国家或运营商。在线DNS测试通常让浏览器查询一组测试域名，再观察其权威DNS收到的递归查询来源；展示的可能是上游转发器，不一定是本机直接连接的服务器。</p>
+<table>
+<thead>
+<tr>
+<th>检查方法</th>
+<th>能说明什么</th>
+<th>不能单独说明什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DNSLeakTest、BrowserLeaks DNS等测试页</td>
+<td>该次浏览器测试可观察到的递归解析来源</td>
+<td>整台设备、其他应用和所有网络下的DNS路径</td>
+</tr>
+<tr>
+<td><code>nslookup</code>或<code>dig</code></td>
+<td>此工具发出的查询及所联系的解析入口</td>
+<td>浏览器内置DoH、应用自带解析或完整上游链路</td>
+</tr>
+<tr>
+<td>系统DNS设置</td>
+<td>系统已配置的接口和解析器</td>
+<td>应用是否遵循它、是否另有回退路径</td>
+</tr>
+<tr>
+<td>客户端连接记录与受控抓包</td>
+<td>测试期间可见的连接、规则和部分DNS流量</td>
+<td>加密DNS中的全部查询内容与远端内部处理</td>
+</tr>
+</tbody>
+</table>
+<p>第三方检测服务会获得本次访问和测试相关信息。需要较少披露时，可在自己控制的测试域名与服务端上观察；不要在公开讨论中贴出完整家庭IP、公司解析器名称或内部域名。</p>
+<p>Windows可先查看系统DNS配置，在PowerShell中执行：</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-DnsClientServerAddress</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">nslookup</span> <span class="n">-type</span><span class="p">=</span><span class="n">A</span> <span class="n">example</span><span class="p">.</span><span class="n">com</span>
+</span></code></pre></div>
+<p>使用systemd-resolved的Linux环境，可检查：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>resolvectl<span class="w"> </span>status
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>resolvectl<span class="w"> </span>query<span class="w"> </span>example.com
+</span></code></pre></div>
+<p>macOS可查看实际解析配置：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>scutil<span class="w"> </span>--dns
+</span></code></pre></div>
+<p><code>127.0.0.53</code>、<code>127.0.0.1</code>或局域网网关可能只是本地转发入口。它们本身不能证明查询未被保护；看到公共解析器地址，也不能证明连接采用了加密或经过代理。<code>nslookup</code>、<code>dig</code>还可能与浏览器使用不同的解析机制。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[记录预期解析器和出口] --&gt; B[区分系统、浏览器与应用解析]
+    B --&gt; C[用测试域名触发新的查询]
+    C --&gt; D[对照检测结果、客户端记录和网络路径]
+    D --&gt; E{结果是否符合预期?}
+    E --&gt;|否| F[定位应用绕过、回退或路由问题]
+    F --&gt; C
+    E --&gt;|是| G[在重连、切网和故障场景下复测]</code></pre>
+<p><em>图15-2 DNS测试需要有预期路径，并覆盖缓存、故障与网络切换的影响</em></p>
+<h3 id="1513">15.1.3 解析加密、代理与系统接管<a class="headerlink" href="#1513" title="Permanent link">&para;</a></h3>
+<p><strong>区分加密和路由</strong></p>
+<p>DoH、DoT和DoQ保护客户端到所选解析服务之间的传输；解析器仍可处理查询，并可能记录相关信息。使用它们不代表DNS自动经过代理，也不意味着业务目标IP、连接时序和全部域名信息都不可见。</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>常用传输</th>
+<th>部署要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统DNS</td>
+<td>UDP或TCP 53</td>
+<td>这段查询通常未加密，需明确是否允许及从何处发出</td>
+</tr>
+<tr>
+<td>DoH</td>
+<td>HTTPS，通常TCP 443，也可能使用HTTP/3</td>
+<td>验证HTTPS身份，并核对代理、引导解析与回退策略</td>
+</tr>
+<tr>
+<td>DoT</td>
+<td>TLS，通常TCP 853</td>
+<td>验证解析器身份，确认端口与网络支持</td>
+</tr>
+<tr>
+<td>DoQ</td>
+<td>专用QUIC，通常UDP 853</td>
+<td>RFC 9250已定义，是否更快取决于实现与路径</td>
+</tr>
+</tbody>
+</table>
+<p>选择解析服务时，考察查询记录、保留期限、司法管辖、过滤策略、可达性和延迟。公共DNS的速度受网络与时间影响，日志处理应结合服务政策评估；恶意域名过滤也不提供匿名保证。DNSSEC用于验证DNS数据真实性，不能代替查询加密或隐藏查询者身份。</p>
+<p>浏览器的安全DNS可能有默认回退、网络检测、企业策略或特定站点例外。设置名称相同，也可能因平台和模式不同而采用不同策略。应与代理客户端的DNS设计一起检查，避免系统DNS、浏览器DoH与本地fake-IP同时各走一条未记录的路径。</p>
+<p><strong>按应用交给代理解析</strong></p>
+<p>对于支持SOCKS5的工具，可以明确选择域名解析位置。下面假定本机已有可信的SOCKS5服务监听<code>127.0.0.1:1080</code>，命令使用真正的curl程序；Windows PowerShell中可把<code>curl</code>写成<code>curl.exe</code>，避免旧环境中的命令别名。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>--noproxy<span class="w"> </span><span class="s2">""</span><span class="w"> </span>--socks5-hostname<span class="w"> </span><span class="m">127</span>.0.0.1:1080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--connect-timeout<span class="w"> </span><span class="m">10</span><span class="w"> </span>--max-time<span class="w"> </span><span class="m">20</span><span class="w"> </span>https://www.example.com/
+</span></code></pre></div>
+<p><code>--socks5-hostname</code>将目标域名交给SOCKS端处理，<code>--socks5</code>通常先由本地解析。<code>--noproxy ""</code>用于取消本次请求的免代理名单。此命令不关闭目标HTTPS证书验证，也不配置系统其他应用的DNS；它只能验证该工具的请求路径。代理服务器如何解析，以及浏览器是否另有预取，仍需分别检查。</p>
+<p><strong>核对客户端DNS模块</strong></p>
+<p>第8章已给出mihomo的DNS配置示例。设置DNS上游、把系统查询送入该模块、决定上游连接出口，是三个不同步骤。以下字段按mihomo文档理解，不能直接照搬到其他核心：</p>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>作用与边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dns.enable</code>与<code>dns.listen</code></td>
+<td>启用DNS模块并监听指定地址；不会自动修改系统DNS或接管应用</td>
+</tr>
+<tr>
+<td><code>enhanced-mode: fake-ip</code></td>
+<td>为部分域名返回映射地址，便于后续识别；不提供查询加密或匿名保证</td>
+</tr>
+<tr>
+<td><code>nameserver</code>、<code>fallback</code>及筛选策略</td>
+<td>选择上游与处理结果；不是按国内外自动划分且自动选择代理的通用规则</td>
+</tr>
+<tr>
+<td><code>respect-rules</code></td>
+<td>控制DNS上游连接是否遵循路由规则，需要配套节点解析设计</td>
+</tr>
+<tr>
+<td><code>proxy-server-nameserver</code></td>
+<td>专门处理代理节点域名，防止依赖尚未建立的同一代理</td>
+</tr>
+<tr>
+<td><code>default-nameserver</code></td>
+<td>处理DNS上游自身域名的引导解析，需单独审视路径</td>
+</tr>
+<tr>
+<td>TUN的<code>dns-hijack</code></td>
+<td>把匹配的DNS连接导入模块；53端口规则不覆盖所有DoH、DoT或应用内置解析</td>
+</tr>
+</tbody>
+</table>
+<p>如果节点域名只能通过该节点建立后的DNS连接解析，就产生了启动循环。应为节点与DNS上游准备可启动的解析路径，并明确这条路径暴露哪些名称、是否加密、是否允许回退。不能只打开一个布尔选项就认定DNS方案完整。</p>
+<p><strong>由系统网络管理方式维护DNS</strong></p>
+<p>修改系统DNS应使用当前平台的网络管理器、VPN配置或设备管理策略，记录原值并保留回退方法。Linux的<code>/etc/resolv.conf</code>可能由NetworkManager、systemd-resolved或其他组件生成；直接编辑后用<code>chattr +i</code>锁定，会妨碍DHCP、VPN、分域解析及网络切换，不作为常规做法。</p>
+<p>仅把DNS地址改成<code>1.1.1.1</code>或其他公共IP，通常不等于启用DoH或DoT。TUN/VPN也要核对分域DNS、多网卡、局域网解析和断线回退。对不允许直连的查询，应测试代理故障时是否停止而不是静默改走另一条路径，同时保留节点引导及本地网络确实需要的例外。</p>
+<h2 id="152-webrtc">15.2 WebRTC泄漏预防<a class="headerlink" href="#152-webrtc" title="Permanent link">&para;</a></h2>
+<h3 id="1521-webrtc">15.2.1 WebRTC的地址与连接路径<a class="headerlink" href="#1521-webrtc" title="Permanent link">&para;</a></h3>
+<p>WebRTC用于实时音视频和数据通信。ICE机制会收集候选地址并尝试可达路径，STUN可用于获取网络映射信息，TURN可提供中继。系统HTTP代理、浏览器代理和完整VPN对这些连接的覆盖范围可能不同。</p>
+<table>
+<thead>
+<tr>
+<th>候选类型</th>
+<th>含义</th>
+<th>隐私判断重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>本地接口候选，部分浏览器用mDNS名称代替具体地址</td>
+<td>私网地址或<code>.local</code>名称不等于公网出口泄漏</td>
+</tr>
+<tr>
+<td><code>srflx</code></td>
+<td>通常通过STUN获得的映射地址</td>
+<td>是否来自预期VPN或代理覆盖的网络路径</td>
+</tr>
+<tr>
+<td><code>prflx</code></td>
+<td>连接检查中发现的对端反射候选</td>
+<td>需结合实际ICE连接与网络路径分析</td>
+</tr>
+<tr>
+<td><code>relay</code></td>
+<td>TURN分配的中继候选</td>
+<td>中继地址不等于用户原始公网地址，也不证明应用身份不可关联</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TD
+    A[网页或应用建立WebRTC连接] --&gt; B[收集本地候选]
+    A --&gt; C[按配置联系STUN或TURN]
+    C --&gt; D[得到映射或中继候选]
+    B --&gt; E[经信令交换并检查可达路径]
+    D --&gt; E
+    E --&gt; F[按策略选择通信路径]
+    F --&gt; G[核对该路径是否受预期代理或VPN覆盖]</code></pre>
+<p><em>图15-3 WebRTC有独立的候选收集与路径选择，不能从网页HTTP出口推断媒体出口</em></p>
+<p>现代浏览器通常提供地址隐藏和路由限制，但效果受版本、权限、策略及网络配置影响。WebRTC是否绕过代理或VPN取决于实际覆盖范围，没有显示原始局域网地址也不代表没有发生其他网络连接。完整且正确覆盖UDP、IPv6和路由的VPN，与仅设置HTTP代理的情形需要分开测试。</p>
+<h3 id="1522-webrtc">15.2.2 检测WebRTC路径<a class="headerlink" href="#1522-webrtc" title="Permanent link">&para;</a></h3>
+<p>BrowserLeaks WebRTC等检测页可以观察当前浏览器向页面暴露的候选信息，但测试可能联系其配置的STUN服务。测试前确认愿意向该服务披露测试流量，结果中区分网页HTTP出口、ICE候选类型和实际媒体连接。</p>
+<p>以下JavaScript适用于支持WebRTC的现代浏览器，可在自己控制的HTTPS页面开发者工具控制台运行。它不配置外部STUN或TURN，只查看本地候选，为候选收集设置5秒等待窗口，并在结束后关闭连接；<strong>不能据此测试公网STUN映射或完整VPN覆盖</strong>。</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">inspectLocalIce</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RTCPeerConnection</span><span class="p">({</span><span class="w"> </span><span class="nx">iceServers</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">candidates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">timer</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nx">connection</span><span class="p">.</span><span class="nx">createDataChannel</span><span class="p">(</span><span class="s2">"local-check"</span><span class="p">);</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">gathered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="nx">connection</span><span class="p">.</span><span class="nx">onicecandidate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">candidate</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">                    </span><span class="nx">resolve</span><span class="p">();</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">                    </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">candidate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">candidate</span><span class="p">;</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                </span><span class="nx">candidates</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">                    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">candidate</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">                    </span><span class="nx">protocol</span><span class="o">:</span><span class="w"> </span><span class="nx">candidate</span><span class="p">.</span><span class="nx">protocol</span><span class="p">,</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">                    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nx">candidate</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">                    </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="nx">candidate</span><span class="p">.</span><span class="nx">port</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">                </span><span class="p">});</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">            </span><span class="p">};</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">            </span><span class="nx">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">setLocalDescription</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">createOffer</span><span class="p">());</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">gathered</span><span class="p">;</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">            </span><span class="nx">complete</span><span class="o">:</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">iceGatheringState</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">            </span><span class="nx">candidates</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">        </span><span class="p">};</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="nx">connection</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="p">}</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="nx">inspectLocalIce</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"候选收集是否完成："</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">complete</span><span class="p">);</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">candidates</span><span class="p">);</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="p">}).</span><span class="k">catch</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">"本地候选检查未完成，请核对浏览器支持与策略"</span><span class="p">);</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>结果为空可能源于浏览器策略、环境限制或检查失败，不是自动通过；<code>complete: false</code>表示未确认完整收集。地址字段也可能是mDNS名称。不要把候选列表或完整SDP当作无敏感信息的普通日志。</p>
+<p>需要验证实际通话时，应使用自己控制或明确可信的STUN/TURN与通话端，观察选中的ICE候选对及客户端连接记录。只看到TURN地址不能证明终端没有联系其他网络服务；已有媒体会话、浏览器重启与网络切换后还要复测。</p>
+<h3 id="1523-webrtc">15.2.3 按需求限制WebRTC<a class="headerlink" href="#1523-webrtc" title="Permanent link">&para;</a></h3>
+<p>不需要实时通信时，可以使用浏览器支持的WebRTC禁用策略。Firefox的高级配置中存在<code>media.peerconnection.enabled</code>；设为<code>false</code>会影响音视频和数据通道功能。修改前记录原值，更新后验证实际效果，不把高级配置页面视作永久稳定的跨浏览器接口。</p>
+<p>需要通话时，优先确保UDP、IPv6和相关路由进入预期TUN/VPN，或采用经过验证的浏览器IP处理策略。Chromium扩展API提供<code>webRTCIPHandlingPolicy</code>，包括<code>disable_non_proxied_udp</code>等取值；它用于限制特定网络路径，<strong>不等于关闭全部WebRTC或保证所有媒体走某个HTTP代理</strong>。受管理设备还可能由组织策略控制，扩展未必能覆盖。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[评估WebRTC需求] --&gt; B{是否需要实时通信?}
+    B --&gt;|否| C[使用受支持的禁用策略并验证]
+    B --&gt;|是| D[核对UDP、IPv6与实际媒体路由]
+    D --&gt; E[按需限制非代理路径或采用可信中继]
+    C --&gt; F[检查功能影响和更新后的行为]
+    E --&gt; F
+    F --&gt; G[在断线和切网后复测]</code></pre>
+<p><em>图15-4 WebRTC防护应在功能需求、路由覆盖和地址暴露之间作明确选择</em></p>
+<p><code>iceTransportPolicy: "relay"</code>是应用建立连接时可采用的中继策略，需要可用TURN服务；普通网页使用者不能假设自己已把所有网站改为该模式，中继服务本身也成为信任方。</p>
+<p>不要只封禁UDP 3478或19302后就认定已阻止WebRTC。STUN/TURN可以采用其他端口及TCP、TLS等路径；限制两个端口可能破坏部分通话，却覆盖不了全部地址发现与媒体连接。网络级控制应与现有防火墙管理方式统一，避免无范围新增或覆盖规则。</p>
+<p>扩展只选择来源可信、权限必要且仍受维护的产品，不按用户量推断安全，也不假定广告拦截器包含当前有效的WebRTC控制。Chromium的Manifest V3兼容性只能说明一部分扩展平台要求，不能证明隐私功能有效。Tor Browser应保留其整体防护设计，不额外堆叠扩展；其浏览器防护不覆盖设备全部应用，也不能保证绝无泄漏。</p>
+<h2 id="153-ipv6">15.3 IPv6泄漏处理<a class="headerlink" href="#153-ipv6" title="Permanent link">&para;</a></h2>
+<h3 id="1531-ipv6">15.3.1 IPv6泄漏的条件<a class="headerlink" href="#1531-ipv6" title="Permanent link">&para;</a></h3>
+<p>IPv6泄漏通常是接管或限制策略没有覆盖IPv6，使原本应受保护的连接直接从本地网络发出。IPv6本身不是泄漏；如果预期允许某个服务使用本地IPv6，出现IPv6地址也不一定违背策略。</p>
+<p>IPv4与IPv6都可以承载HTTPS。绕过代理意味着路径和源地址暴露范围发生变化，并不自动意味着内容变成明文。双栈应用还可能竞速选择可用路径，不能假定总是先IPv6或总是先IPv4。</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>需要区分的能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本机到代理节点</td>
+<td>节点地址是否可通过IPv4或IPv6到达</td>
+</tr>
+<tr>
+<td>代理转发目标</td>
+<td>代理协议、服务端解析与出口是否支持IPv6目标</td>
+</tr>
+<tr>
+<td>本机接管范围</td>
+<td>应用代理或TUN/VPN是否实际覆盖IPv6连接</td>
+</tr>
+<tr>
+<td>DNS结果</td>
+<td>是否返回AAAA，与实际连接走哪条路是两个问题</td>
+</tr>
+<tr>
+<td>防火墙及例外</td>
+<td>IPv6是否有等效限制，局域网和管理例外是否明确</td>
+</tr>
+</tbody>
+</table>
+<p>本机通过IPv4连接代理节点，仍可能由节点访问IPv6目标。反过来，节点可以通过IPv6连接，也不能证明设备的其他IPv6流量已经进入代理。</p>
+<h3 id="1532-ipv6">15.3.2 检测IPv6路径<a class="headerlink" href="#1532-ipv6" title="Permanent link">&para;</a></h3>
+<p><code>test-ipv6.com</code>等工具主要检测IPv6连通性，出口检测页则展示该次请求抵达服务端的地址。应与预期出口比较，不能规定“只要显示IPv6就是泄漏”。解析出AAAA记录也不等于成功建立过IPv6连接。</p>
+<p>Windows PowerShell可读取接口和路由状态：</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Get-NetIPConfiguration</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Get-NetRoute</span> <span class="n">-AddressFamily</span> <span class="n">IPv6</span>
+</span></code></pre></div>
+<p>Linux可检查地址和路由：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ip<span class="w"> </span>-6<span class="w"> </span>address<span class="w"> </span>show
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ip<span class="w"> </span>-6<span class="w"> </span>route<span class="w"> </span>show
+</span></code></pre></div>
+<p>对于不使用应用代理、希望测试底层网络直连能力的curl，可显式取消本次请求的应用层代理：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>--noproxy<span class="w"> </span><span class="s2">"*"</span><span class="w"> </span>-6<span class="w"> </span>--connect-timeout<span class="w"> </span><span class="m">10</span><span class="w"> </span>--max-time<span class="w"> </span><span class="m">20</span><span class="w"> </span>https://www.example.com/
+</span></code></pre></div>
+<p>该命令会尝试发出真实测试请求，应在允许直接测试的网络中使用；它不绕过内核TUN/VPN或防火墙。目标及当前网络必须提供可用IPv6路径，失败可能是没有地址、路由或目标服务，不自动证明防泄漏成功。</p>
+<p>当curl连接SOCKS或HTTP代理时，<code>-6</code>不能作为“强制代理服务端以IPv6访问目标”的通用证明。应使用可控的仅IPv6目标与服务端日志，或检查客户端和节点实际连接，分别验证节点连接地址族与目标连接地址族。</p>
+<h3 id="1533">15.3.3 代理、阻断与回退<a class="headerlink" href="#1533" title="Permanent link">&para;</a></h3>
+<p>需要IPv6时，补齐代理/TUN接管、路由、DNS与访问控制；不需要某类IPv6出口时，可以在明确范围内限制它，并保留系统和本地网络依赖。不得将全局禁用IPv6或把所有IPv6链默认设为DROP作为不加区分的推荐。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[发现IPv6连接与预期不符] --&gt; B[确认节点、目标和本机接管分别支持什么]
+    B --&gt; C{业务是否需要IPv6?}
+    C --&gt;|是| D[补齐接管、路由与等效访问控制]
+    C --&gt;|否| E[评估依赖后实施有范围的限制]
+    D --&gt; F[验证正常连接、断线与网络切换]
+    E --&gt; F
+    F --&gt; G[确认没有静默直连且管理路径可恢复]</code></pre>
+<p><em>图15-5 IPv6应根据业务和接管范围处理，不以关闭协议代替路径验证</em></p>
+<p>mihomo顶层<code>ipv6</code>、DNS的IPv6选项、IPv6规则和TUN路由各有职责。关闭AAAA回答不能阻止应用连接已经知道的IPv6字面地址；启用IPv6也不能保证全部流量进入TUN。V2Ray入站监听<code>::</code>只改变监听地址，不能据此接管系统IPv6，更可能意外扩大本地代理的访问范围。</p>
+<p>Windows组件可能依赖IPv6，微软不建议无条件解绑或禁用；“优先IPv4”也不等于禁止IPv6直连。第10章列出了Linux的IPv6开关示例，调整前还需检查接口与服务依赖，保留必要的ICMPv6、邻居发现和路径MTU机制，不阻断唯一管理会话。需要限制时采用当前防火墙或VPN支持的明确策略，先记录原配置并准备恢复。</p>
+<p>防断线直连机制还应覆盖代理崩溃、系统休眠恢复、Wi-Fi与移动网络切换、双网卡和VPN重连。不能仅在连接正常时做一次浏览器测试，就认定所有故障场景都会停止出网。</p>
+<h2 id="154">15.4 支付信息隐私<a class="headerlink" href="#154" title="Permanent link">&para;</a></h2>
+<h3 id="1541">15.4.1 支付链路中的信息<a class="headerlink" href="#1541" title="Permanent link">&para;</a></h3>
+<p>支付隐私涉及商户、支付处理方、发卡机构、交易平台和账号系统，各方能够看到的字段不同。商户不一定能看到完整卡号，支付机构却可能知道真实付款人；隐藏其中一个字段，不能推出整笔购买无法关联。</p>
+<p>购买网络服务时，注册邮箱、付款记录、登录IP、客服工单、发票、续费和退款都可能建立联系。使用代理只能改变部分网络路径，不能删除商户与支付方原有记录，也不能让登录后的实名账号自动变成匿名账号。</p>
+<table>
+<thead>
+<tr>
+<th>参与方</th>
+<th>可能处理的信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>服务商</td>
+<td>账号、订单、服务配置、登录和支持记录</td>
+</tr>
+<tr>
+<td>支付处理方或银行</td>
+<td>付款身份、支付工具、金额、时间与收款方</td>
+</tr>
+<tr>
+<td>交易平台或托管钱包</td>
+<td>账号、充值提现、交易和必要的身份资料</td>
+</tr>
+<tr>
+<td>公共区块链观察者</td>
+<td>公开交易、金额或地址关联，具体取决于协议</td>
+</tr>
+<tr>
+<td>邮箱与恢复服务</td>
+<td>注册、账单、恢复通知及相关登录信息</td>
+</tr>
+</tbody>
+</table>
+<p>判断支付方式时，先明确希望减少哪一方获得哪些非必要信息，而不是按“匿名程度高、中、低”给出无条件排序。</p>
+<h3 id="1542">15.4.2 不同支付工具的能力与限制<a class="headerlink" href="#1542" title="Permanent link">&para;</a></h3>
+<p>虚拟卡或一次性卡号可以减少真实卡号向商户暴露，支持额度与订阅控制，但发卡方仍可关联持卡人，商户也可能保留姓名、地址或设备信息。可用地区、验证条件、退款和周期扣款支持应按具体产品核对，不能从“虚拟卡”名称推导开户资格或续费能力。</p>
+<p>预付卡和礼品卡不是天然免身份验证。购买、充值、激活、兑换及商户风控可能各有要求；通用礼品卡也不一定能购买VPS。来源不明的折价卡还可能被撤销，支付成功并不保证长期可用或能够退款。</p>
+<p>比特币采用公开账本，地址属于假名标识，交易记录可以被观察和关联。交易平台、地址复用、充值提现以及订单金额和时间都可能提供关联线索，未公开姓名的地址也可能被关联到实际身份。</p>
+<p>Monero等协议使用隐私机制降低链上发送方、接收方或金额的直接暴露，但钱包终端、交易对手、托管平台及网络行为仍会影响实际隐私。不能保证任何使用方式都完全匿名，也不能把购买某种资产当作解决全部身份关联的步骤。</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>主要可能收益</th>
+<th>仍需评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>虚拟卡或代币化支付</td>
+<td>减少原卡号暴露，分开管理商户授权</td>
+<td>发卡方关联、账单字段、续费和退款</td>
+</tr>
+<tr>
+<td>预付卡或礼品卡</td>
+<td>限定可支出余额</td>
+<td>验证要求、来源、适用商户及失效风险</td>
+</tr>
+<tr>
+<td>公开账本资产</td>
+<td>不使用传统卡号完成部分支付</td>
+<td>链上关联、托管记录、价格和手续费</td>
+</tr>
+<tr>
+<td>具备链上隐私机制的资产</td>
+<td>减少部分公开交易信息</td>
+<td>端点、交易对手、获取与使用路径</td>
+</tr>
+</tbody>
+</table>
+<p>不把跳过身份验证或使用混币服务作为通用隐私步骤。支付方式应符合服务可用条件，并保留核对订单、退款和争议处理所需的记录；这些记录应受限保存，而不是为“匿名”一律删除。</p>
+<h3 id="1543">15.4.3 最小披露与账号恢复<a class="headerlink" href="#1543" title="Permanent link">&para;</a></h3>
+<p>选择服务前阅读隐私政策，确认需要收集的字段、保留期限和删除渠道。使用单独且可长期控制的邮箱别名、独立密码及多因素认证，有助于分隔用途并减少凭据复用风险，但不保证服务商无法关联不同账号。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[明确需要减少的信息暴露] --&gt; B[核对商户与支付工具的实际要求]
+    B --&gt; C[只提交必要信息并保护登录凭据]
+    C --&gt; D[完成付款并保存必要的订单凭证]
+    D --&gt; E[验证续费、退款和账号恢复方法]
+    E --&gt; F[按需要撤销扣款授权或关闭服务]</code></pre>
+<p><em>图15-6 支付隐私还要覆盖账号、续费和恢复，不能只关注付款瞬间</em></p>
+<p>长期VPS或域名服务不宜依赖随时失效、可能被他人接管的临时邮箱或公开接码平台。恢复渠道本身应可控，避免因无法接收通知而丢失服务、账单和数据。即使组合使用Tor、临时邮箱与加密货币，也不能据此判断购买行为无法关联。</p>
+<h2 id="155">15.5 数字足迹管理<a class="headerlink" href="#155" title="Permanent link">&para;</a></h2>
+<h3 id="1551">15.5.1 浏览器指纹防护<a class="headerlink" href="#1551" title="Permanent link">&para;</a></h3>
+<p>浏览器指纹综合字体、屏幕、图形渲染、时区、语言及部分硬件能力，形成用于区分或关联访问的特征。它不一定是永远唯一且准确的身份标识，但可以与账号、Cookies、IP和行为共同使用。</p>
+<p>Firefox、Brave和Tor Browser采用不同的限制、标准化或随机化策略。Firefox自145版本阶段扩展了隐私浏览和严格追踪保护模式中的相关防护；具体覆盖和默认状态仍需按当前版本核对。研究中的唯一性变化不能当作对每个使用者的固定保护率，更不能据此保证追踪减少某个百分比。</p>
+<table>
+<thead>
+<tr>
+<th>防护方式</th>
+<th>作用</th>
+<th>使用边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阻止已知追踪脚本</td>
+<td>减少部分已知收集行为</td>
+<td>规则不能识别所有第一方或新脚本</td>
+</tr>
+<tr>
+<td>限制或标准化API结果</td>
+<td>减少可用于区分的细节</td>
+<td>可能影响功能，仍有其他特征可见</td>
+</tr>
+<tr>
+<td>按站点或会话随机化</td>
+<td>降低部分跨站、跨会话关联</td>
+<td>不同实现范围不同，不消除账号关联</td>
+</tr>
+<tr>
+<td>保持一致的浏览器群体配置</td>
+<td>减少罕见的自定义组合</td>
+<td>依赖整体设计，随意添加扩展可能削弱效果</td>
+</tr>
+</tbody>
+</table>
+<p>Tor Browser强调整体指纹防护，不代表所有人的指纹完全相同或绝对匿名。不要随意安装额外字体、扩展或调整高级参数来追求某个测试分数；大量独特改动本身可能增加可区分性。普通广告拦截扩展也不能替代全部指纹防护。</p>
+<p>AmIUnique、EFF Cover Your Tracks等测试可以展示其采集到的特征与样本比较结果，但样本群体、时间和测试方法会影响结论。不存在适用于所有人的“唯一性低于20%即安全”标准，单次得分无法证明长期不可关联。测试本身也会向该服务提供一组指纹信息。</p>
+<h3 id="1552">15.5.2 浏览器数据与会话隔离<a class="headerlink" href="#1552" title="Permanent link">&para;</a></h3>
+<p>隐私浏览主要减少本地会话留下的历史和站点数据，不隐藏网络出口，也不阻止网站识别已登录账号。会话结束后通常清理临时站点状态，但下载文件、书签、外部应用记录和网站端记录可能继续保留。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[一次浏览活动] --&gt; B[本地历史、Cookie与缓存]
+    A --&gt; C[下载、截图和外部应用文件]
+    A --&gt; D[网站账号与服务端日志]
+    B --&gt; E[按浏览器会话和清理策略处理]
+    C --&gt; F[单独管理文件及同步副本]
+    D --&gt; G[通过服务端设置管理可删除数据]</code></pre>
+<p><em>图15-7 清理本地会话不会同时删除下载文件、云端副本和服务端记录</em></p>
+<p>需要分隔工作、个人或其他用途时，可采用独立浏览器配置文件，分别管理账号、Cookie、扩展和同步。容器标签页可以隔离部分站点存储，但不是独立设备或完整网络隔离。若仍登录同一账号、共享邮箱或复用付款信息，隔离窗口不能消除这些关联。</p>
+<p>清理前先明确对象，选择对应站点或数据类型。不要默认勾选所有保存密码、通行密钥或恢复材料；应先确认密码管理器、备份和设备同步状态。删除下载列表不等于删除文件，删除本机历史也可能不影响其他设备或云端记录。</p>
+<p>退出某个网页不一定撤销所有登录会话。设备丢失或凭据泄露时，还要从可信设备检查会话、撤销令牌、轮换失守秘密并核对恢复渠道。Tor Browser的新身份等功能也不代表清空系统文件、修改所有已登录服务记录或保护外部程序。</p>
+<h3 id="1553">15.5.3 系统数据、缓存与日志<a class="headerlink" href="#1553" title="Permanent link">&para;</a></h3>
+<p>系统足迹管理应区分缓存、个人文件、诊断资料和安全审计。清空Windows安全日志、删除<code>/var/log</code>或递归移除整个<code>/tmp</code>与缓存目录，会破坏排障、审计或正在运行的应用，不作为隐私维护步骤。</p>
+<table>
+<thead>
+<tr>
+<th>数据</th>
+<th>合适的处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用缓存和临时文件</td>
+<td>使用应用或系统提供的清理功能，先关闭相关任务并检查范围</td>
+</tr>
+<tr>
+<td>DNS缓存</td>
+<td>排障或切换解析方案时按需刷新，不视作清除外部查询记录</td>
+</tr>
+<tr>
+<td>Shell与终端历史</td>
+<td>避免在命令中输入秘密，核对本地及会话记录策略</td>
+</tr>
+<tr>
+<td>系统与安全日志</td>
+<td>按必要范围、权限和保留期限管理，见第16章</td>
+</tr>
+<tr>
+<td>崩溃报告和遥测</td>
+<td>查看实际采集与上传设置，提交前检查敏感内容</td>
+</tr>
+<tr>
+<td>同步、备份和回收站</td>
+<td>分别核对副本与恢复机制，不从单份删除推断全部消失</td>
+</tr>
+</tbody>
+</table>
+<p>Windows PowerShell可在排障时刷新系统DNS缓存：</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Clear-DnsClientCache</span>
+</span></code></pre></div>
+<p>使用systemd-resolved的Linux环境可按需执行：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>resolvectl<span class="w"> </span>flush-caches
+</span></code></pre></div>
+<p>这不会清除浏览器自己的全部缓存、路由器或公共解析器记录，也不会撤销已经发出的查询。macOS及其他Linux解析服务应按实际系统文档处理，不套用同一个后台进程命令。</p>
+<p>敏感参数如果已经进入日志或Shell历史，删除当前终端显示不等于删除所有副本。应优先轮换泄露凭据，再处理受控范围内的残留。常用预防方法是使用受限配置文件、标准输入或支持安全输入的工具，避免把令牌放进URL、命令参数和截图。</p>
+<h3 id="1554">15.5.4 文件元数据与安全分享<a class="headerlink" href="#1554" title="Permanent link">&para;</a></h3>
+<p>照片可能包含GPS、拍摄时间和设备信息；办公文件可能包含作者、批注、修订及嵌入对象。PDF还可能保留先前版本或隐藏内容。文件名、画面中的门牌、二维码、屏幕反光和正文内容同样可能泄露身份，不能只检查EXIF。</p>
+<p>应先保留受限原件，在副本上处理并核对成品。下面采用ExifTool <code>13.34</code>可用的命令形式，针对单个JPEG示例操作；安装包应来自可信来源并保持受维护版本。<code>photo.jpg</code>和输出文件均应替换为已核对的具体路径，输出文件事先不存在。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>exiftool<span class="w"> </span>-G1<span class="w"> </span>-a<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>photo.jpg
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>exiftool<span class="w"> </span>-all<span class="o">=</span><span class="w"> </span>-o<span class="w"> </span>photo-share.jpg<span class="w"> </span>--<span class="w"> </span>photo.jpg
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>exiftool<span class="w"> </span>-G1<span class="w"> </span>-a<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>photo-share.jpg
+</span></code></pre></div>
+<p><code>-o</code>将处理结果写入新文件，源文件保留。默认原地写入时，ExifTool通常还会生成带<code>_original</code>后缀的备份，不能误把它一起发送。全量移除可写元数据可能影响色彩配置、方向或后续编辑，应打开分享副本，确认方向、颜色和内容，而不是只看命令退出成功。</p>
+<p>结构信息、文件系统时间和画面本身并不会因此全部消失。处理后仍需检查敏感字段及可见内容，不把递归操作整个照片库作为第一步。在线元数据清理服务会接收原文件，不适合在没有评估的情况下上传敏感资料。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[选择待分享的具体文件] --&gt; B[保留受限原件并建立分享副本]
+    B --&gt; C[检查元数据、正文和画面信息]
+    C --&gt; D[按格式进行清理或真正的内容删改]
+    D --&gt; E[重新打开成品并检查残留]
+    E --&gt; F[只分享已核对副本，排除备份和临时文件]</code></pre>
+<p><em>图15-8 元数据检查、内容处理和成品验证是不同步骤</em></p>
+<p>ExifTool对PDF的写入采用增量更新，旧信息可能仍保留在文件中并可恢复。因此，<code>exiftool -all= document.pdf</code>不能作为彻底清除敏感数据的通用方法。应使用理解PDF结构的清理及真正的遮盖删除功能，并核对附件、批注、隐藏层、嵌入对象与历史内容；简单画黑色矩形不代表底下文字已移除。</p>
+<p>MAT2等工具也有格式范围和已知限制，“没有显示元数据”不等于证明不存在任何隐含信息。对重要材料应检查处理后内容、重新导出的结果以及文件可用性，必要时使用专门的文档审查流程。办公文件导出成PDF或图片，也可能保留或新增信息，不能跳过验证。</p>
+<h3 id="1555">15.5.5 数字足迹最小化与数据生命周期<a class="headerlink" href="#1555" title="Permanent link">&para;</a></h3>
+<p>减少足迹应从收集和创建之前开始：不提供非必要字段，按用途分开账号与凭据，减少无必要的长期同步和第三方授权。别名有助于组织和减少公开披露，但需要遵守服务的实际身份要求，也不能阻止后台通过其他信息关联。</p>
+<p>临时邮箱、一次性号码和共享接码服务不适合关键账号恢复；密码管理器中的独立密码、通行密钥及多因素认证更有助于避免账号连锁失守。保护恢复材料与保护登录凭据同样必要。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[决定是否需要创建或提交数据] --&gt; B[限定用途、字段和接收方]
+    B --&gt; C[受限保存并按需加密与备份]
+    C --&gt; D[定期检查账号、共享和授权]
+    D --&gt; E[按保留期限删除或申请关闭]
+    E --&gt; F[核对同步副本、备份与设备处置方式]</code></pre>
+<p><em>图15-9 数据最小化覆盖创建、使用、共享、保存与退出全过程</em></p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>实践重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建账号</td>
+<td>独立凭据、可控恢复渠道、最少必要资料</td>
+</tr>
+<tr>
+<td>授权应用</td>
+<td>核对权限和接收方，定期撤销不再需要的授权</td>
+</tr>
+<tr>
+<td>保存文件</td>
+<td>设备加密、访问权限、受保护且可恢复的备份</td>
+</tr>
+<tr>
+<td>共享资料</td>
+<td>最小接收范围、核对副本、必要的有效期与撤销能力</td>
+</tr>
+<tr>
+<td>关闭服务</td>
+<td>检查订阅、扣款、数据导出和服务端保留政策</td>
+</tr>
+<tr>
+<td>转让或报废设备</td>
+<td>根据介质与实现选择可验证的数据清除方法</td>
+</tr>
+</tbody>
+</table>
+<p>文件加密、数字签名和传输加密解决不同问题。例如，GPG既可签名也可加密，仅签名不会隐藏正文；压缩归档也需明确选择实际加密方式并保护口令。设备全盘加密主要保护相应锁定状态下的数据，不能阻止已登录会话中的恶意程序读取文件。</p>
+<p>普通删除、格式化和覆盖单个文件不保证物理介质上的所有副本都不可恢复。SSD磨损均衡、写时复制、快照、同步和备份可能保留其他副本；<code>shred</code>不能被当作跨介质的绝对安全删除方法。设备处置应参考NIST SP 800-88等资料，使用设备支持且经过验证的清除、净化或加密擦除流程，并考虑密钥副本、备份和实际实现条件。</p>
+<h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>隐私保护需要把解析、连接、账号、支付与本地数据分别管理。加密DNS不等于DNS经过代理，网页出口不等于WebRTC或全部IPv6出口，隐私窗口也不删除服务端记录。</p>
+<p>有效实践是明确预期路径、减少非必要披露，并验证切网、断线和恢复后的行为。数字足迹维护应保护审计与恢复能力，在具体副本上处理敏感内容，而不是靠批量删除日志或堆叠工具追求绝对匿名。下一章将讨论审计与日志管理。</p>
+<p><strong>实践任务：</strong></p>
+<ol>
+<li>画出一个应用的DNS与业务连接路径，说明解析加密、解析器信任和代理路由分别由什么控制。</li>
+<li>对比系统DNS与浏览器测试，记录测试范围及局限；不要公开原始IP、内部域名和配置秘密。</li>
+<li>在自己控制的页面运行本地ICE检查，区分候选类型，并说明为什么它不能验证公网STUN路径。</li>
+<li>核对IPv6接管与故障回退，在允许的测试网络验证切网和重连，保留管理与恢复路径。</li>
+<li>对一个自有JPEG副本清理元数据并检查画面，说明为何PDF和办公文档还需要格式专用审查。</li>
+<li>制定一份账号、付款授权、同步副本与设备处置计划，保留必要的恢复材料和审计记录。</li>
+</ol>
+<p><strong>参考资料：</strong></p>
+<ul>
+<li><a href="https://wiki.metacubex.one/config/dns/">mihomo DNS设置</a></li>
+<li><a href="https://wiki.metacubex.one/config/inbound/tun/">mihomo TUN设置</a></li>
+<li><a href="https://curl.se/docs/manpage.html">curl选项与SOCKS解析行为</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9250.html">RFC 9250：DNS over QUIC</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc8828.html">RFC 8828：WebRTC IP地址处理要求</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/type">MDN：ICE候选类型</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection">MDN：RTCPeerConnection配置</a></li>
+<li><a href="https://developer.chrome.com/docs/extensions/reference/api/privacy">Chrome扩展privacy API</a></li>
+<li><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">微软：Windows中的IPv6配置注意事项</a></li>
+<li><a href="https://blog.mozilla.org/en/firefox/fingerprinting-protections/">Mozilla：Firefox指纹防护改进</a></li>
+<li><a href="https://firefox-source-docs.mozilla.org/toolkit/components/resistfingerprinting/resistfingerprinting/index.html">Firefox指纹防护实现文档</a></li>
+<li><a href="https://github.com/brave/brave-browser/wiki/Fingerprinting-Protections">Brave指纹防护说明</a></li>
+<li><a href="https://support.torproject.org/tor-browser/security/using-tb-safely/">Tor Browser安全使用建议</a></li>
+<li><a href="https://support.torproject.org/tor-browser/features/fingerprinting-protections/">Tor Browser指纹防护</a></li>
+<li><a href="https://bitcoin.org/en/protect-your-privacy">比特币隐私说明</a></li>
+<li><a href="https://www.getmonero.org/resources/moneropedia/stealthaddress.html">Monero隐匿地址说明</a></li>
+<li><a href="https://exiftool.org/exiftool_pod.html">ExifTool命令说明</a></li>
+<li><a href="https://exiftool.org/TagNames/PDF.html">ExifTool PDF写入与信息残留限制</a></li>
+<li><a href="https://manpages.debian.org/trixie/mat2/mat2.1.en.html">MAT2说明与限制</a></li>
+<li><a href="https://csrc.nist.gov/pubs/sp/800/88/r2/final">NIST SP 800-88 Rev. 2：介质清理指南</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！我们会持续改进。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第14章 网络安全防护">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                第14章 网络安全防护
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第16章 审计与日志管理">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                第16章 审计与日志管理
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 科学上网完全指南
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ihmily/network-proxy-guide" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

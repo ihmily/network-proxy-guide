@@ -1,0 +1,2521 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="专业的科学上网技术文档 - 涵盖代理协议、客户端工具、服务器搭建、安全防护等完整知识体系">
+      
+      
+        <meta name="author" content="科学上网指南">
+      
+      
+        <link rel="canonical" href="https://ihmily.github.io/network-proxy-guide/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC09%E7%AB%A0-VPS%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/">
+      
+      
+        <link rel="prev" href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC08%E7%AB%A0-%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/">
+      
+      
+        <link rel="next" href="../%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>第09章 VPS选购指南 - 科学上网完全指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-vps" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="科学上网完全指南" class="md-header__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科学上网完全指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第09章 VPS选购指南
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="科学上网完全指南" class="md-nav__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    科学上网完全指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%E5%85%A8%E4%B9%A6%E5%A4%A7%E7%BA%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全书大纲
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础知识篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础知识篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC01%E7%AB%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第01章 什么是科学上网
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC02%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第02章 网络基础知识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC03%E7%AB%A0-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第03章 核心技术原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 主流协议与工具篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 主流协议与工具篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC04%E7%AB%A0-%E5%B8%B8%E8%A7%81%E4%BB%A3%E7%90%86%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第04章 常见代理协议详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC05%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第05章 客户端工具使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC06%E7%AB%A0-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第06章 浏览器与插件方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 高级配置篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 高级配置篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC07%E7%AB%A0-%E8%AE%A2%E9%98%85%E4%B8%8E%E8%8A%82%E7%82%B9%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第07章 订阅与节点管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC08%E7%AB%A0-%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第08章 分流规则详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 服务器搭建篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 服务器搭建篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第09章 VPS选购指南
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第09章 VPS选购指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="本章大纲">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      本章大纲
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 VPS供应商对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 VPS供应商对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1 先比较适用条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.2 计算可比的总成本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#913" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.3 注册与购买流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 地域选择策略
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 地域选择策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1 从实际路径测量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.2 线路类型与机房筛选
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#923" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.3 同时考虑数据和服务要求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 配置需求分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 配置需求分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1 从最小工作负载开始
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2 多人共享配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.3 流量计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#934" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.4 性能测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 付款方式与隐私保护
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 付款方式与隐私保护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#941" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4.1 核对支付和账号条款
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#942" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4.2 控制数据暴露
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#943" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4.3 账号安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 IP质量检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 IP质量检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#951-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.1 IP类型与信誉
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#952" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.2 连通性与端口测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#953" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.3 目标服务可用性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#954" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.4 采购前决策记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 服务器环境配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 一键脚本部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC12%E7%AB%A0-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 手动搭建教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 多用户管理方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 安全与隐私篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 安全与隐私篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 网络安全防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 隐私保护实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 审计与日志管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 故障排查篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 故障排查篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 常见问题诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 网络测试工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 最佳实践篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 最佳实践篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC19%E7%AB%A0-%E4%B8%8D%E5%90%8C%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 不同场景应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC20%E7%AB%A0-%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 成本优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC21%E7%AB%A0-%E5%90%88%E8%A7%84%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 合规使用建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95A-%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95C-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95D-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="9-vps">第9章 VPS选购指南<a class="headerlink" href="#9-vps" title="Permanent link">&para;</a></h1>
+<p>买VPS主要比较供应商、机房线路、配置与流量、IP质量和总成本。本章提供配置样例、购买流程与测试命令；价格、库存和支付方式以实际结算页为准。</p>
+<h2 id="91-vps">9.1 VPS供应商对比<a class="headerlink" href="#91-vps" title="Permanent link">&para;</a></h2>
+<h3 id="911">9.1.1 先比较适用条件<a class="headerlink" href="#911" title="Permanent link">&para;</a></h3>
+<p>不要只按最低月费排序。先从供应商的官方产品、服务条款和支持页面核对以下项目：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>应核对的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>使用范围</td>
+<td>所需业务是否符合可接受使用政策；是否允许相关端口与流量类型</td>
+</tr>
+<tr>
+<td>实例资源</td>
+<td>CPU、内存、存储、架构及超售或共享资源说明</td>
+</tr>
+<tr>
+<td>网络与流量</td>
+<td>端口速率、出站额度、计费方式、超额后的处理、IPv4/IPv6支持</td>
+</tr>
+<tr>
+<td>运维能力</td>
+<td>控制台、重装、快照、备份、监控、故障支持与状态页</td>
+</tr>
+<tr>
+<td>账号与合同</td>
+<td>身份核验、支付方式、续费、退款、关停和数据删除条款</td>
+</tr>
+<tr>
+<td>地域与数据</td>
+<td>机房位置、数据驻留要求、访问路径与所需服务条款</td>
+</tr>
+</tbody>
+</table>
+<p><strong>常见供应商：</strong> 先从产品页确定候选机房与配置，再在结算页比较实际价格和流量规则。</p>
+<table>
+<thead>
+<tr>
+<th>供应商</th>
+<th>官方入口</th>
+<th>选购时重点看</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vultr</td>
+<td><a href="https://www.vultr.com/products/cloud-compute/">Cloud Compute</a></td>
+<td>机房、出站额度、实例删除后的计费</td>
+</tr>
+<tr>
+<td>DigitalOcean</td>
+<td><a href="https://www.digitalocean.com/products/droplets">Droplets</a></td>
+<td>机房、流量池、快照与备份费用</td>
+</tr>
+<tr>
+<td>Akamai / Linode</td>
+<td><a href="https://www.akamai.com/products/essential-compute">Essential Compute</a></td>
+<td>机房、共享资源规格与出站计费</td>
+</tr>
+<tr>
+<td>BandwagonHost（搬瓦工）</td>
+<td><a href="https://bandwagonhost.com/">官网</a></td>
+<td>具体线路、库存、续费与迁移条款</td>
+</tr>
+<tr>
+<td>Hostwinds</td>
+<td><a href="https://www.hostwinds.com/vps/linux">Linux VPS</a></td>
+<td>带宽政策、备份、IP更换条件</td>
+</tr>
+<tr>
+<td>AWS Lightsail</td>
+<td><a href="https://aws.amazon.com/lightsail/pricing/">定价页</a></td>
+<td>套餐内流量、超额计费与区域</td>
+</tr>
+</tbody>
+</table>
+<p>网站上的基准测试、广告中的“优化线路”和用户评价可作为线索，但不能替代从自己接入网络做实际测量。对没有官方价格、流量条款或退款说明的候选项，不应根据第三方列表作采购决定。</p>
+<h3 id="912">9.1.2 计算可比的总成本<a class="headerlink" href="#912" title="Permanent link">&para;</a></h3>
+<p>按同一币种和同一使用周期计算：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>预计总成本 = 实例租金 + 超额流量 + 备份/快照 + 附加IP或存储 + 税费与支付费用
+</span></code></pre></div>
+<p>记录促销结束后的续费价格，以及停机、销毁或迁移期间是否继续收费。长期承诺只有在使用规模、网络质量和退出条件已经验证后才有意义。付费前保存当时的价格和条款页面，日后对账与续费时重新核对。</p>
+<h3 id="913">9.1.3 注册与购买流程<a class="headerlink" href="#913" title="Permanent link">&para;</a></h3>
+<p>以Vultr购买流程为例，可按以下顺序检查；控制台按钮名称可能变化，以结算页为准。</p>
+<ol>
+<li>从官方入口注册，验证邮箱，并先启用双因素认证；准备SSH公钥。</li>
+<li>创建Cloud Compute实例，依次选择**机房、操作系统、CPU/内存、磁盘和流量套餐**。首次试用优先选可按需销毁、可扩容的规格。</li>
+<li>在确认页记录实例月费或小时费、超额流量价格、快照/备份费用、续费与退款条件，再付款或启用实例。</li>
+<li>实例变为可运行后保存控制台入口、IP、系统版本与SSH密钥位置；先测试SSH及目标端口，不要把随机生成的初始密码发到聊天群。</li>
+<li>用自己常用的网络在高峰和非高峰时段测试。若IP或线路不合适，先查清重建、换IP和销毁规则，再决定是否保留。</li>
+</ol>
+<h2 id="92">9.2 地域选择策略<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
+<h3 id="921">9.2.1 从实际路径测量<a class="headerlink" href="#921" title="Permanent link">&para;</a></h3>
+<p>机房距离只是影响体验的因素之一。客户端接入网络、运营商互联、拥塞时段、目标服务所在地和分流规则，都可能改变结果。先向服务商索取其官方测试地址或测试文件，并在自己常用的网络与时段测量；不要把文档示例IP当作真实服务器。</p>
+<table>
+<thead>
+<tr>
+<th>测试</th>
+<th>用途</th>
+<th>解释边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ping</code></td>
+<td>观察测试目标的往返时间与丢包</td>
+<td>ICMP可能被限制，单次超时不能证明服务不可用</td>
+</tr>
+<tr>
+<td><code>traceroute</code> / <code>mtr</code></td>
+<td>观察路径变化</td>
+<td>中间跳点的丢包不一定是端到端丢包</td>
+</tr>
+<tr>
+<td>受控下载/上传</td>
+<td>在授权端点估算实际吞吐</td>
+<td>会消耗流量，结果受目标和时段影响</td>
+</tr>
+<tr>
+<td>实际业务请求</td>
+<td>验证目标服务与所选出口</td>
+<td>需同时检查DNS、规则和服务条款</td>
+</tr>
+</tbody>
+</table>
+<p><strong>机房延迟初筛：</strong> 下面是从中国大陆接入时的粗略经验区间，用来决定先测哪些机房；具体结果仍取决于运营商和时段。</p>
+<table>
+<thead>
+<tr>
+<th>机房</th>
+<th style="text-align: right;">经验参考RTT</th>
+<th>首先关注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>香港</td>
+<td style="text-align: right;">5–30 ms</td>
+<td>低延迟、跨运营商拥塞和价格</td>
+</tr>
+<tr>
+<td>日本、韩国</td>
+<td style="text-align: right;">30–80 ms</td>
+<td>晚高峰路由和丢包</td>
+</tr>
+<tr>
+<td>新加坡</td>
+<td style="text-align: right;">50–100 ms</td>
+<td>东南亚互联及回程</td>
+</tr>
+<tr>
+<td>美国西部</td>
+<td style="text-align: right;">130–180 ms</td>
+<td>跨洋路由与目标服务区域</td>
+</tr>
+<tr>
+<td>美国东部</td>
+<td style="text-align: right;">180–230 ms</td>
+<td>更长的跨洋路径</td>
+</tr>
+<tr>
+<td>欧洲</td>
+<td style="text-align: right;">250–350 ms</td>
+<td>特定地域需求和稳定性</td>
+</tr>
+</tbody>
+</table>
+<p>从常用网络对服务商提供的测试地址运行<code>ping</code>和<code>traceroute</code>（Windows用<code>tracert</code>）；已安装<code>mtr</code>时可用<code>mtr -rwzc 30 TEST_HOST</code>（替换为实际测试地址）观察多次探测结果。记录运营商和测试时段，再比较不同机房。</p>
+<p>测试时记录来源网络、日期、时段、目标、协议和节点配置。至少比较高峰与非高峰时段，并留意稳定性，而不是仅取最高速度。</p>
+<p>一个可重复的小规模测试计划是：先在常用设备上记录不经过候选VPS的基线，再在同一设备、同一网络和相近时段测试候选服务商的官方测试端点；重复测量后比较中位表现与异常次数。变更接入网络、测试目标或客户端规则时，另开一组记录，不把不同条件下的数字直接排名。吞吐测试前确认测试文件大小与剩余流量，避免为比较机房产生意外费用。</p>
+<h3 id="922">9.2.2 线路类型与机房筛选<a class="headerlink" href="#922" title="Permanent link">&para;</a></h3>
+<p>“普通线路、CN2 GT/GIA、BGP多线”是选购时常见的标签。采购前分别从电信、联通、移动或自己的实际接入网络测回程路径和高峰表现。</p>
+<table>
+<thead>
+<tr>
+<th>线路标签</th>
+<th>常见含义</th>
+<th>应核对的证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通国际转接</td>
+<td>经公共骨干和国际运营商互联</td>
+<td>高峰RTT、丢包、实际路径</td>
+</tr>
+<tr>
+<td>CN2 GT / GIA</td>
+<td>电信CN2相关产品，覆盖范围和方向因套餐而异</td>
+<td>服务商线路说明、来回程路由、测试IP</td>
+</tr>
+<tr>
+<td>BGP多线</td>
+<td>机房接入多个运营商并选择路由</td>
+<td>你的运营商是否真的走更合适的路径</td>
+</tr>
+</tbody>
+</table>
+<p>机房初筛可按用途进行：低延迟交互优先测试相近区域；面向特定地域的业务先确认目标服务区域；预算敏感时比较普通线路与优化线路的高峰差异。不要只因机房地理距离近或宣传“CN2”就直接购买长期套餐。</p>
+<h3 id="923">9.2.3 同时考虑数据和服务要求<a class="headerlink" href="#923" title="Permanent link">&para;</a></h3>
+<p>工作资料、客户信息或个人信息可能有地域与跨境处理要求；目标服务也可能限制数据中心地址或账号的使用方式。先确定合法和合同允许的范围，再在范围内比较网络表现。机房标签与IP地理数据库可能不完全一致，不能用地区名称推定某项服务一定可用。</p>
+<h2 id="93">9.3 配置需求分析<a class="headerlink" href="#93" title="Permanent link">&para;</a></h2>
+<h3 id="931">9.3.1 从最小工作负载开始<a class="headerlink" href="#931" title="Permanent link">&para;</a></h3>
+<p>列出预期的同时在线连接、应用协议、日志保留、系统和证书需求。个人使用可从以下配置筛选，再根据实际负载决定是否扩容：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>CPU / 内存</th>
+<th>存储</th>
+<th>月流量额度</th>
+<th>适用情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单人轻度</td>
+<td>1 vCPU / 1 GB</td>
+<td>20–25 GB SSD</td>
+<td>500 GB–1 TB</td>
+<td>网页、文档和少量视频</td>
+</tr>
+<tr>
+<td>单人重度</td>
+<td>1–2 vCPU / 2 GB</td>
+<td>50 GB SSD</td>
+<td>约2 TB</td>
+<td>多设备、高清视频或较多下载</td>
+</tr>
+</tbody>
+</table>
+<p>视频是否流畅主要取决于实际线路、端口限速和目标服务，不由CPU、内存数字单独保证。初次测试可选可扩容、可取消的方案；长期运行前观察CPU、内存、磁盘和网络使用情况。</p>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>观察方法</th>
+<th>扩容信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>使用率与负载的持续趋势</td>
+<td>高峰时长时间饱和，延迟随负载上升</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>可用内存、交换与进程终止记录</td>
+<td>频繁交换或因内存不足退出</td>
+</tr>
+<tr>
+<td>存储</td>
+<td>可用空间、日志与备份增长</td>
+<td>接近容量上限或无法完成备份</td>
+</tr>
+<tr>
+<td>网络</td>
+<td>出站总量、丢包和吞吐</td>
+<td>超额、持续排队或不稳定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="932">9.3.2 多人共享配置<a class="headerlink" href="#932" title="Permanent link">&para;</a></h3>
+<p>多人共享可按下表选择初始配置。它是**容量样例**，不是某家服务商的实时套餐；同时在线视频和下载会改变实际负载。</p>
+<table>
+<thead>
+<tr>
+<th>使用人数</th>
+<th>CPU / 内存</th>
+<th>存储</th>
+<th>月流量额度</th>
+<th>网络端口</th>
+<th>管理重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2–5人</td>
+<td>2 vCPU / 4 GB</td>
+<td>80 GB SSD</td>
+<td>3–4 TB</td>
+<td>1 Gbps</td>
+<td>在3X-UI为每人设独立客户端、流量与到期时间</td>
+</tr>
+<tr>
+<td>5–10人</td>
+<td>4 vCPU / 8 GB</td>
+<td>160 GB SSD</td>
+<td>5–6 TB</td>
+<td>1 Gbps</td>
+<td>分配配额，观察高峰带宽、CPU、内存与丢包</td>
+</tr>
+</tbody>
+</table>
+<p>表中的流量额度偏宽裕，不是最低需求；按9.3.3算出的实际用量较低时，可以选择更小的套餐。</p>
+<p>端口标称1 Gbps不等于可持续跑满；先确认供应商的共享带宽和公平使用条款。试用或短期购买后，在目标人数同时使用时查看<code>top</code>、<code>free -h</code>和<code>ss -s</code>，再决定是否升级。每个用户使用独立标识，出现异常流量时才能定位和限制；面板设置见<a href="../%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/">第13章 多用户管理方案</a>。</p>
+<h3 id="933">9.3.3 流量计算<a class="headerlink" href="#933" title="Permanent link">&para;</a></h3>
+<p>按真实业务测得的日均出站量、预计使用天数和峰值波动估算，而非按客户端显示的连接数推算。注意云服务商可能按服务器出站流量计费，客户端与服务器两端的统计口径也可能不同。将系统更新、备份和测速流量纳入预算，并核对超额规则。</p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th style="text-align: right;">粗略消耗</th>
+<th>月度估算例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通网页</td>
+<td style="text-align: right;">约1–3 MB/页；图片较多可到5–10 MB/页</td>
+<td>100页/天 × 5 MB ≈ 15 GB/月</td>
+</tr>
+<tr>
+<td>720p视频</td>
+<td style="text-align: right;">约1.5 GB/小时</td>
+<td>1小时/天 ≈ 45 GB/月</td>
+</tr>
+<tr>
+<td>1080p视频</td>
+<td style="text-align: right;">约3 GB/小时</td>
+<td>2小时/天 ≈ 180 GB/月</td>
+</tr>
+<tr>
+<td>4K视频</td>
+<td style="text-align: right;">约7 GB/小时</td>
+<td>1小时/天 ≈ 210 GB/月</td>
+</tr>
+<tr>
+<td>文件下载</td>
+<td style="text-align: right;">按文件实际大小</td>
+<td>一次20 GB下载就占用20 GB额度</td>
+</tr>
+</tbody>
+</table>
+<p>编码、码率、自动播放和客户端缓存会使实际消耗变化。先按使用习惯计算，再乘以1.2–1.5的余量；连续运行后用服务商账单和面板计数校正。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>预计月出站量 = 每人日均出站量 × 人数 × 使用天数 × 峰值余量系数
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>示例：4人 × 5 GB/天 × 30天 × 1.25 = 750 GB/月
+</span></code></pre></div>
+<h3 id="934">9.3.4 性能测试<a class="headerlink" href="#934" title="Permanent link">&para;</a></h3>
+<p>优先使用系统监控和服务商提供的测试端点。运行第三方基准脚本前，按照<a href="../%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/">第11章的脚本审查流程</a>核对来源、版本与行为；不要直接复制“下载后立即执行”的命令。高强度磁盘或网络测试可能影响已有业务并产生额外费用，须在可控时段与授权环境中进行。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 基础资源与连接检查（Linux）</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>lscpu
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>free<span class="w"> </span>-h
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>df<span class="w"> </span>-h
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ss<span class="w"> </span>-s
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 观察运行中CPU、内存和网络接口计数</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>top
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>ip<span class="w"> </span>-s<span class="w"> </span>link
+</span></code></pre></div>
+<p>若要测试磁盘I/O或跨地域吞吐，先备份业务数据，记录测试文件大小和服务商流量计费方式；结果至少与另一个时段复测比较。</p>
+<h2 id="94">9.4 付款方式与隐私保护<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
+<h3 id="941">9.4.1 核对支付和账号条款<a class="headerlink" href="#941" title="Permanent link">&para;</a></h3>
+<p>支付方式以服务商当前结算页面为准。比较汇率、手续费、续费、发票、退款及争议处理；不要为了回避服务商的身份核验而使用虚假身份或不可恢复的邮箱。账号应使用独立强密码和多因素认证，妥善保存账单与恢复信息。</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>使用时核对</th>
+<th>常见取舍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>银行卡/信用卡</td>
+<td>预授权、自动续费、外币手续费与消费提醒</td>
+<td>覆盖广，但要管理账单和卡片风险</td>
+</tr>
+<tr>
+<td>PayPal</td>
+<td>商户是否支持、账户地区、汇率和争议规则</td>
+<td>可减少向每个商户直接提供卡号</td>
+</tr>
+<tr>
+<td>支付宝/微信支付</td>
+<td>当前商户及地区是否提供、退款路径</td>
+<td>操作方便，支付记录与账户关联</td>
+</tr>
+<tr>
+<td>加密货币</td>
+<td>实际到账金额、网络手续费、退款方式</td>
+<td>转账通常不可撤销，链上交易不等于匿名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="942">9.4.2 控制数据暴露<a class="headerlink" href="#942" title="Permanent link">&para;</a></h3>
+<p>确认服务商的隐私政策、日志与数据保留说明，以及关停实例后的删除流程。代理服务器可能接触连接元数据，支付记录也可能与账号关联；任何支付方式或注册地区都不能单独保证匿名。需要处理他人信息时，先满足组织和适用法律要求。</p>
+<h3 id="943">9.4.3 账号安全<a class="headerlink" href="#943" title="Permanent link">&para;</a></h3>
+<ol>
+<li>为VPS控制台使用独立密码，并启用认证器或安全密钥形式的双因素认证。</li>
+<li>将密码保存在密码管理器，例如<a href="https://bitwarden.com/">Bitwarden</a>或<a href="https://keepass.info/">KeePass</a>；不要把示例密码直接用作真实密码。</li>
+<li>离线保存2FA恢复码，测试备用登录方法，避免丢失手机后无法管理或销毁实例。</li>
+<li>创建实例时优先添加SSH公钥；若供应商发放初始密码，首次登录后更换并检查控制台访问记录。</li>
+<li>开启账单通知，定期检查未使用的实例、快照、附加IP和自动续费。</li>
+</ol>
+<h2 id="95-ip">9.5 IP质量检测<a class="headerlink" href="#95-ip" title="Permanent link">&para;</a></h2>
+<h3 id="951-ip">9.5.1 IP类型与信誉<a class="headerlink" href="#951-ip" title="Permanent link">&para;</a></h3>
+<p>在<a href="https://ipinfo.io/">IPinfo</a>查看IP的ASN、运营机构和地区，再与服务商告知的机房信息核对。ASN属于数据中心并不表示IP不能使用；ASN显示为住宅网络也不能单独证明它是真实住宅IP。地区数据库可能更新滞后，应以目标业务的实际表现为准。</p>
+<p>如果要从VPS发送邮件，可在<a href="https://mxtoolbox.com/blacklists.aspx">MXToolbox黑名单查询</a>检查邮件相关RBL记录；“Listed”主要提示邮件投递风险，不能直接推断代理连接或流媒体一定失败。</p>
+<h3 id="952">9.5.2 连通性与端口测试<a class="headerlink" href="#952" title="Permanent link">&para;</a></h3>
+<p>先确认VPS运行、服务监听，再从本地测TCP；只看到<code>ping</code>超时，不能断定IP不可用。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 在VPS上：确认服务是否监听预期端口</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-lntup
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 在自己的Linux/macOS设备上：替换地址和端口</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>nc<span class="w"> </span>-vz<span class="w"> </span>YOUR_VPS_IP<span class="w"> </span><span class="m">443</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 若已配置自己的HTTPS测试域名，再核对TLS和HTTP响应</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>curl<span class="w"> </span>-v<span class="w"> </span>--connect-timeout<span class="w"> </span><span class="m">5</span><span class="w"> </span>https://YOUR_TEST_DOMAIN/
+</span></code></pre></div>
+<p>Windows可用PowerShell执行<code>Test-NetConnection YOUR_VPS_IP -Port 443</code>。若失败，按“服务未监听 → 云防火墙 → 系统防火墙 → 本地网络/路由”的顺序检查；从另一网络复测并记录时间。不要在尚未启动服务时，用外部端口检测站的“关闭”结果判断IP有问题。详细命令见<a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/">第18章 网络测试工具</a>。</p>
+<h3 id="953">9.5.3 目标服务可用性<a class="headerlink" href="#953" title="Permanent link">&para;</a></h3>
+<p>目标网站是否接受数据中心IP，应在符合其条款的前提下，用实际账户和客户端验证。对Netflix等流媒体，仅执行<code>curl -I</code>或第三方“解锁脚本”不能证明播放权限；地区、账号、版权与设备条件都可能影响结果。将目标服务测试与VPS的TCP连通、路由稳定性分开记录。</p>
+<h3 id="954">9.5.4 采购前决策记录<a class="headerlink" href="#954" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>记录内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连通性</td>
+<td>SSH、所需TCP端口、TLS及实际请求结果</td>
+</tr>
+<tr>
+<td>线路</td>
+<td>高峰和非高峰的RTT、丢包与路由变化</td>
+</tr>
+<tr>
+<td>IP信息</td>
+<td>ASN、地区、邮件黑名单和目标服务实测</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>当前租金、超额流量、备份、续费与退出费用</td>
+</tr>
+<tr>
+<td>运维</td>
+<td>控制台恢复、快照、换IP与客服响应路径</td>
+</tr>
+</tbody>
+</table>
+<p>把候选项和测试结果记录在采购笔记中。如果IP或线路只有单次测试结果，先用短期方案验证，再决定是否长期续费。</p>
+<h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>先用供应商、地域、配置和流量示例缩小范围，再以当前产品页、结算页和自己的网络测试结果做最终选择。</p>
+<p><strong>实践任务：</strong></p>
+<ol>
+<li>从9.1的供应商表选两个候选，记录机房、CPU/内存、流量、续费价与官方条款。</li>
+<li>按9.3计算单人或多人月流量，核对套餐额度和超额收费。</li>
+<li>在高峰和非高峰时段，从自己的网络测试供应商提供的端点。</li>
+<li>若已购买短期实例，按9.5检查端口、IP信息和目标服务，并记录测试结果。</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！我们会持续改进。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC08%E7%AB%A0-%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第08章 分流规则详解">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                第08章 分流规则详解
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第10章 服务器环境配置">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                第10章 服务器环境配置
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 科学上网完全指南
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ihmily/network-proxy-guide" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

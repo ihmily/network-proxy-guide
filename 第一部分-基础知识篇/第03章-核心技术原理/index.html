@@ -522,7 +522,7 @@
   <a href="#311" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1.1 正向代理详解
+        3.1.1 正向代理与反向代理
       
     </span>
   </a>
@@ -530,10 +530,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#312-http" class="md-nav__link">
+  <a href="#312" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1.2 HTTP代理原理
+        3.1.2 正向代理怎样连接目标
       
     </span>
   </a>
@@ -541,10 +541,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#313-socks5" class="md-nav__link">
+  <a href="#313-httpconnect" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1.3 SOCKS5代理原理
+        3.1.3 HTTP代理与CONNECT隧道
       
     </span>
   </a>
@@ -552,10 +552,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#314" class="md-nav__link">
+  <a href="#314-socks5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1.4 本地代理与远程代理
+        3.1.4 SOCKS5代理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.5 本地代理与远程代理
       
     </span>
   </a>
@@ -571,19 +582,19 @@
   <a href="#32-vpn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 VPN技术详解
+        3.2 VPN技术
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.2 VPN技术详解">
+    <nav class="md-nav" aria-label="3.2 VPN技术">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#321-vpn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2.1 VPN基本概念
+        3.2.1 VPN的基本工作方式
       
     </span>
   </a>
@@ -605,7 +616,7 @@
   <a href="#323-vpn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2.3 常见VPN协议
+        3.2.3 常见VPN协议和代理协议
       
     </span>
   </a>
@@ -613,10 +624,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#324-wireguardvpn" class="md-nav__link">
+  <a href="#324-wireguard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2.4 WireGuard现代VPN
+        3.2.4 WireGuard入门
       
     </span>
   </a>
@@ -629,22 +640,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#33-tunneling" class="md-nav__link">
+  <a href="#33" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3 隧道技术（Tunneling）
+        3.3 隧道技术
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.3 隧道技术（Tunneling）">
+    <nav class="md-nav" aria-label="3.3 隧道技术">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#331" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3.1 隧道的概念
+        3.3.1 什么是隧道
       
     </span>
   </a>
@@ -663,10 +674,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#333" class="md-nav__link">
+  <a href="#333-ssh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3.3 科学上网中的隧道应用
+        3.3.3 SSH端口转发
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.4 加密代理的隧道过程
       
     </span>
   </a>
@@ -682,19 +704,19 @@
   <a href="#34" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4 流量混淆与伪装
+        3.4 流量特征与承载方式
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.4 流量混淆与伪装">
+    <nav class="md-nav" aria-label="3.4 流量特征与承载方式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#341" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4.1 为什么需要流量伪装
+        3.4.1 为什么会观察流量特征
       
     </span>
   </a>
@@ -705,7 +727,7 @@
   <a href="#342" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4.2 流量混淆技术
+        3.4.2 常见承载方式
       
     </span>
   </a>
@@ -716,7 +738,7 @@
   <a href="#343-cdn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4.3 CDN中转技术
+        3.4.3 CDN与反向代理中转
       
     </span>
   </a>
@@ -727,7 +749,7 @@
   <a href="#344" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.4.4 协议伪装案例
+        3.4.4 两个常见例子
       
     </span>
   </a>
@@ -755,7 +777,7 @@
   <a href="#351" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.5.1 端到端加密
+        3.5.1 先看加密边界
       
     </span>
   </a>
@@ -816,6 +838,28 @@
     <span class="md-ellipsis">
       
         本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动手思考
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸阅读
       
     </span>
   </a>
@@ -1002,8 +1046,6 @@
       
         
       
-        
-      
     
     
     
@@ -1105,34 +1147,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC09%E7%AB%A0-%E8%BF%9B%E9%98%B6%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    第09章 进阶优化技巧
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1211,14 +1225,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC10%E7%AB%A0-VPS%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC09%E7%AB%A0-VPS%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第10章 VPS选购指南
+    第09章 VPS选购指南
   
 
     
@@ -1239,14 +1253,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC11%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第11章 服务器环境配置
+    第10章 服务器环境配置
   
 
     
@@ -1267,14 +1281,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC12%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第12章 一键脚本部署
+    第11章 一键脚本部署
   
 
     
@@ -1295,14 +1309,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC12%E7%AB%A0-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第13章 手动搭建教程
+    第12章 手动搭建教程
   
 
     
@@ -1323,14 +1337,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC14%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第14章 多用户管理方案
+    第13章 多用户管理方案
   
 
     
@@ -1418,14 +1432,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC15%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第15章 网络安全防护
+    第14章 网络安全防护
   
 
     
@@ -1446,14 +1460,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC16%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第16章 隐私保护实践
+    第15章 隐私保护实践
   
 
     
@@ -1474,14 +1488,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第17章 审计与日志管理
+    第16章 审计与日志管理
   
 
     
@@ -1567,14 +1581,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第18章 常见问题诊断
+    第17章 常见问题诊断
   
 
     
@@ -1595,14 +1609,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC19%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第19章 网络测试工具
+    第18章 网络测试工具
   
 
     
@@ -1690,14 +1704,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC20%E7%AB%A0-%E4%B8%8D%E5%90%8C%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC19%E7%AB%A0-%E4%B8%8D%E5%90%8C%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第20章 不同场景应用
+    第19章 不同场景应用
   
 
     
@@ -1718,14 +1732,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC21%E7%AB%A0-%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC20%E7%AB%A0-%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第21章 成本优化策略
+    第20章 成本优化策略
   
 
     
@@ -1746,14 +1760,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC22%E7%AB%A0-%E5%90%88%E8%A7%84%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC21%E7%AB%A0-%E5%90%88%E8%A7%84%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    第22章 合规使用建议
+    第21章 合规使用建议
   
 
     
@@ -1782,8 +1796,6 @@
   
     
     
-      
-        
       
         
       
@@ -1871,42 +1883,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95B-%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95C-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    附录B 配置模板
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95C-%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    附录C 资源推荐
+    附录C 资源索引
   
 
     
@@ -1976,986 +1960,843 @@
 
 
 <h1 id="3">第3章 核心技术原理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
-<p>在掌握了网络基础知识后，本章将深入探讨科学上网的核心技术原理。我们将理解代理服务器如何工作、VPN的运行机制，以及现代科学上网工具如何对抗网络封锁。</p>
-<h2 id="31">3.1 代理服务器工作原理<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
-<h3 id="311">3.1.1 正向代理详解<a class="headerlink" href="#311" title="Permanent link">&para;</a></h3>
-<p><strong>基本工作流程：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>完整代理流程：
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>第1步：客户端配置
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>┌─────────┐
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│ 浏览器  │ 配置代理：proxy.example.com:1080
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─────────┘
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>第2步：发起请求
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>用户想访问：https://www.google.com
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>↓
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>浏览器不直接连接Google
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>↓
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>而是连接到代理服务器
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>第3步：代理转发
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>┌────────────┐
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│ 代理服务器  │ ← 接收用户请求
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└────────────┘
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>      ↓
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>连接真实的Google服务器
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>      ↓
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>┌────────────┐
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│ Google.com │
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>└────────────┘
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>第4步：返回数据
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>Google响应 → 代理服务器 → 用户浏览器
-</span></code></pre></div>
-<p><strong>关键技术点：</strong></p>
+<p>前两章介绍了IP、DNS、HTTP、TCP/UDP和加密。本章把这些知识连起来，回答三个问题：</p>
 <ol>
-<li>
-<p><strong>请求改写</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>原始请求：
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GET https://www.google.com/search?q=test HTTP/1.1
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Host: www.google.com
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>通过HTTP代理：
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>CONNECT www.google.com:443 HTTP/1.1
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Host: www.google.com
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>通过SOCKS5代理：
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>[SOCKS5握手] → [目标地址] → [数据传输]
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>连接维持</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>用户 ←═══ 加密隧道 ═══→ 代理服务器 ←─── 明文/加密 ───→ 目标网站
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>     (长连接)                        (按需建立)
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>IP地址替换</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>目标网站看到的访问者：
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>不是：用户真实IP（如 123.45.67.89）
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>而是：代理服务器IP（如 140.82.114.26）
-</span></code></pre></div></p>
-</li>
+<li><strong>代理怎样帮客户端连接目标？</strong></li>
+<li><strong>VPN和代理究竟有什么区别？</strong></li>
+<li><strong>隧道、流量承载和加密分别解决什么问题？</strong></li>
 </ol>
-<h3 id="312-http">3.1.2 HTTP代理原理<a class="headerlink" href="#312-http" title="Permanent link">&para;</a></h3>
-<p><strong>HTTP CONNECT方法：</strong></p>
-<p>用于建立隧道，支持HTTPS流量穿透。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>客户端请求：
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>CONNECT www.example.com:443 HTTP/1.1
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Host: www.example.com:443
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Proxy-Authorization: Basic dXNlcjpwYXNz
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>代理服务器响应：
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>HTTP/1.1 200 Connection Established
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>隧道建立后：
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>客户端 ←══════ TLS加密通道 ══════→ 目标服务器
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        (代理服务器只转发，不解密)
-</span></code></pre></div>
-<p><strong>优势与限制：</strong></p>
-<ul>
-<li>✅ 浏览器原生支持，无需额外软件</li>
-<li>✅ 配置简单，易于使用</li>
-<li>❌ 仅适用于HTTP/HTTPS流量</li>
-<li>❌ 协议特征明显，易被识别</li>
-<li>❌ 大部分HTTP代理已被封锁</li>
-</ul>
-<h3 id="313-socks5">3.1.3 SOCKS5代理原理<a class="headerlink" href="#313-socks5" title="Permanent link">&para;</a></h3>
-<p><strong>SOCKS5握手过程：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>阶段1：版本协商
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>客户端 → 服务器：[版本(0x05), 认证方法数量, 认证方法列表]
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>服务器 → 客户端：[版本(0x05), 选择的认证方法]
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>阶段2：身份认证（如需要）
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>客户端 → 服务器：[版本(0x01), 用户名长度, 用户名, 密码长度, 密码]
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>服务器 → 客户端：[版本(0x01), 状态(0x00成功)]
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>阶段3：连接请求
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>客户端 → 服务器：[版本, 命令, 保留, 地址类型, 目标地址, 目标端口]
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>服务器 → 客户端：[版本, 状态, 保留, 绑定地址类型, 绑定地址, 绑定端口]
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>阶段4：数据传输
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>客户端 ←══════ 双向数据流 ═══════→ 服务器
-</span></code></pre></div>
-<p><strong>SOCKS5支持的命令：</strong></p>
-<ul>
-<li><code>CONNECT (0x01)</code>：建立TCP连接</li>
-<li><code>BIND (0x02)</code>：绑定端口等待连接</li>
-<li><code>UDP ASSOCIATE (0x03)</code>：关联UDP端口</li>
-</ul>
-<p><strong>地址类型：</strong></p>
-<ul>
-<li><code>IPv4 (0x01)</code>：4字节IPv4地址</li>
-<li><code>域名 (0x03)</code>：长度+域名字符串</li>
-<li><code>IPv6 (0x04)</code>：16字节IPv6地址</li>
-</ul>
-<p><strong>SOCKS5的优势：</strong></p>
-<ul>
-<li>✅ 协议层次低，可代理任何TCP/UDP流量</li>
-<li>✅ 支持用户名密码认证</li>
-<li>✅ 可代理非HTTP协议（FTP、SMTP、游戏等）</li>
-<li>✅ UDP支持（重要！游戏和语音需要）</li>
-</ul>
-<h3 id="314">3.1.4 本地代理与远程代理<a class="headerlink" href="#314" title="Permanent link">&para;</a></h3>
-<p><strong>架构模式：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>模式1：直接连接远程代理
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>应用程序 ─────────────► 远程代理服务器 ────► 目标网站
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>           (需要应用支持SOCKS5/HTTP代理)
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>模式2：本地客户端+远程代理
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>应用程序 ──► 本地客户端 ──(加密)──► 远程代理 ──► 目标网站
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  (系统代理)  (127.0.0.1:1080)     (境外服务器)
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>             Clash/V2RayN等
-</span></code></pre></div>
-<p><strong>本地客户端的作用：</strong></p>
-<ol>
-<li><strong>协议转换</strong>：将标准SOCKS5/HTTP转换为加密协议</li>
-<li><strong>流量加密</strong>：使用Shadowsocks/VMess等加密</li>
-<li><strong>规则分流</strong>：智能判断哪些走代理，哪些直连</li>
-<li><strong>负载均衡</strong>：多个节点间切换和分配</li>
-<li><strong>用户界面</strong>：提供图形化配置和管理</li>
-</ol>
-<h2 id="32-vpn">3.2 VPN技术详解<a class="headerlink" href="#32-vpn" title="Permanent link">&para;</a></h2>
-<h3 id="321-vpn">3.2.1 VPN基本概念<a class="headerlink" href="#321-vpn" title="Permanent link">&para;</a></h3>
-<p><strong>VPN（Virtual Private Network）虚拟专用网络</strong></p>
-<p>VPN在公共网络上建立加密隧道，创建虚拟的专用网络连接。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>传统专线：
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>公司总部 ═══ 物理专线 ═══ 分公司
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>         (昂贵、固定)
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>VPN方案：
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>公司总部 ─── 互联网 ─── 分公司
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>         ╚═ 加密隧道 ═╝
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        (便宜、灵活、安全)
-</span></code></pre></div>
-<p><strong>VPN隧道示意：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>原始数据包：
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>┌──────┬───────┬──────────┐
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>│ IP头 │ TCP头 │ 应用数据  │
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>└──────┴───────┴──────────┘
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>VPN封装后：
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>┌─────────┬─────────┬───────────────────────────────┐
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>│ 新IP头  │ VPN协议 │ [加密的(原IP头+TCP头+数据)]     │
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>└─────────┴─────────┴───────────────────────────────┘
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>   ↑                        ↑
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>到VPN服务器              加密隧道内容
-</span></code></pre></div></p>
-<h3 id="322-vpn">3.2.2 VPN与代理的区别<a class="headerlink" href="#322-vpn" title="Permanent link">&para;</a></h3>
-<p><strong>工作层次对比：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>OSI七层模型：
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>应用层  ━━━━━━━━━  HTTP代理工作在这里
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>表示层
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>会话层  ━━━━━━━━━  SOCKS代理工作在这里
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>传输层  ━━━━━━━━━  部分VPN工作在这里(如SSL VPN)
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>网络层  ━━━━━━━━━  大多数VPN工作在这里(如IPsec)
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>数据链路层
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>物理层
-</span></code></pre></div>
-<p><strong>详细对比表：</strong></p>
+<p>先用一张表建立整体概念：</p>
 <table>
 <thead>
 <tr>
-<th>维度</th>
+<th>技术</th>
+<th>主要做什么？</th>
+<th>处理的对象</th>
+<th>初学者先记什么？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>正向代理</strong></td>
+<td>代表客户端访问外部服务</td>
+<td>请求、连接或数据流</td>
+<td>用户主动使用，目标通常看到代理出口</td>
+</tr>
+<tr>
+<td><strong>反向代理</strong></td>
+<td>代表网站接收外部访问</td>
+<td>到达网站入口的请求</td>
+<td>用户访问的是代理入口，代理再分发给后端</td>
+</tr>
+<tr>
+<td><strong>VPN</strong></td>
+<td>建立一条逻辑上的专用连接</td>
+<td>通常是IP包</td>
+<td>由系统路由决定哪些流量进入隧道</td>
+</tr>
+<tr>
+<td><strong>隧道</strong></td>
+<td>把一种数据放进另一种连接传输</td>
+<td>数据包、字节流或应用消息</td>
+<td>封装不等于加密，两者可以组合</td>
+</tr>
+<tr>
+<td><strong>流量承载/伪装</strong></td>
+<td>改变连接呈现出来的特征</td>
+<td>握手、协议和通信行为</td>
+<td>能减少明显特征，但不保证不可识别</td>
+</tr>
+<tr>
+<td><strong>加密与认证</strong></td>
+<td>保护内容、验证身份、检测篡改</td>
+<td>消息或连接</td>
+<td>要看清楚每一层加密保护哪一段</td>
+</tr>
+</tbody>
+</table>
+<h2 id="31">3.1 代理服务器工作原理<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<h3 id="311">3.1.1 正向代理与反向代理<a class="headerlink" href="#311" title="Permanent link">&para;</a></h3>
+<p>**正向代理**位于客户端和目标服务之间，代表客户端访问外部资源。客户端通常需要主动配置代理地址，或者由系统、网关把流量交给代理。</p>
+<p>**反向代理**位于用户和网站后端之间，代表网站接收外部访问。用户访问网站公开的入口，通常不知道后面是哪台后端服务器。</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>正向代理</th>
+<th>反向代理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>代表谁？</strong></td>
+<td>代表客户端</td>
+<td>代表网站或后端服务</td>
+</tr>
+<tr>
+<td><strong>谁主动使用？</strong></td>
+<td>用户、应用或所在网络配置</td>
+<td>网站管理员部署在服务入口</td>
+</tr>
+<tr>
+<td><strong>请求方向</strong></td>
+<td>客户端 → 代理 → 外部网站</td>
+<td>外部用户 → 代理 → 后端服务</td>
+</tr>
+<tr>
+<td><strong>常见用途</strong></td>
+<td>访问控制、连接中转、调试、跨网络访问</td>
+<td>TLS终止、负载均衡、缓存、网站发布</td>
+</tr>
+<tr>
+<td><strong>用户通常看到什么？</strong></td>
+<td>目标网站通常看到代理出口IP</td>
+<td>用户看到代理的公开域名或IP</td>
+</tr>
+<tr>
+<td><strong>常见例子</strong></td>
+<td>HTTP代理、SOCKS5、Shadowsocks</td>
+<td>Nginx、HAProxy、CDN入口</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Forward["正向代理：代表客户端"]
+        U1["用户设备"] --&gt; P1["正向代理"] --&gt; W1["外部网站"]
+    end
+    subgraph Reverse["反向代理：代表网站"]
+        U2["外部用户"] --&gt; P2["反向代理入口"] --&gt; B1["后端服务1"]
+        P2 --&gt; B2["后端服务2"]
+    end</code></pre>
+<p><em>图3-1 正向代理与反向代理的方向和角色对比</em></p>
+<p><strong>一句话记忆：</strong> 正向代理是“我让代理帮我访问网站”；反向代理是“网站让代理帮它接待用户”。同一台软件可以根据配置承担不同角色，不能只看软件名称判断。</p>
+<h3 id="312">3.1.2 正向代理怎样连接目标<a class="headerlink" href="#312" title="Permanent link">&para;</a></h3>
+<p>正向代理通常分为四步：</p>
+<ol>
+<li>客户端告诉代理目标地址和端口。</li>
+<li>代理解析目标域名，或直接使用客户端提交的IP。</li>
+<li>代理连接目标服务。</li>
+<li>代理在两端之间转发数据。</li>
+</ol>
+<pre class="mermaid"><code>sequenceDiagram
+    participant C as 客户端
+    participant P as 正向代理
+    participant D as DNS解析服务
+    participant W as 目标网站
+    C-&gt;&gt;P: 请求访问 www.example.com:443
+    P-&gt;&gt;D: 需要时查询目标地址
+    D--&gt;&gt;P: 返回IP地址
+    P-&gt;&gt;W: 建立到目标的连接
+    P--&gt;&gt;C: 返回连接结果
+    C-&gt;&gt;P: 发送请求数据
+    P-&gt;&gt;W: 转发请求
+    W--&gt;&gt;P: 返回响应
+    P--&gt;&gt;C: 转发响应</code></pre>
+<p><em>图3-2 正向代理连接目标并转发数据</em></p>
+<p>客户端到代理、代理到目标通常是两段独立连接。代理可能看到客户端IP、目标地址、连接时间和流量大小；目标通常看到代理出口IP。账号、Cookie和设备特征仍可能把访问与用户关联起来。</p>
+<h3 id="313-httpconnect">3.1.3 HTTP代理与CONNECT隧道<a class="headerlink" href="#313-httpconnect" title="Permanent link">&para;</a></h3>
+<p>**访问明文HTTP网站**时，客户端可以把完整网址交给代理：</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">GET</span> <span class="nn">http://www.example.com/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
+</span></code></pre></div>
+<p>代理连接网站后，可能转换成发给网站的普通请求：</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">GET</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
+</span></code></pre></div>
+<p>此时代理能够读取HTTP内容，也可能按策略进行认证、缓存或过滤。</p>
+<p>**访问HTTPS网站**时，客户端通常先使用<code>CONNECT</code>请求代理建立一条TCP隧道：</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">CONNECT</span> <span class="nn">www.example.com:443</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com:443</span>
+</span></code></pre></div>
+<p>代理连接成功后返回：</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">Connection Established</span>
+</span></code></pre></div>
+<p>之后，浏览器在隧道内与目标网站建立TLS连接：</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant C as 浏览器
+    participant P as HTTP代理
+    participant W as HTTPS网站
+    C-&gt;&gt;P: CONNECT www.example.com:443
+    P-&gt;&gt;W: 建立TCP连接
+    P--&gt;&gt;C: 200 Connection Established
+    C-&gt;&gt;P: 转发网站TLS握手
+    P-&gt;&gt;W: 转发TLS握手
+    Note over C,W: 浏览器与网站建立TLS连接
+    C-&gt;&gt;P: 发送HTTPS密文
+    P-&gt;&gt;W: 转发HTTPS密文
+    W--&gt;&gt;P: 返回HTTPS密文
+    P--&gt;&gt;C: 转发HTTPS密文</code></pre>
+<p><em>图3-3 HTTP CONNECT建立HTTPS隧道</em></p>
+<p><strong>重点：</strong> 普通CONNECT代理通常不终止网站TLS，所以不能直接读取网页正文；它仍能看到CONNECT目标和连接元数据。客户端到代理如果没有额外加密，代理请求和认证信息可能被路径上的设备观察。</p>
+<p>代理要求认证时，可能返回<code>407 Proxy Authentication Required</code>，客户端再提交<code>Proxy-Authorization</code>。Basic认证只是编码，不是加密，应放在受保护的代理连接中使用。</p>
+<h3 id="314-socks5">3.1.4 SOCKS5代理<a class="headerlink" href="#314-socks5" title="Permanent link">&para;</a></h3>
+<p>SOCKS5先协商认证方式和目标地址，再建立转发。以TCP连接为例：</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant C as SOCKS5客户端
+    participant P as SOCKS5服务器
+    participant W as 目标服务
+    C-&gt;&gt;P: 提供支持的认证方法
+    P--&gt;&gt;C: 选择认证方法
+    C-&gt;&gt;P: 提交认证信息（如需要）
+    P--&gt;&gt;C: 返回认证结果
+    C-&gt;&gt;P: CONNECT、目标地址与端口
+    P-&gt;&gt;W: 建立TCP连接
+    P--&gt;&gt;C: 返回连接结果
+    C-&gt;&gt;P: 发送应用数据
+    P-&gt;&gt;W: 转发数据
+    W--&gt;&gt;P: 返回响应
+    P--&gt;&gt;C: 转发响应</code></pre>
+<p><em>图3-4 SOCKS5协商与TCP转发</em></p>
+<table>
+<thead>
+<tr>
+<th>SOCKS5内容</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>认证方法</strong></td>
+<td>协商匿名、用户名密码等方式</td>
+</tr>
+<tr>
+<td><strong>CONNECT</strong></td>
+<td>建立到目标的TCP连接</td>
+</tr>
+<tr>
+<td><strong>BIND</strong></td>
+<td>监听并等待对端连接，实际支持情况因实现而异</td>
+</tr>
+<tr>
+<td><strong>UDP ASSOCIATE</strong></td>
+<td>建立UDP转发关联</td>
+</tr>
+<tr>
+<td><strong>地址类型</strong></td>
+<td>支持IPv4、域名和IPv6</td>
+</tr>
+</tbody>
+</table>
+<p>SOCKS5本身不提供通用的流量加密。用户名密码认证也不等于加密；是否安全，要看外层连接是否受到保护。</p>
+<p>**SOCKS5 UDP转发**需要先用TCP控制连接建立关联，再通过协商出的UDP中继地址发送数据：</p>
+<pre class="mermaid"><code>flowchart LR
+    C["应用与SOCKS5客户端"] --&gt;|"TCP控制连接"| P["SOCKS5服务器"]
+    C --&gt;|"UDP数据报"| R["UDP中继"] --&gt; T["目标UDP服务"]
+    T --&gt; R --&gt; C</code></pre>
+<p><em>图3-5 SOCKS5的TCP控制连接与UDP数据路径</em></p>
+<p>应用、客户端和服务器都要支持UDP；防火墙、NAT和数据报大小也会影响结果。域名如果在本地提前解析，DNS查询就可能不会经过代理。</p>
+<h3 id="315">3.1.5 本地代理与远程代理<a class="headerlink" href="#315" title="Permanent link">&para;</a></h3>
+<p>很多客户端会在本机运行一个代理核心：应用只连接本地端口，核心再决定直连还是走远端代理。</p>
+<pre class="mermaid"><code>flowchart LR
+    A["应用"] --&gt;|"HTTP/SOCKS接入"| L["本地代理核心&lt;br/&gt;127.0.0.1:1080（示例）"]
+    L --&gt;|"直连规则"| D["直连目标"]
+    L --&gt;|"代理规则"| R["远端代理服务器"] --&gt; T["目标网站"]
+    G["图形客户端"] -.配置与状态.-&gt; L</code></pre>
+<p><em>图3-6 本地代理核心、图形客户端和远端服务器</em></p>
+<ul>
+<li><strong>代理核心</strong>：处理协议、路由、DNS和数据转发。</li>
+<li><strong>图形客户端</strong>：管理节点、规则和状态，通常不是转发本身的必要组成部分。</li>
+<li><strong>系统代理</strong>：只影响遵守系统代理设置的应用。</li>
+<li><strong>TUN等接管方式</strong>：可以扩大接管范围，但需要额外的路由和DNS配置。</li>
+</ul>
+<h2 id="32-vpn">3.2 VPN技术<a class="headerlink" href="#32-vpn" title="Permanent link">&para;</a></h2>
+<h3 id="321-vpn">3.2.1 VPN的基本工作方式<a class="headerlink" href="#321-vpn" title="Permanent link">&para;</a></h3>
+<p>VPN（Virtual Private Network，虚拟专用网络）在公共网络上建立一条逻辑上的专用连接。系统先根据路由决定哪些IP包进入VPN接口，再由VPN封装、加密并发送给对端。</p>
+<pre class="mermaid"><code>flowchart LR
+    A["应用产生IP流量"] --&gt; B{"系统路由选择"}
+    B --&gt;|进入VPN| C["VPN封装与加密"] --&gt; N["公共网络"] --&gt; D["VPN对端验证并解封装"] --&gt; E["远端网络或互联网出口"]
+    B --&gt;|直连| F["本地网络出口"]</code></pre>
+<p><em>图3-7 VPN分流与全隧道的基本路径</em></p>
+<p>VPN可以只接管某个内网网段，也可以安装默认路由，接管更大范围的流量。远端要作为互联网出口，还需要正确配置转发、回程路由、防火墙和必要的NAT。</p>
+<p>“VPN”这个名称本身不保证加密。要确认具体方案使用了什么认证、加密和完整性保护。</p>
+<h3 id="322-vpn">3.2.2 VPN与代理的区别<a class="headerlink" href="#322-vpn" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
 <th>VPN</th>
 <th>代理</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><strong>主要处理对象</strong></td>
+<td>通常是IP包</td>
+<td>应用请求、TCP连接或UDP数据报</td>
+</tr>
+<tr>
+<td><strong>接入方式</strong></td>
+<td>虚拟网卡、系统路由或安全策略</td>
+<td>应用代理设置、本地监听、TUN或网关接管</td>
+</tr>
+<tr>
 <td><strong>流量范围</strong></td>
-<td>全局（所有网络流量）</td>
-<td>应用级（仅配置的应用）</td>
+<td>可全隧道，也可按路由分流</td>
+<td>取决于应用支持和接管配置</td>
 </tr>
 <tr>
-<td><strong>配置方式</strong></td>
-<td>系统级（虚拟网卡）</td>
-<td>应用级（浏览器/软件）</td>
+<td><strong>DNS路径</strong></td>
+<td>由系统、应用和VPN配置共同决定</td>
+<td>由应用、客户端和远端解析设置决定</td>
 </tr>
 <tr>
-<td><strong>透明度</strong></td>
-<td>对应用完全透明</td>
-<td>需要应用支持</td>
-</tr>
-<tr>
-<td><strong>DNS处理</strong></td>
-<td>全部通过VPN</td>
-<td>可能泄露到本地DNS</td>
+<td><strong>常见用途</strong></td>
+<td>远程办公、站点互联、统一出口</td>
+<td>请求转发、访问控制、调试、灵活分流</td>
 </tr>
 <tr>
 <td><strong>加密范围</strong></td>
-<td>整个数据包</td>
-<td>应用层数据</td>
-</tr>
-<tr>
-<td><strong>性能开销</strong></td>
-<td>较大（全局处理）</td>
-<td>较小（按需处理）</td>
-</tr>
-<tr>
-<td><strong>灵活性</strong></td>
-<td>低（全局模式）</td>
-<td>高（可分流）</td>
+<td>通常保护设备或网关到VPN对端</td>
+<td>取决于代理协议和传输配置</td>
 </tr>
 </tbody>
 </table>
-<p><strong>使用场景建议：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>选择VPN：
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>✓ 远程办公访问企业内网
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>✓ 需要保护所有网络流量
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>✓ 使用不支持代理的软件
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>✓ 在公共WiFi保护隐私
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>选择代理：
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>✓ 科学上网（国内外分流）
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>✓ 只需代理特定应用
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>✓ 追求更快的速度
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>✓ 需要灵活的规则配置
-</span></code></pre></div>
-<h3 id="323-vpn">3.2.3 常见VPN协议<a class="headerlink" href="#323-vpn" title="Permanent link">&para;</a></h3>
-<p><strong>1. PPTP（Point-to-Point Tunneling Protocol）</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>年代：1990s
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>加密：MPPE (RC4)
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>安全性：⭐ (已被破解，不推荐)
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>速度：⭐⭐⭐⭐⭐
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>状态：已淘汰
-</span></code></pre></div></p>
-<p><strong>2. L2TP/IPsec</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>年代：2000s
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>加密：IPsec (AES)
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>安全性：⭐⭐⭐
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>速度：⭐⭐⭐
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>特点：双层封装，开销大
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>状态：仍在使用但逐渐被淘汰
-</span></code></pre></div></p>
-<p><strong>3. OpenVPN</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>年代:2001年至今
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>加密:OpenSSL库(AES-256)
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>安全性:⭐⭐⭐⭐⭐
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>速度:⭐⭐⭐
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>特点:开源、灵活、可靠
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>状态:仍在使用,但逐渐被更快的协议替代
-</span></code></pre></div></p>
-<p><strong>4. WireGuard</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>年代:2020年正式发布
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>加密:ChaCha20-Poly1305、Curve25519
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>安全性:⭐⭐⭐⭐⭐
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>速度:⭐⭐⭐⭐⭐
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>特点:代码简洁(~4000行)、性能极佳
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>状态:2024年成为主流首选
-</span></code></pre></div></p>
-<p><strong>5. IKEv2/IPsec</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>年代:2005年发布,持续更新
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>加密:AES-256
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>安全性:⭐⭐⭐⭐
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>速度:⭐⭐⭐⭐
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>特点:移动端稳定,自动重连
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>状态:Apple设备原生支持,企业常用
-</span></code></pre></div></p>
-<p><strong>协议对比：</strong></p>
+<p><strong>不要用“VPN一定全局、代理只能浏览器使用”来判断。</strong> VPN可以分流，代理也可以通过TUN等方式接管更多应用；最终以实际路由、DNS和客户端配置为准。</p>
+<h3 id="323-vpn">3.2.3 常见VPN协议和代理协议<a class="headerlink" href="#323-vpn" title="Permanent link">&para;</a></h3>
+<p>VPN协议通常处理IP包，代理协议通常处理应用请求、TCP连接或UDP数据报。下面分成两张表：</p>
+<p><strong>常见的VPN协议</strong></p>
 <table>
 <thead>
 <tr>
-<th>协议</th>
-<th>加密强度</th>
-<th>吞吐量</th>
-<th>连接延迟</th>
-<th>配置难度</th>
-<th>抗封锁</th>
-<th>推荐度</th>
+<th>协议或方案</th>
+<th>时间节点</th>
+<th>一句话理解</th>
+<th>使用提醒</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PPTP</td>
-<td>低</td>
-<td>快</td>
-<td>低</td>
-<td>简单</td>
-<td>差</td>
-<td>❌ 已废弃</td>
+<td><strong>PPTP</strong></td>
+<td>1990年代；1999年形成公开规范</td>
+<td>早期远程接入方案</td>
+<td>安全性不足，不适合新的部署</td>
 </tr>
 <tr>
-<td>L2TP/IPsec</td>
-<td>中</td>
-<td>中等</td>
-<td>中</td>
-<td>中等</td>
-<td>差</td>
-<td>⚠️ 逐步淘汰</td>
+<td><strong>L2TP/IPsec</strong></td>
+<td>1999年起；2000年代常见</td>
+<td>L2TP负责承载，IPsec负责保护</td>
+<td>L2TP本身不加密，要理解两者分工</td>
 </tr>
 <tr>
-<td>OpenVPN</td>
-<td>高</td>
-<td>0.65-0.78Gbps</td>
-<td>8-12ms</td>
-<td>复杂</td>
-<td>一般</td>
-<td>✅ 企业可用</td>
+<td><strong>OpenVPN</strong></td>
+<td>2001年至今</td>
+<td>使用TLS协商，支持TCP或UDP承载</td>
+<td>灵活但配置项较多，性能依实现和配置而定</td>
 </tr>
 <tr>
-<td>IKEv2/IPsec</td>
-<td>高</td>
-<td>~4Gbps</td>
-<td>2-5ms</td>
-<td>中等</td>
-<td>一般</td>
-<td>✅ 移动设备优选</td>
+<td><strong>IKEv2/IPsec</strong></td>
+<td>2005—2010年代逐步完善</td>
+<td>IKEv2协商密钥，IPsec保护IP流量</td>
+<td>常见于企业和系统集成，移动切换能力看配置</td>
 </tr>
 <tr>
-<td>WireGuard</td>
-<td>高</td>
-<td>7.88Gbps</td>
-<td>1-3ms</td>
-<td>简单</td>
-<td>一般</td>
-<td>✅✅ 性能最佳</td>
-</tr>
-<tr>
-<td>Shadowsocks</td>
-<td>高</td>
-<td>快</td>
-<td>低</td>
-<td>简单</td>
-<td>强</td>
-<td>✅✅ 经典方案</td>
-</tr>
-<tr>
-<td>Xray/V2Ray</td>
-<td>高</td>
-<td>6.8Gbps</td>
-<td>2-4ms</td>
-<td>中等</td>
-<td>很强</td>
-<td>✅✅✅ 主流首选</td>
-</tr>
-<tr>
-<td>Hysteria2</td>
-<td>高</td>
-<td>7.5Gbps</td>
-<td>&lt;5ms</td>
-<td>中等</td>
-<td>强</td>
-<td>✅✅✅ 弱网优选</td>
-</tr>
-<tr>
-<td>Sing-box</td>
-<td>高</td>
-<td>优秀</td>
-<td>低</td>
-<td>中等</td>
-<td>很强</td>
-<td>✅✅✅ 新兴热门</td>
+<td><strong>WireGuard</strong></td>
+<td>2016年首次发布；2020年进入Linux主线</td>
+<td>使用现代密码学，在UDP上传输加密IP包</td>
+<td>配置简洁，仍依赖UDP可达性和正确路由</td>
 </tr>
 </tbody>
 </table>
-<h3 id="324-wireguardvpn">3.2.4 WireGuard现代VPN<a class="headerlink" href="#324-wireguardvpn" title="Permanent link">&para;</a></h3>
-<p><strong>为什么WireGuard是现代之选：</strong></p>
-<p><strong>代码简洁：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>代码行数对比：
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>OpenVPN：~70,000行
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>IPsec：~400,000行
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>WireGuard：~4,000行
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>↓
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>更少的代码 = 更少的漏洞 = 更高的安全性
-</span></code></pre></div></p>
-<p><strong>性能实测数据(10Gbps网络环境):</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>协议吞吐量对比:
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>WireGuard:     7.88 Gbps  (接近线速,CPU占用低)
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>OpenVPN:       0.65-0.78 Gbps  (受限于加密开销)
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>IPsec/IKEv2:   ~4 Gbps  (内核级处理)
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>Hysteria2:     ~7.5 Gbps  (QUIC协议优势)
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>Xray(XTLS):    ~6.8 Gbps  (Vision流控优化)
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>连接建立时间:
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>WireGuard:     0.5-1秒
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>OpenVPN:       3-8秒
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>IKEv2:         1-2秒
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>内存占用:
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>WireGuard:     5-15 MB
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>OpenVPN:       50-100 MB
-</span></code></pre></div></p>
-<p><strong>核心特性:</strong></p>
-<ol>
-<li><strong>现代密码学</strong>:ChaCha20-Poly1305、Curve25519、BLAKE2s哈希</li>
-<li><strong>无状态握手</strong>:类似SSH的公钥认证,无需复杂PKI基础设施</li>
-<li><strong>连接迁移</strong>:IP地址或端口变化时自动无缝切换(移动网络友好)</li>
-<li><strong>极简配置</strong>:配置文件通常仅10-20行,类似SSH密钥对</li>
-<li><strong>内核集成</strong>:Linux 5.6+内核原生支持,Windows/macOS/iOS/Android全平台可用</li>
-<li><strong>极小代码</strong>:仅约4000行代码,便于审计,漏洞更少</li>
-</ol>
-<p><strong>配置示例:</strong>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">[Interface]</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="na">PrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;客户端私钥&gt;</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="na">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.0.0.2/24</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="na">DNS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1.1.1.1, 8.8.8.8</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="na">MTU</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1420</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">[Peer]</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="na">PublicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;服务器公钥&gt;</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="na">Endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">server.example.com:51820</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="na">AllowedIPs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.0.0.0/0, ::/0</span>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="na">PersistentKeepalive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25</span>
-</span></code></pre></div></p>
-<h2 id="33-tunneling">3.3 隧道技术（Tunneling）<a class="headerlink" href="#33-tunneling" title="Permanent link">&para;</a></h2>
-<h3 id="331">3.3.1 隧道的概念<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
-<p><strong>什么是网络隧道？</strong></p>
-<p>隧道技术将一种网络协议封装在另一种协议中传输，就像在公路下挖地道一样。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>现实类比：
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>地面交通受限 → 挖掘地下隧道 → 在隧道内自由通行
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>网络隧道：
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>网络访问受限 → 建立加密隧道 → 在隧道内传输数据
+<p><strong>常见的代理协议</strong></p>
+<table>
+<thead>
+<tr>
+<th>协议或方案</th>
+<th>时间节点</th>
+<th>一句话理解</th>
+<th>使用提醒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTP/HTTPS代理</strong></td>
+<td>1990年代起；CONNECT规范持续演进</td>
+<td>转发HTTP请求，或用CONNECT建立TCP隧道</td>
+<td>HTTPS代理连接与“通过代理访问HTTPS网站”是两层不同含义</td>
+</tr>
+<tr>
+<td><strong>SOCKS5</strong></td>
+<td>1996年发布RFC 1928</td>
+<td>协商目标后转发TCP，也定义UDP关联</td>
+<td>协议本身不提供通用加密，UDP需要完整实现支持</td>
+</tr>
+<tr>
+<td><strong>Shadowsocks</strong></td>
+<td>2012年出现；2022规范更新</td>
+<td>使用预共享密钥进行认证加密和流量转发</td>
+<td>使用双方兼容且仍受维护的实现与规范</td>
+</tr>
+<tr>
+<td><strong>VMess / VLESS</strong></td>
+<td>VMess约2015年；VLESS约2020年</td>
+<td>多协议代理平台中常见的代理协议</td>
+<td>VLESS常配合TLS、REALITY等机制提供传输保护</td>
+</tr>
+<tr>
+<td><strong>Trojan</strong></td>
+<td>2019年前后出现</td>
+<td>通常在TLS连接中完成认证和代理转发</td>
+<td>需要正确配置证书验证和认证信息</td>
+</tr>
+<tr>
+<td><strong>Hysteria 2 / TUIC</strong></td>
+<td>2022年前后发展</td>
+<td>基于QUIC承载代理通信</td>
+<td>依赖UDP可达，实际速度取决于线路和拥塞控制</td>
+</tr>
+</tbody>
+</table>
+<p><strong>协议、核心和客户端不是一回事：</strong></p>
+<ul>
+<li>**协议：**规定通信双方如何协商、认证和传输数据，例如SOCKS5、VLESS、WireGuard。</li>
+<li>**代理核心或实现：**负责真正处理协议和路由，例如Xray、sing-box、mihomo、V2Ray。</li>
+<li>**图形客户端：**提供节点导入、规则设置和状态查看界面，背后通常调用一个或多个核心。</li>
+</ul>
+<p>协议名称也不能直接决定速度。吞吐量、延迟和稳定性还受到线路、MTU、设备性能、软件版本和流量类型影响。</p>
+<h3 id="324-wireguard">3.2.4 WireGuard入门<a class="headerlink" href="#324-wireguard" title="Permanent link">&para;</a></h3>
+<p>WireGuard用公钥标识对端，通过握手建立会话密钥，再在UDP中传送受保护的IP包。</p>
+<p><strong>AllowedIPs有两个作用：</strong></p>
+<ul>
+<li><strong>发送时</strong>：根据目标IP选择哪个对端承载数据。</li>
+<li><strong>接收时</strong>：检查解密后的内层源IP是否属于该对端允许使用的范围。</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    A["待发送的IP包"] --&gt; B["系统路由交给WireGuard接口"] --&gt; C["按AllowedIPs匹配目标"] --&gt; D["选择对端公钥"] --&gt; E["加密后发送到UDP Endpoint"]
+    F["收到UDP报文"] --&gt; G["认证、解密、防重放检查"] --&gt; H["检查内层源IP"] --&gt; I["交给系统网络栈"]</code></pre>
+<p><em>图3-8 WireGuard发送与接收方向的处理</em></p>
+<p>一个只访问远端内网的分流示例：</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[Interface]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">PrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;客户端私钥&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="na">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.77.0.2/32</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">[Peer]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="na">PublicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;服务器公钥&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="na">Endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vpn.example.com:51820</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="na">AllowedIPs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.77.0.0/24</span>
 </span></code></pre></div>
-<p><strong>隧道封装原理：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>原始数据：
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>┌─────────────┐
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>│ 应用数据     │
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>└─────────────┘
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>加上传输层头：
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>┌──────┬─────────────┐
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>│ TCP  │ 应用数据     │
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>└──────┴─────────────┘
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>加上网络层头：
-</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>┌─────┬──────┬─────────────┐
-</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>│ IP  │ TCP  │ 应用数据     │
-</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>└─────┴──────┴─────────────┘
-</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
-</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>隧道封装（整体加密后再封装）：
-</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>┌────────┬────────┬─────────────────────────┐
-</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>│ 外层IP │ 隧道协议 │ 加密(IP+TCP+应用数据)    │
-</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>└────────┴────────┴─────────────────────────┘
-</span></code></pre></div></p>
+<p>这里的<code>AllowedIPs</code>只把<code>10.77.0.0/24</code>交给对端。若改为<code>0.0.0.0/0</code>，通常会安装IPv4默认路由，形成更广泛的接管。IPv6需要另外配置地址、路由和<code>AllowedIPs</code>。</p>
+<p><code>PersistentKeepalive</code>可帮助NAT后的设备维持映射，但会增加定期流量；是否需要设置取决于网络环境。</p>
+<h2 id="33">3.3 隧道技术<a class="headerlink" href="#33" title="Permanent link">&para;</a></h2>
+<h3 id="331">3.3.1 什么是隧道<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
+<p>隧道就是“把一种数据放进另一种连接里传输”。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>原始数据：        [内层IP头][TCP/UDP头][应用数据]
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>放入隧道后：      [外层IP头][外层传输头][隧道信息][受保护的原始数据]
+</span></code></pre></div>
+<p>内层描述原本要发送的内容，外层负责把它送到隧道对端。<strong>封装负责“装进去”，加密负责“保护内容”，两者不是同一件事。</strong></p>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>常见原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>隧道连不上</td>
+<td>外层地址、端口、路由或防火墙有问题</td>
+</tr>
+<tr>
+<td>隧道能连但网页卡住</td>
+<td>MTU不匹配、丢包、DNS或上层连接问题</td>
+</tr>
+<tr>
+<td>速度变慢</td>
+<td>多了一层封装、加密开销或绕远路由</td>
+</tr>
+</tbody>
+</table>
+<p>隧道会增加额外头部，内层可用空间通常小于路径MTU。TCP套TCP还可能叠加重传和队头阻塞，应谨慎选择承载方式。</p>
 <h3 id="332">3.3.2 常见隧道类型<a class="headerlink" href="#332" title="Permanent link">&para;</a></h3>
-<p><strong>1. IP隧道（IP-in-IP）</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>用途：IPv6 over IPv4、站点间VPN
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>原理：将整个IP包封装在另一个IP包中
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>应用：企业多站点互联
-</span></code></pre></div></p>
-<p><strong>2. GRE隧道</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>GRE (Generic Routing Encapsulation)
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>特点：可封装多种协议
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>用途：路由器之间的隧道
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>限制：不加密（需配合IPsec）
-</span></code></pre></div>
-<p><strong>3. SSL/TLS隧道</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>原理：在TLS连接内传输其他协议
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>优势：伪装成HTTPS流量
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>应用：Trojan、V2Ray的TLS模式
-</span></code></pre></div></p>
-<p><strong>4. SSH隧道</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>本地端口转发：
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>ssh -L 本地端口:目标地址:目标端口 用户@SSH服务器
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>远程端口转发：
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>ssh -R 远程端口:本地地址:本地端口 用户@SSH服务器
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>动态端口转发（SOCKS代理）：
-</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>ssh -D 1080 用户@SSH服务器
-</span></code></pre></div></p>
-<h3 id="333">3.3.3 科学上网中的隧道应用<a class="headerlink" href="#333" title="Permanent link">&para;</a></h3>
-<p><strong>Shadowsocks隧道：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>客户端                               服务器
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  │                                    │
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>  │  ─── ①连接SS服务器 ────────────────► │
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>  │     (建立加密隧道)                   │
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>  │                                    │
-</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>  │  ─── ②发送加密请求 ────────────────► │
-</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>  │      [加密(目标地址+数据)]            │
-</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>  │                                    │
-</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>  │                                    │── ③解密请求
-</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>  │                                    │   访问真实目标
-</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>  │                                    │
-</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>  │  ◄─── ④返回加密响应 ──────────────── │
-</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>  │      [加密(目标响应数据)]             │
-</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>  │                                    │
-</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>  │  ─── ⑤本地解密显示                    │
-</span></code></pre></div></p>
-<p><strong>V2Ray多层隧道：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>复杂场景：WebSocket + TLS + CDN
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>用户 → V2Ray客户端
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>        ↓ (VMess协议加密)
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>      WebSocket连接
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>        ↓ (套上TLS加密)
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>      HTTPS流量
-</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>        ↓ (通过CDN)
-</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>      Cloudflare CDN
-</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>        ↓
-</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>      V2Ray服务器
-</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>        ↓
-</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>      目标网站
-</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
-</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>防火墙看到的：正常的HTTPS网站访问
-</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>实际传输的：代理流量
-</span></code></pre></div></p>
-<h2 id="34">3.4 流量混淆与伪装<a class="headerlink" href="#34" title="Permanent link">&para;</a></h2>
-<h3 id="341">3.4.1 为什么需要流量伪装<a class="headerlink" href="#341" title="Permanent link">&para;</a></h3>
-<p><strong>深度包检测(DPI)的威胁:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>防火墙的多维度检测手段:
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>1. 端口与协议特征:
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>   ✗ 非443端口的加密流量 → 可疑
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>   ✗ 大量同端口连接但协议特征不符 → 标记
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>2. 流量统计特征:
-</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>   ✗ 熵值分析(加密数据随机性检测)
-</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>   ✗ 包长度分布模式识别
-</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>   ✗ 发包间隔时序分析
-</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>   ✗ 流量突发模式异常
-</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
-</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>3. TLS指纹识别:
-</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>   ✗ JA3/JA4指纹库匹配(Client Hello特征)
-</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>   ✗ 服务器证书链分析
-</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>   ✗ SNI(Server Name Indication)域名检查
-</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>   ✗ ALPN协议协商异常
-</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>
-</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>4. 主动探测攻击:
-</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>   ✗ 模拟客户端连接可疑服务器
-</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>   ✗ 证书重放攻击检测
-</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>   ✗ 无效数据包响应测试
-</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>   ✗ 时间关联分析
-</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
-</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>5. 行为模式分析:
-</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>   ✗ 连接时长统计异常
-</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>   ✗ 流量方向性分析
-</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>   ✗ 连接频率模式识别
-</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>   ✗ 机器学习模型检测(近年新增)
-</span></code></pre></div>
-<h3 id="342">3.4.2 流量混淆技术<a class="headerlink" href="#342" title="Permanent link">&para;</a></h3>
-<p><strong>1. 简单混淆（http_simple, tls1.2_ticket_auth等）</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>原始Shadowsocks流量：
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>[随机数据...] (虽然加密但有特征)
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>混淆后：
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>[伪造的HTTP头]
-</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>GET / HTTP/1.1
-</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>Host: www.bing.com
-</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>[...实际加密数据...]
-</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
-</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>防火墙看到：像是访问Bing的HTTP流量
-</span></code></pre></div>
-<p><strong>2. TLS伪装</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>真正的HTTPS连接特征：
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>Client Hello (TLS) → Server Hello → Certificate → ...
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>伪装的TLS：
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>模仿Client Hello结构
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>伪造Server Name Indication (SNI)
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>使用真实网站域名作为掩护
-</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
-</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>结果：看起来像在访问正常HTTPS网站
-</span></code></pre></div>
-<p><strong>3. WebSocket伪装</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>WebSocket协议特点:
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>1. 通过HTTP升级建立
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>2. 长连接,双向通信
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>3. 广泛用于聊天、推送、在线协作
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
-</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>伪装方案:
-</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>HTTP请求升级到WebSocket
-</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>GET /chat HTTP/1.1
-</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>Upgrade: websocket
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>Connection: Upgrade
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>Sec-WebSocket-Version: 13
-</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>↓
-</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>在WebSocket通道内传输代理数据
-</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>↓
-</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>防火墙认为是正常的Web应用
-</span></code></pre></div>
-<p><strong>4. gRPC伪装</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>gRPC特点:
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>- 基于HTTP/2的RPC框架
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>- Google开发,微服务架构广泛采用
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>- 正常业务流量,防火墙难以区分
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>- Kubernetes、云原生应用大量使用
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>Xray gRPC模式:
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>使用gRPC作为传输层
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>流量特征与正常gRPC API完全一致
-</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>支持multiplexing多路复用
-</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>内置flow control流控机制
-</span></code></pre></div>
-<p><strong>5. QUIC/HTTP3伪装</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>QUIC技术优势:
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>- UDP协议基础,绕过TCP针对性封锁
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>- 内置1-RTT/0-RTT握手,首次连接&lt;5ms
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>- 内建加密,无明文握手阶段
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>- 连接迁移,网络切换不断线
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>- HTTP/3正式标准(RFC 9114, 2022年)
-</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
-</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>Hysteria2/TUIC实现:
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>完全基于QUIC协议构建
-</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>伪装成普通HTTP/3流量
-</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>拥塞控制采用BBR/Brutal算法
-</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>弱网丢包率20%仍可稳定使用
-</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>测试吞吐量可达7.5Gbps
-</span></code></pre></div>
-<h3 id="343-cdn">3.4.3 CDN中转技术<a class="headerlink" href="#343-cdn" title="Permanent link">&para;</a></h3>
-<p><strong>CDN加速+隐藏真实IP：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>传统方案问题：
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>用户 ──────► VPS服务器IP ──────► 目标网站
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>            (IP暴露，易被封)
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
-</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>使用CDN：
-</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>用户 ──► Cloudflare CDN ──► 源站服务器 ──► 目标网站
-</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>        (大量CDN节点)    (真实IP隐藏)
-</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
-</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>优势：
-</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>✓ 真实服务器IP不暴露
-</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>✓ CDN的IP太多，难以全部封锁
-</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>✓ 流量看起来是访问CDN的正常网站
-</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>✓ CDN本身提供加速
-</span></code></pre></div>
-<p><strong>WebSocket + TLS + CDN组合：</strong>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="na">V2Ray配置示例：</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="na">{</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span><span class="na">"streamSettings"</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="na">"network"</span><span class="o">:</span><span class="w"> </span><span class="s">"ws"</span><span class="na">,           // 使用WebSocket</span>
-</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">    </span><span class="na">"security"</span><span class="o">:</span><span class="w"> </span><span class="s">"tls"</span><span class="na">,         // 启用TLS加密</span>
-</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">    </span><span class="na">"tlsSettings"</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
-</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">      </span><span class="na">"serverName"</span><span class="o">:</span><span class="w"> </span><span class="s">"yoursite.com"</span>
-</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">    </span><span class="na">},</span>
-</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">    </span><span class="na">"wsSettings"</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
-</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="w">      </span><span class="na">"path"</span><span class="o">:</span><span class="w"> </span><span class="s">"/websocket"</span><span class="w">     </span><span class="na">// WebSocket路径</span>
-</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="w">    </span><span class="na">}</span>
-</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="w">  </span><span class="na">}</span>
-</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="na">}</span>
-</span></code></pre></div></p>
-<h3 id="344">3.4.4 协议伪装案例<a class="headerlink" href="#344" title="Permanent link">&para;</a></h3>
-<p><strong>Trojan协议的伪装策略：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Trojan设计哲学：
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>"如果流量看起来完全像HTTPS，就无法被识别"
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>实现方式：
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>1. 使用真实的TLS证书
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>2. 在真实Web服务器上运行
-</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>3. 流量与正常HTTPS完全相同
-</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>4. 通过密码区分真实用户和探测
-</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>
-</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>流程：
-</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>防火墙探测 ──► Trojan服务器
-</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>              │
-</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>        密码错误？
-</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>              ↓
-</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a>        返回真实网站内容
-</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>        (防火墙认为是正常网站)
-</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a>
-</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a>真实用户 ──► 密码正确 ──► 建立代理连接
-</span></code></pre></div>
-<p><strong>VMess + WebSocket + TLS + Nginx(经典方案):</strong></p>
-<div class="language-nginx highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="w"> </span><span class="s">http2</span><span class="p">;</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">yoursite.com</span><span class="p">;</span>
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="kn">ssl_certificate</span><span class="w"> </span><span class="s">/path/to/fullchain.pem</span><span class="p">;</span>
-</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">    </span><span class="kn">ssl_certificate_key</span><span class="w"> </span><span class="s">/path/to/privkey.pem</span><span class="p">;</span>
-</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">    </span><span class="kn">ssl_protocols</span><span class="w"> </span><span class="s">TLSv1.2</span><span class="w"> </span><span class="s">TLSv1.3</span><span class="p">;</span>
-</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="w">    </span><span class="kn">ssl_ciphers</span><span class="w"> </span><span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>
-</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>
-</span><span id="__span-36-10"><a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-36-11"><a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="w">        </span><span class="c1"># 正常网站内容</span>
-</span><span id="__span-36-12"><a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="w">        </span><span class="kn">root</span><span class="w"> </span><span class="s">/var/www/html</span><span class="p">;</span>
-</span><span id="__span-36-13"><a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a><span class="w">        </span><span class="kn">index</span><span class="w"> </span><span class="s">index.html</span><span class="p">;</span>
-</span><span id="__span-36-14"><a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-36-15"><a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a>
-</span><span id="__span-36-16"><a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/secret-path</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-36-17"><a id="__codelineno-36-17" name="__codelineno-36-17" href="#__codelineno-36-17"></a><span class="w">        </span><span class="c1"># WebSocket代理到V2Ray</span>
-</span><span id="__span-36-18"><a id="__codelineno-36-18" name="__codelineno-36-18" href="#__codelineno-36-18"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://127.0.0.1:10000</span><span class="p">;</span>
-</span><span id="__span-36-19"><a id="__codelineno-36-19" name="__codelineno-36-19" href="#__codelineno-36-19"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
-</span><span id="__span-36-20"><a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
-</span><span id="__span-36-21"><a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">"upgrade"</span><span class="p">;</span>
-</span><span id="__span-36-22"><a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
-</span><span id="__span-36-23"><a id="__codelineno-36-23" name="__codelineno-36-23" href="#__codelineno-36-23"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
-</span><span id="__span-36-24"><a id="__codelineno-36-24" name="__codelineno-36-24" href="#__codelineno-36-24"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-36-25"><a id="__codelineno-36-25" name="__codelineno-36-25" href="#__codelineno-36-25"></a><span class="p">}</span>
-</span><span id="__span-36-26"><a id="__codelineno-36-26" name="__codelineno-36-26" href="#__codelineno-36-26"></a>
-</span><span id="__span-36-27"><a id="__codelineno-36-27" name="__codelineno-36-27" href="#__codelineno-36-27"></a><span class="k">结果:</span>
-</span><span id="__span-36-28"><a id="__codelineno-36-28" name="__codelineno-36-28" href="#__codelineno-36-28"></a><span class="s">-</span><span class="w"> </span><span class="s">访问首页:看到真实网站</span>
-</span><span id="__span-36-29"><a id="__codelineno-36-29" name="__codelineno-36-29" href="#__codelineno-36-29"></a><span class="s">-</span><span class="w"> </span><span class="s">访问/secret-path:进入V2Ray隧道</span>
-</span><span id="__span-36-30"><a id="__codelineno-36-30" name="__codelineno-36-30" href="#__codelineno-36-30"></a><span class="s">-</span><span class="w"> </span><span class="s">防火墙无法区分</span>
-</span></code></pre></div>
-<p><strong>Reality协议(最新抗审查技术):</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Reality设计理念:
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>"借用"真实网站的TLS指纹
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>完全模拟目标网站的握手过程
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>无需自己的域名和证书
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>技术原理:
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>1. 客户端发起连接到Reality服务器
-</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>2. 握手时借用指定网站(如microsoft.com)的证书
-</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>3. 对外呈现与目标网站完全相同的TLS特征
-</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>4. 通过隐藏字段识别真实用户
-</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>5. 非法探测只能看到真实网站的响应
-</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
-</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>实测优势(2023年发布以来):
-</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>✓ 无需购买域名和SSL证书
-</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>✓ TLS指纹100%真实
-</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>✓ 抗主动探测能力极强
-</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>✓ 配置相对简单
-</span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>✓ 已在多国成功抵御封锁
-</span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>✓ 支持xtls-rprx-vision流控
-</span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>
-</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>局限性:
-</span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>- 依赖目标网站稳定性
-</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>- 需选择合适的"掩护"网站
-</span></code></pre></div>
-<h2 id="35">3.5 加密传输机制<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
-<h3 id="351">3.5.1 端到端加密<a class="headerlink" href="#351" title="Permanent link">&para;</a></h3>
-<p><strong>加密的层次：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>多层加密保护：
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>应用层：HTTPS/TLS
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>  ↓ [加密应用数据]
-</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>代理层：Shadowsocks/VMess
-</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>  ↓ [再次加密]
-</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>传输层：TCP/WebSocket
-</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>  ↓
-</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>最终传输：双重加密的数据流
-</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>
-</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>即使代理层被破解，应用层仍然安全
-</span></code></pre></div>
-<p><strong>Shadowsocks加密流程：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>发送端：
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>明文数据 → [加密算法 + 密码] → 密文 → 发送
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>            ↓
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>        AES-256-GCM
-</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>        ChaCha20-Poly1305
-</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
-</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>接收端：
-</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>接收 → 密文 → [解密算法 + 密码] → 明文数据
-</span></code></pre></div>
-<h3 id="352-aead">3.5.2 认证加密（AEAD）<a class="headerlink" href="#352-aead" title="Permanent link">&para;</a></h3>
-<p><strong>什么是AEAD？</strong></p>
-<p>AEAD (Authenticated Encryption with Associated Data)
-= 加密 + 完整性验证</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>传统加密问题：
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>密文可能被篡改，接收方无法察觉
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
-</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>AEAD解决方案：
-</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>加密的同时生成认证标签（MAC）
-</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>┌──────────┬─────────┐
-</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>│ 密文数据  │ 认证标签 │
-</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>└──────────┴─────────┘
-</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>
-</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>接收方：
-</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>1. 验证标签是否匹配
-</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>2. 如果被篡改，标签验证失败
-</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>3. 拒绝解密，保证安全
-</span></code></pre></div>
-<p><strong>推荐的AEAD算法:</strong></p>
 <table>
 <thead>
 <tr>
-<th>算法</th>
-<th>密钥长度</th>
-<th>性能</th>
-<th>安全性</th>
-<th>推荐场景</th>
-<th>状态</th>
+<th>类型</th>
+<th>把什么放进去？</th>
+<th>是否自带加密？</th>
+<th>常见用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>AES-128-GCM</strong></td>
-<td>128位</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐</td>
-<td>通用,硬件加速</td>
-<td>✅</td>
+<td><strong>IP-in-IP</strong></td>
+<td>一个IP包放进另一个IP包</td>
+<td>否</td>
+<td>跨网络传送IP流量</td>
 </tr>
 <tr>
-<td><strong>AES-256-GCM</strong></td>
-<td>256位</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>更高安全需求</td>
-<td>✅✅</td>
+<td><strong>GRE</strong></td>
+<td>多种网络层协议或数据</td>
+<td>否</td>
+<td>路由器之间的隧道，常与IPsec组合</td>
+</tr>
+<tr>
+<td><strong>TLS隧道</strong></td>
+<td>字节流或应用协议</td>
+<td>TLS提供相应保护</td>
+<td>受保护的远程连接</td>
+</tr>
+<tr>
+<td><strong>SSH转发</strong></td>
+<td>TCP连接或SOCKS请求</td>
+<td>SSH提供相应保护</td>
+<td>远程管理、端口转发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="333-ssh">3.3.3 SSH端口转发<a class="headerlink" href="#333-ssh" title="Permanent link">&para;</a></h3>
+<p>下面的命令都使用<code>-N</code>，表示只建立转发，不执行远端命令。</p>
+<p><strong>本地转发（</strong><code>-L</code><strong>）</strong>：本地端口 → SSH服务器 → 目标服务。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">127</span>.0.0.1:15432:db.internal.example:5432<span class="w"> </span>user@ssh.example.com
+</span></code></pre></div>
+<p>访问本机<code>127.0.0.1:15432</code>时，由远端SSH服务器连接<code>db.internal.example:5432</code>。</p>
+<p><strong>远程转发（</strong><code>-R</code><strong>）</strong>：SSH服务器端口 → SSH客户端 → 客户端本地服务。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-R<span class="w"> </span><span class="m">127</span>.0.0.1:18080:127.0.0.1:8080<span class="w"> </span>user@ssh.example.com
+</span></code></pre></div>
+<p>最终能否监听以及监听范围，受SSH服务器配置限制。</p>
+<p><strong>动态转发（</strong><code>-D</code><strong>）</strong>：在本地提供SOCKS接入。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-D<span class="w"> </span><span class="m">127</span>.0.0.1:1080<span class="w"> </span>user@ssh.example.com
+</span></code></pre></div>
+<p>OpenSSH的动态转发主要建立TCP连接，不等于完整支持SOCKS5 UDP转发。</p>
+<h3 id="334">3.3.4 加密代理的隧道过程<a class="headerlink" href="#334" title="Permanent link">&para;</a></h3>
+<p>以加密代理为例，数据大致经过以下步骤：</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant A as 应用
+    participant C as 本地代理客户端
+    participant S as 远端代理服务器
+    participant T as 目标服务
+    A-&gt;&gt;C: 提交目标地址和应用数据
+    C-&gt;&gt;S: 认证加密后的目标与数据
+    S-&gt;&gt;S: 验证消息并恢复目标信息
+    S-&gt;&gt;T: 建立连接并转发数据
+    T--&gt;&gt;S: 返回响应
+    S--&gt;&gt;C: 认证加密后的响应
+    C--&gt;&gt;A: 验证、解密并交付响应</code></pre>
+<p><em>图3-9 加密代理客户端、服务器和目标服务</em></p>
+<p>具体字段和密钥派生由协议规范决定。应用HTTPS与代理协议的加密是两层不同保护，不能因为“有一层加密”就忽略另一层的端点。</p>
+<h2 id="34">3.4 流量特征与承载方式<a class="headerlink" href="#34" title="Permanent link">&para;</a></h2>
+<h3 id="341">3.4.1 为什么会观察流量特征<a class="headerlink" href="#341" title="Permanent link">&para;</a></h3>
+<p>加密通常隐藏应用内容，但网络路径上的设备仍可能观察：</p>
+<table>
+<thead>
+<tr>
+<th>观察内容</th>
+<th>可能得到的信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>端点信息</strong></td>
+<td>IP、端口、服务器所属网络</td>
+</tr>
+<tr>
+<td><strong>握手信息</strong></td>
+<td>TLS版本、扩展、ALPN、未受保护的名称字段</td>
+</tr>
+<tr>
+<td><strong>统计特征</strong></td>
+<td>包长、方向、时间间隔、连接频率</td>
+</tr>
+<tr>
+<td><strong>主动响应</strong></td>
+<td>服务器对正常或异常输入的回应方式</td>
+</tr>
+</tbody>
+</table>
+<p>这些信息只能作为判断线索。单个端口、证书或指纹不能单独证明某个连接属于某种应用。</p>
+<p>**伪装/承载的目标**是减少明显差异，让连接遵守某种常见协议的格式或行为。它不能保证不可识别，也不能替代正确的认证和安全更新。</p>
+<h3 id="342">3.4.2 常见承载方式<a class="headerlink" href="#342" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>承载方式</th>
+<th>可以怎样理解？</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TLS</strong></td>
+<td>在TLS连接里传输数据</td>
+<td>证书、域名、握手和后续行为都要正确配置</td>
+</tr>
+<tr>
+<td><strong>WebSocket</strong></td>
+<td>先HTTP升级，再建立双向长连接</td>
+<td>WebSocket本身不加密，通常与TLS一起使用</td>
+</tr>
+<tr>
+<td><strong>gRPC</strong></td>
+<td>使用HTTP/2的RPC消息承载数据</td>
+<td>需要服务端、路径和客户端实现匹配</td>
+</tr>
+<tr>
+<td><strong>QUIC/HTTP/3</strong></td>
+<td>在UDP上承载加密、多路复用连接</td>
+<td>依赖UDP可达性，性能取决于线路和拥塞控制</td>
+</tr>
+<tr>
+<td><strong>简单混淆</strong></td>
+<td>添加类似HTTP/TLS的表面格式</td>
+<td>若协议状态机不完整，仍可能暴露差异</td>
+</tr>
+</tbody>
+</table>
+<p>使用真实协议承载时，需要遵守协议的握手、错误处理、超时和连接行为。仅“看起来像”某种协议，不能保证表现一致。</p>
+<h3 id="343-cdn">3.4.3 CDN与反向代理中转<a class="headerlink" href="#343-cdn" title="Permanent link">&para;</a></h3>
+<p>CDN或反向代理可以作为公开入口，再把受支持的请求转发到源站：</p>
+<pre class="mermaid"><code>flowchart LR
+    U["用户"] --&gt; C["CDN/反向代理入口&lt;br/&gt;用户看到的地址"] --&gt; S["源站&lt;br/&gt;真实服务地址"] --&gt; T["后端目标服务"]</code></pre>
+<p><em>图3-10 CDN或反向代理的回源关系</em></p>
+<p><strong>它能改变什么？</strong> 用户连接的是入口地址，源站地址可能不直接暴露；入口还可以提供TLS终止、缓存或负载分配。</p>
+<p><strong>它不能自动解决什么？</strong></p>
+<ul>
+<li>普通HTTP CDN不一定支持任意TCP、UDP或长连接。</li>
+<li>WebSocket、gRPC、带宽和连接时长要看服务商支持及条款。</li>
+<li>源站若直接暴露或配置不当，真实地址仍可能被发现。</li>
+<li>中转会增加回源距离和一跳开销，速度不一定更快。</li>
+</ul>
+<h3 id="344">3.4.4 两个常见例子<a class="headerlink" href="#344" title="Permanent link">&para;</a></h3>
+<p><strong>Trojan：TLS连接中的认证与转发</strong></p>
+<p>Trojan通常在TLS连接中检查认证信息：通过认证的连接进入代理处理，未通过的连接则按实现和配置回落或拒绝。</p>
+<pre class="mermaid"><code>flowchart TD
+    A["到达服务端的TLS连接"] --&gt; B{"通过协议认证？"}
+    B --&gt;|是| C["连接目标并转发"]
+    B --&gt;|否| D["按配置回落或拒绝"]
+    D --&gt; E["可返回普通网站内容"]</code></pre>
+<p><em>图3-11 Trojan认证后的分流处理</em></p>
+<p><strong>WebSocket + TLS + Nginx</strong></p>
+<p>Nginx可以提供普通网站，同时把指定路径的WebSocket连接转给本机代理服务。这里的职责分别是：Nginx处理外层TLS和HTTP路由，WebSocket承载双向数据，代理协议负责认证和转发。</p>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">location</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/proxy-ws</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://127.0.0.1:10000</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">"upgrade"</span><span class="p">;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>路径只是路由条件，不是凭据；认证仍由代理协议或服务端配置负责。</p>
+<p>**REALITY**是Xray生态中的传输安全机制，VLESS、REALITY和XTLS Vision承担不同职责。具体配置依赖版本、密钥、SNI、shortId和目标服务要求；服务端IP、连接时间和流量元数据仍可能被观察。</p>
+<h2 id="35">3.5 加密传输机制<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
+<h3 id="351">3.5.1 先看加密边界<a class="headerlink" href="#351" title="Permanent link">&para;</a></h3>
+<p>“端到端”必须先说清楚是哪两个端点。普通HTTPS代理中，网站TLS通常仍是浏览器到目标网站；代理隧道则是客户端到远端代理服务器。</p>
+<table>
+<thead>
+<tr>
+<th>保护层</th>
+<th>两端是谁？</th>
+<th>中间节点通常能看到什么？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>网站HTTPS</strong></td>
+<td>浏览器 ↔ 目标网站</td>
+<td>目标地址、时间、流量大小等元数据；通常不能读取正文</td>
+</tr>
+<tr>
+<td><strong>代理隧道</strong></td>
+<td>本地客户端 ↔ 远端代理</td>
+<td>外层端点和流量元数据；隧道内容由协议保护</td>
+</tr>
+<tr>
+<td><strong>外层TLS在CDN终止</strong></td>
+<td>客户端 ↔ CDN，CDN ↔ 源站</td>
+<td>CDN可处理它终止的HTTP消息；内层独立加密另行判断</td>
+</tr>
+</tbody>
+</table>
+<p><strong>加密不等于匿名</strong>：登录账号、Cookie、设备特征和服务商日志仍可能关联身份。</p>
+<h3 id="352-aead">3.5.2 认证加密（AEAD）<a class="headerlink" href="#352-aead" title="Permanent link">&para;</a></h3>
+<p>AEAD同时完成两件事：</p>
+<ul>
+<li><strong>加密</strong>：保护内容不被直接读取。</li>
+<li><strong>认证</strong>：检查内容有没有被篡改。</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    A["明文 + 密钥 + nonce"] --&gt; B["AEAD加密"] --&gt; C["密文 + 认证标签"]
+    C --&gt; D{"标签验证成功？"}
+    D --&gt;|是| E["解密并交付"]
+    D --&gt;|否| F["拒绝消息"]</code></pre>
+<p><em>图3-12 AEAD的基本过程</em></p>
+<table>
+<thead>
+<tr>
+<th>构造</th>
+<th>常见用途</th>
+<th>初学者注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AES-GCM</strong></td>
+<td>TLS及其他安全协议</td>
+<td>性能受设备硬件加速影响</td>
 </tr>
 <tr>
 <td><strong>ChaCha20-Poly1305</strong></td>
-<td>256位</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>移动设备首选</td>
-<td>✅✅</td>
+<td>TLS、代理和移动设备</td>
+<td>由协议规定密钥、nonce和消息格式</td>
 </tr>
 <tr>
 <td><strong>XChaCha20-Poly1305</strong></td>
-<td>256位</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>更大nonce空间</td>
-<td>✅✅</td>
+<td>明确支持它的协议或库</td>
+<td>不能直接替代其他协议中的ChaCha20-Poly1305</td>
+</tr>
+<tr>
+<td><strong>DES/3DES</strong></td>
+<td>历史系统</td>
+<td>不适合新的安全部署</td>
 </tr>
 </tbody>
 </table>
+<p>nonce通常不需要保密，但同一密钥下必须遵守协议规定的唯一性和使用次数限制。认证成功前，不应把未验证内容交给应用。</p>
 <h3 id="353">3.5.3 密钥派生与管理<a class="headerlink" href="#353" title="Permanent link">&para;</a></h3>
-<p><strong>密钥派生函数（KDF）：</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>从简单密码生成强密钥：
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>用户密码："mypassword123"
-</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>   ↓ [PBKDF2/HKDF/bcrypt]
-</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>   ↓ (加盐 + 多次哈希)
-</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>   ↓
-</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>强密钥：0x8a3f2b9c1e5d7f... (256位随机)
-</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>
-</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>防止：
-</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>✗ 弱密码直接用作密钥
-</span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>✗ 彩虹表攻击
-</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>✗ 暴力破解
+<p>不同输入要用不同的密钥处理方式：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>常见机制</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>用户口令 → 密钥</strong></td>
+<td>Argon2id、scrypt、PBKDF2</td>
+<td>增加猜测成本，仍需要强口令</td>
+</tr>
+<tr>
+<td><strong>共享秘密 → 会话密钥</strong></td>
+<td>HKDF等</td>
+<td>按用途和上下文派生不同密钥</td>
+</tr>
+<tr>
+<td><strong>随机预共享密钥</strong></td>
+<td>安全随机数生成器</td>
+<td>直接生成协议要求长度的秘密材料</td>
+</tr>
+<tr>
+<td><strong>用户标识</strong></td>
+<td>UUID或协议凭据</td>
+<td>用于匹配和认证，不自动提供加密</td>
+</tr>
+</tbody>
+</table>
+<p>私钥、预共享密钥和认证凭据都应当保密。泄露后应撤销或更换，并同步更新通信两端；配置备份和日志也可能泄露这些信息。</p>
+<p>以Shadowsocks 2022为例，方法名称和密钥长度必须匹配：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>原始密钥长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2022-blake3-aes-128-gcm</code></td>
+<td>16字节</td>
+</tr>
+<tr>
+<td><code>2022-blake3-aes-256-gcm</code></td>
+<td>32字节</td>
+</tr>
+<tr>
+<td><code>2022-blake3-chacha20-poly1305</code></td>
+<td>32字节</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">32</span>
 </span></code></pre></div>
-<p><strong>Shadowsocks密钥派生：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>主密码 → EVP_BytesToKey → 加密密钥 + IV
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>         (MD5多次迭代)
-</span></code></pre></div></p>
-<p><strong>V2Ray UUID机制:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>用户ID:550e8400-e29b-41d4-a716-446655440000
-</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>        (UUID v4,随机生成)
-</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
-</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>作用:
-</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>- 用户身份标识
-</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>- 防止重放攻击(结合时间戳)
-</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>- 流量统计和管理
-</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>- 多用户隔离
-</span></code></pre></div></p>
-<p><strong>Shadowsocks 2022版本(2022年发布):</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>重大改进:
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>- 采用预共享密钥(PSK)体系
-</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>- 强制使用AEAD加密(AES-GCM/ChaCha20-Poly1305)
-</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>- 内置完整的重放攻击防护
-</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>- 使用Blake3高性能哈希算法
-</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>- 消除TCP重放过滤问题
-</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>- UDP流量增加重放保护
-</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>
-</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a>推荐加密方法:
-</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a>- 2022-blake3-aes-128-gcm
-</span><span id="__span-44-11"><a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a>- 2022-blake3-aes-256-gcm  
-</span><span id="__span-44-12"><a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a>- 2022-blake3-chacha20-poly1305
-</span><span id="__span-44-13"><a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a>
-</span><span id="__span-44-14"><a id="__codelineno-44-14" name="__codelineno-44-14" href="#__codelineno-44-14"></a>密钥生成:
-</span><span id="__span-44-15"><a id="__codelineno-44-15" name="__codelineno-44-15" href="#__codelineno-44-15"></a>openssl rand -base64 32
-</span><span id="__span-44-16"><a id="__codelineno-44-16" name="__codelineno-44-16" href="#__codelineno-44-16"></a>密钥格式: 2022-blake3-aes-256-gcm:YourBase64Key==
-</span><span id="__span-44-17"><a id="__codelineno-44-17" name="__codelineno-44-17" href="#__codelineno-44-17"></a>
-</span><span id="__span-44-18"><a id="__codelineno-44-18" name="__codelineno-44-18" href="#__codelineno-44-18"></a>相比旧版优势:
-</span><span id="__span-44-19"><a id="__codelineno-44-19" name="__codelineno-44-19" href="#__codelineno-44-19"></a>✓ 消除已知安全漏洞
-</span><span id="__span-44-20"><a id="__codelineno-44-20" name="__codelineno-44-20" href="#__codelineno-44-20"></a>✓ 性能显著提升
-</span><span id="__span-44-21"><a id="__codelineno-44-21" name="__codelineno-44-21" href="#__codelineno-44-21"></a>✓ 完整的重放保护
-</span><span id="__span-44-22"><a id="__codelineno-44-22" name="__codelineno-44-22" href="#__codelineno-44-22"></a>✓ 更规范的密钥管理
-</span></code></pre></div></p>
+<p>命令生成的是32个随机字节的Base64表示。具体字段格式以所用实现和协议规范为准。</p>
 <h3 id="354">3.5.4 防重放攻击<a class="headerlink" href="#354" title="Permanent link">&para;</a></h3>
-<p><strong>重放攻击原理：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>攻击者：
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>1. 截获合法用户的加密数据包
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>2. 不解密，直接重新发送
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>3. 冒充合法用户访问
-</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>
-</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>结果：即使加密也不安全
-</span></code></pre></div></p>
-<p><strong>防御机制：</strong></p>
-<p><strong>1. 时间戳验证</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>数据包结构：
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>┌──────────┬──────────┬─────────┐
-</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>│ 时间戳    │ 随机数    │ 实际数据 │
-</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>└──────────┴──────────┴─────────┘
-</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>
-</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>服务器验证：
-</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>if (|收到的时间戳 - 当前时间| &gt; 30秒) {
-</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>    拒绝连接; // 可能是重放攻击
-</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>}
-</span></code></pre></div></p>
-<p><strong>2. Nonce（一次性随机数）</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>每个数据包使用唯一的Nonce
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>服务器记录已使用的Nonce
-</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>重复的Nonce → 检测到重放 → 拒绝
-</span></code></pre></div></p>
-<p><strong>3. 序列号机制</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>TCP序列号：
-</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>每个包有递增的序列号
-</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>接收方检查序列号连续性
-</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>乱序/重复 → 丢弃
-</span></code></pre></div></p>
+<p>重放攻击是把以前捕获的有效消息再次提交。攻击者不需要解密，原有认证标签也可能仍然有效。</p>
+<table>
+<thead>
+<tr>
+<th>防护方式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>时间窗口</strong></td>
+<td>拒绝过旧或时间异常的消息</td>
+</tr>
+<tr>
+<td><strong>已用标识记录</strong></td>
+<td>拒绝重复的盐、请求ID或随机数</td>
+</tr>
+<tr>
+<td><strong>序号和滑动窗口</strong></td>
+<td>接受合理范围内的新消息，拒绝重复或过旧消息</td>
+</tr>
+<tr>
+<td><strong>挑战与会话绑定</strong></td>
+<td>把消息绑定到当前交互，减少跨会话复用</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TD
+    A["收到消息"] --&gt; B["验证格式和认证标签"]
+    B --&gt; C{"认证通过？"}
+    C --&gt;|否| R["拒绝"]
+    C --&gt;|是| D["检查时间、序号和已用标识"]
+    D --&gt; E{"符合接收条件？"}
+    E --&gt;|否| R
+    E --&gt;|是| F["更新状态并交付内容"]</code></pre>
+<p><em>图3-13 认证与防重放检查</em></p>
+<p>AEAD只证明消息完整、并由持有密钥的一方生成，不会自动记住“这条消息以前是否处理过”。TLS 1.3和QUIC的0-RTT早期数据也有重放风险，应用需要限制其可执行的操作。</p>
 <h3 id="355-pfs">3.5.5 完美前向保密（PFS）<a class="headerlink" href="#355-pfs" title="Permanent link">&para;</a></h3>
-<p><strong>什么是PFS？</strong></p>
-<p>Perfect Forward Secrecy：即使长期密钥泄露，过去的通信仍然安全。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>没有PFS：
-</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>长期密钥泄露 → 所有历史通信被解密
-</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>
-</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>有PFS：
-</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>长期密钥仅用于身份认证
-</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>实际加密使用临时会话密钥
-</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>会话结束后密钥销毁
-</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>→ 历史通信无法解密
-</span></code></pre></div>
-<p><strong>实现方式：</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>TLS 1.3 握手（支持PFS）：
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>
-</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>1. 客户端生成临时密钥对 (ephemeral key)
-</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>2. 服务器生成临时密钥对
-</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>3. 通过ECDHE交换公钥
-</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>4. 各自计算会话密钥
-</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>5. 使用会话密钥加密通信
-</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>6. 连接结束销毁临时密钥
-</span><span id="__span-50-9"><a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>
-</span><span id="__span-50-10"><a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a>即使服务器私钥泄露，
-</span><span id="__span-50-11"><a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a>攻击者仍无法解密过去的会话
-</span></code></pre></div></p>
+<p>前向保密关注一个问题：<strong>长期身份密钥以后泄露，过去的会话还能不能被解密？</strong></p>
+<p>常见做法是使用临时Diffie–Hellman密钥交换：长期密钥负责认证，临时密钥负责生成本次会话的流量密钥。</p>
+<pre class="mermaid"><code>flowchart LR
+    A["长期身份密钥"] --&gt;|认证| B["临时密钥交换"]
+    B --&gt; C["本次会话共享秘密"] --&gt; D["本次会话流量密钥"] --&gt; E["保护通信"]
+    E --&gt; F["结束后销毁临时秘密"]</code></pre>
+<p><em>图3-14 长期身份认证与临时会话密钥的分工</em></p>
+<p>前向保密需要正确的协议、实现和密钥销毁。终端已被控制、会话密钥直接泄露，属于另一类风险。Shadowsocks 2022的预共享密钥模式不提供传统意义上的前向保密；如果其中继续承载正确验证的HTTPS，网站TLS层仍需单独判断。</p>
 <hr />
 <h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>本章深入探讨了科学上网的核心技术原理：</p>
-<p><strong>关键技术点：</strong></p>
 <ol>
-<li><strong>代理服务器</strong>：通过流量中转和IP替换实现访问</li>
-<li><strong>VPN隧道</strong>：在网络层建立加密通道，保护所有流量</li>
-<li><strong>隧道技术</strong>：协议封装，在受限网络中建立自由通道</li>
-<li><strong>流量伪装</strong>：对抗DPI检测，模仿正常HTTPS流量</li>
-<li><strong>加密机制</strong>：多层加密+认证，确保通信安全</li>
+<li>**正向代理**代表客户端访问外部服务；**反向代理**代表网站接收用户访问。</li>
+<li>**HTTP CONNECT和SOCKS5**先协商目标，再建立连接或转发数据；协议本身是否加密要单独确认。</li>
+<li>**VPN**通常处理IP包，流量范围由系统路由和安全策略决定，也可以分流。</li>
+<li>**隧道**负责封装和传输，封装本身不等于加密；额外头部会影响MTU。</li>
+<li>**承载和伪装**改变连接呈现方式，但不能保证不可识别或自动匿名。</li>
+<li>**AEAD、防重放、密钥派生和PFS**解决的是不同问题，不能相互替代。</li>
 </ol>
-<p><strong>技术演进趋势:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>简单代理 → 加密代理 → 流量伪装 → 行为模拟 → 智能对抗
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a> (易封)    (特征检测)   (主动探测)   (难以区分)  (持续博弈)
-</span></code></pre></div></p>
-<p><strong>前沿技术方向:</strong></p>
+<p>排查一次连接时，可以按这个顺序思考：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>应用是否把请求交给了正确的代理？
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>        ↓
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>代理或VPN能否连接到下一跳？
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        ↓
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>DNS、路由、端口和MTU是否正常？
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        ↓
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>TLS/协议认证是否通过？
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        ↓
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>目标服务返回了什么结果？
+</span></code></pre></div>
+<h2 id="_2">动手思考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>QUIC协议普及</strong>:Hysteria2、TUIC等高性能实现,测试吞吐量7.5Gbps+</li>
-<li><strong>Reality技术</strong>:借用真实TLS指纹,无需证书,伊朗等地实测有效</li>
-<li><strong>ECH(Encrypted Client Hello)</strong>:加密SNI字段,RFC 9180标准推进中</li>
-<li><strong>多路径传输</strong>:MPTCP同时使用多条网络路径,提升稳定性</li>
-<li><strong>智能流量模拟</strong>:机器学习生成真实用户行为模式</li>
-<li><strong>去中心化方案</strong>:Tor、I2P等匿名网络技术应用</li>
-<li><strong>WebTransport</strong>:基于HTTP/3的新一代传输API</li>
+<li>正向代理和反向代理分别代表哪一方？用户在两种场景中连接的第一台服务器是谁？</li>
+<li>通过HTTP CONNECT访问HTTPS时，代理能看到目标网站正文吗？它还能看到哪些信息？</li>
+<li>SOCKS5的TCP控制连接和UDP中继分别做什么？</li>
+<li>WireGuard把<code>AllowedIPs</code>改为<code>0.0.0.0/0</code>后，流量范围会发生什么变化？</li>
+<li>为什么“封装了”不等于“加密了”？GRE和TLS隧道有什么区别？</li>
+<li>为什么AEAD认证成功，仍然不能单独防止重放？</li>
 </ol>
-<p><strong>核心理念：</strong></p>
+<h2 id="_3">延伸阅读<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>加密保安全</strong>：防窃听、防篡改</li>
-<li><strong>伪装防检测</strong>：模仿正常流量</li>
-<li><strong>灵活保可用</strong>：多协议、多节点</li>
-</ul>
-<p>在下一部分，我们将学习具体的代理协议和客户端工具的使用方法。</p>
-<hr />
-<p><strong>实践思考:</strong></p>
-<ol>
-<li>为什么Trojan要运行在真实网站上?</li>
-<li>CDN中转如何同时实现加速和隐藏IP?</li>
-<li>AEAD相比传统加密有什么优势?</li>
-<li>如何选择合适的加密算法?</li>
-<li>Reality协议相比传统TLS伪装有何优势?</li>
-<li>为什么QUIC协议在弱网环境下表现更好?</li>
-</ol>
-<p><strong>延伸阅读:</strong></p>
-<ul>
-<li>WireGuard白皮书(2020)</li>
-<li>Shadowsocks 2022版本设计文档</li>
-<li>Xray-core完整配置指南</li>
-<li>TLS 1.3协议规范(RFC 8446)</li>
-<li>QUIC协议规范(RFC 9000)</li>
-<li>Reality协议技术文档(2023)</li>
-<li>Hysteria2设计理念与实现</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110：HTTP语义</a>：CONNECT及代理相关语义。</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc1928.html">RFC 1928：SOCKS5</a>与<a href="https://www.rfc-editor.org/rfc/rfc1929.html">RFC 1929：用户名与密码认证</a>：代理协商、UDP关联与认证。</li>
+<li><a href="https://www.wireguard.com/protocol/">WireGuard协议说明</a>与<a href="https://git.zx2c4.com/wireguard-tools/about/src/man/wg-quick.8">wg-quick手册</a>：握手、对端和系统路由配置。</li>
+<li><a href="https://man.openbsd.org/ssh">OpenSSH ssh手册</a>：本地、远程和动态转发。</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc6455.html">RFC 6455：WebSocket</a>：升级握手和双向消息通道。</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc5116.html">RFC 5116：AEAD接口</a>与<a href="https://www.rfc-editor.org/rfc/rfc5869.html">RFC 5869：HKDF</a>：认证加密和密钥派生。</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc8446.html">RFC 8446：TLS 1.3</a>与<a href="https://www.rfc-editor.org/rfc/rfc9001.html">RFC 9001：QUIC中的TLS</a>：握手、0-RTT和传输保护。</li>
+<li><a href="https://github.com/shadowsocks/shadowsocks-org/blob/main/docs/doc/sip022.md">Shadowsocks 2022官方规范</a>：密钥、消息格式和重放防护。</li>
 </ul>
 
 

@@ -1,0 +1,2641 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="专业的科学上网技术文档 - 涵盖代理协议、客户端工具、服务器搭建、安全防护等完整知识体系">
+      
+      
+        <meta name="author" content="科学上网指南">
+      
+      
+        <link rel="canonical" href="https://ihmily.github.io/network-proxy-guide/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E5%AE%89%E5%85%A8%E4%B8%8E%E9%9A%90%E7%A7%81%E7%AF%87/%E7%AC%AC16%E7%AB%A0-%E5%AE%A1%E8%AE%A1%E4%B8%8E%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">
+      
+      
+        <link rel="prev" href="../%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/">
+      
+      
+        <link rel="next" href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>第16章 审计与日志管理 - 科学上网完全指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#16" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="科学上网完全指南" class="md-header__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            科学上网完全指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第16章 审计与日志管理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="科学上网完全指南" class="md-nav__button md-logo" aria-label="科学上网完全指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    科学上网完全指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ihmily/network-proxy-guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%E5%85%A8%E4%B9%A6%E5%A4%A7%E7%BA%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全书大纲
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础知识篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础知识篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC01%E7%AB%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第01章 什么是科学上网
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC02%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第02章 网络基础知识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AF%87/%E7%AC%AC03%E7%AB%A0-%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第03章 核心技术原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 主流协议与工具篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 主流协议与工具篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC04%E7%AB%A0-%E5%B8%B8%E8%A7%81%E4%BB%A3%E7%90%86%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第04章 常见代理协议详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC05%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第05章 客户端工具使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E4%B8%BB%E6%B5%81%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%B7%A5%E5%85%B7%E7%AF%87/%E7%AC%AC06%E7%AB%A0-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第06章 浏览器与插件方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 高级配置篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 高级配置篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC07%E7%AB%A0-%E8%AE%A2%E9%98%85%E4%B8%8E%E8%8A%82%E7%82%B9%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第07章 订阅与节点管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E7%AF%87/%E7%AC%AC08%E7%AB%A0-%E5%88%86%E6%B5%81%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第08章 分流规则详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 服务器搭建篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 服务器搭建篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC09%E7%AB%A0-VPS%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第09章 VPS选购指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC10%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 服务器环境配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 一键脚本部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC12%E7%AB%A0-%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 手动搭建教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%AF%87/%E7%AC%AC13%E7%AB%A0-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 多用户管理方案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 安全与隐私篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 安全与隐私篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC14%E7%AB%A0-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 网络安全防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 隐私保护实践
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 审计与日志管理
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 审计与日志管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="本章大纲">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      本章大纲
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 访问日志配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.1 访问日志配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1611" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1.1 日志的用途与范围
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1612-v2rayxray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1.2 V2Ray与Xray日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1613-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1.3 Nginx最小字段访问日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1614" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1.4 轮转、容量与保留
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 流量分析工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.2 流量分析工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1621" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2.1 接口与进程监控
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1622" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2.2 统计口径与结构化数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2.3 限速与限额的区别
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 异常检测机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.3 异常检测机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1631" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3.1 连接、资源与采集异常
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1632" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3.2 探测与认证失败检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1633" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3.3 分级响应与可撤销变更
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 日志隐私平衡
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.4 日志隐私平衡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1641" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4.1 按用途选择保存策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1642" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4.2 最小字段汇总与去标识化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1643" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4.3 加密、完整性与访问隔离
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1644" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4.4 到期处置与恢复验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 故障排查篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 故障排查篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 常见问题诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC18%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 网络测试工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 最佳实践篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 最佳实践篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC19%E7%AB%A0-%E4%B8%8D%E5%90%8C%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 不同场景应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC20%E7%AB%A0-%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 成本优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%B8%83%E9%83%A8%E5%88%86-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%AC%AC21%E7%AB%A0-%E5%90%88%E8%A7%84%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 合规使用建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95A-%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95C-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 资源索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%99%84%E5%BD%95/%E9%99%84%E5%BD%95D-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="16">第16章 审计与日志管理<a class="headerlink" href="#16" title="Permanent link">&para;</a></h1>
+<p>日志管理需要同时回答三个问题：为了什么记录、记录哪些字段，以及由谁保存多久。完全关闭诊断信息会降低故障与入侵发现能力，无限制记录又会增加隐私、存储和失守风险。合理的方案应把运行状态、用量统计、访问事件和管理审计分开处理。</p>
+<p>本章沿用第10—15章的systemd环境。V2Ray配置采用<code>v5.53.0</code>的传统JSON格式，Xray差异以<code>v26.10.21</code>说明；两者片段均应合并到已有完整配置。Nginx日志示例使用<code>escape=json</code>，要求<code>1.11.8</code>及以上版本。路径、服务用户、网卡和部署方式必须按实际环境核对，不让多个任务同时管理同一批日志。</p>
+<h2 id="161">16.1 访问日志配置<a class="headerlink" href="#161" title="Permanent link">&para;</a></h2>
+<h3 id="1611">16.1.1 日志的用途与范围<a class="headerlink" href="#1611" title="Permanent link">&para;</a></h3>
+<p>不同日志有不同的目的。运行诊断关注启动失败、上游不可达和资源耗尽；管理审计关注谁在何时修改了什么；流量计数器关注字节和统计周期。这些信息不应都通过保存每个用户访问的域名来获得。</p>
+<table>
+<thead>
+<tr>
+<th>数据类别</th>
+<th>典型用途</th>
+<th>应避免的额外采集</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行与错误日志</td>
+<td>故障定位、配置加载和资源异常</td>
+<td>密码、令牌、完整订阅与不必要的目标信息</td>
+</tr>
+<tr>
+<td>访问事件</td>
+<td>核对请求状态、入口与响应行为</td>
+<td>无明确用途的完整URL、Cookie及请求正文</td>
+</tr>
+<tr>
+<td>聚合指标</td>
+<td>容量、错误率和用量变化</td>
+<td>为统计总量而保留全部原始会话</td>
+</tr>
+<tr>
+<td>管理审计</td>
+<td>权限变更、账号停用、配置与备份操作</td>
+<td>变更对象的明文密码、私钥和完整配置秘密</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TD
+    A[明确诊断或审计问题] --&gt; B[选择能够回答问题的最少字段]
+    B --&gt; C[记录来源、时间与必要事件标识]
+    C --&gt; D[受限采集、传输和保存]
+    D --&gt; E[按用途查询或生成汇总]
+    E --&gt; F[到期处置并核对归档与备份]</code></pre>
+<p><em>图16-1 日志管理从用途开始，并覆盖采集到处置的完整过程</em></p>
+<p>日志中的时间、地址、账号标识和目标即使没有正文，也可能揭示使用关系。错误日志同样可能带有目标域名或连接上下文，不能只凭级别为<code>error</code>就判定没有敏感信息。提交工单前应检查具体字段和样本，避免把原始日志直接粘贴到公开讨论中。</p>
+<p>访问日志不能完整代表用户行为：缓存、长连接、多路复用、失败请求和采集丢失会改变记录数量。审计也不能只依赖本机可写文件；若需要抵抗主机失守后的篡改，应设计独立权限与远端留存，同时评估增加的接收方和数据副本。</p>
+<h3 id="1612-v2rayxray">16.1.2 V2Ray与Xray日志<a class="headerlink" href="#1612-v2rayxray" title="Permanent link">&para;</a></h3>
+<p><strong>显式设置访问与错误日志</strong></p>
+<p>下面的<code>log</code>片段适用于本章指定的V2Ray和Xray版本：关闭核心访问日志，保留warning及更严重的运行消息，输出到控制台。</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"log"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">"loglevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"warning"</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>error</code>为空表示控制台输出，不表示只存内存。在本章的systemd服务中，标准输出和标准错误通常由journal接收，还可能被转发、持久保存或交给容器日志驱动。应核对服务的<code>StandardOutput</code>、<code>StandardError</code>及采集器设置，不能仅看核心配置中的文件路径。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>本章版本中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>access: "none"</code></td>
+<td>显式关闭核心访问日志</td>
+</tr>
+<tr>
+<td><code>access: ""</code></td>
+<td>启用该配置对象时采用控制台访问输出，不等于关闭</td>
+</tr>
+<tr>
+<td><code>error: ""</code></td>
+<td>错误与运行消息使用控制台输出</td>
+</tr>
+<tr>
+<td>文件路径</td>
+<td>由核心写指定文件，需要服务用户可写及配套轮转方案</td>
+</tr>
+<tr>
+<td><code>loglevel</code></td>
+<td>控制运行消息级别；访问日志需要单独核对</td>
+</tr>
+</tbody>
+</table>
+<p><code>warning</code>、<code>error</code>、<code>info</code>和<code>debug</code>应按诊断需求选择。详细级别仅在限定时间、入口和接收范围内启用，操作前安排空间与退出调试的步骤。不能由一个级别名称推导所有事件都已覆盖，或所有秘密都已过滤。</p>
+<p>V2Ray <code>v5.53.0</code>的<code>loglevel: "none"</code>不能代替显式关闭<code>access</code>；Xray <code>v26.10.21</code>在该级别下同时关闭其访问与错误日志。为避免依赖差异，确需关闭核心这两类日志时，应分别设置：</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"log"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">"loglevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>这只涉及核心日志机制，不保证启动器、面板、操作系统、代理提供者或目标服务没有记录。Xray的DNS日志、地址遮盖等扩展也需按对应版本单独核对，不能直接作为V2Ray通用字段。</p>
+<p><strong>检查实际接收位置</strong></p>
+<p>第12章介绍了原生V2Ray服务部署。下面的检查示例假设已另行创建<code>v2ray</code>服务用户，并授予其读取配置的权限；第12章的手动systemd示例使用root，不能直接假定该用户已存在。确认实际服务用户和权限后，先验证完整配置和服务属性，再查看有限时间范围：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>v2ray<span class="w"> </span>/usr/local/bin/v2ray<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-format<span class="w"> </span>json<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>-c<span class="w"> </span>/usr/local/etc/v2ray/config.json
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>systemctl<span class="w"> </span>show<span class="w"> </span>v2ray.service<span class="w"> </span>-p<span class="w"> </span>StandardOutput<span class="w"> </span>-p<span class="w"> </span>StandardError
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>v2ray.service<span class="w"> </span>--since<span class="w"> </span><span class="s1">'30 minutes ago'</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--utc<span class="w"> </span>-o<span class="w"> </span>short-iso-precise<span class="w"> </span>-n<span class="w"> </span><span class="m">100</span><span class="w"> </span>--no-pager
+</span></code></pre></div>
+<p>使用Xray、容器或面板管理服务时，替换为实际命令和日志接收位置。配置检查不等于已加载；应用变更应按该服务支持的方法执行，并验证启动结果和输出位置。不要假定任何核心都提供<code>systemctl reload</code>，更不能忽略reload失败后仍声称轮转成功。</p>
+<h3 id="1613-nginx">16.1.3 Nginx最小字段访问日志<a class="headerlink" href="#1613-nginx" title="Permanent link">&para;</a></h3>
+<p>Nginx默认或既有格式可能记录客户端IP、完整请求、Referer和User-Agent。完整请求中的查询参数或路径可能包含订阅凭据，Cookie和Authorization也不能加入普通访问日志。更稳妥的做法是在源头选择需要的字段，而不是事后靠一个正则表达式寻找全部秘密。</p>
+<p>下面是Nginx的<code>http</code>上下文片段。它把实际路径映射为固定类别，不记录原始URI、查询参数、IP、账号、请求头或正文；日志保存在单独文件，便于按用途控制权限和轮转。</p>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">map</span><span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$guide_route</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kn">default</span><span class="w"> </span><span class="s">web</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kn">/v2ray</span><span class="w"> </span><span class="s">proxy</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">log_format</span><span class="w"> </span><span class="s">guide_min</span><span class="w"> </span><span class="s">escape=json</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="s">'</span><span class="p">{</span><span class="kn">"time":"$time_iso8601","route":"$guide_route",'</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="s">'"method":"</span><span class="nv">$request_method","status":$status,'</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="s">'"bytes":</span><span class="nv">$body_bytes_sent,"duration":$request_time}'</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kn">access_log</span><span class="w"> </span><span class="s">/var/log/nginx/guide-access.jsonl</span><span class="w"> </span><span class="s">guide_min</span><span class="p">;</span>
+</span></code></pre></div>
+<p>本例可合并到第12章的Nginx部署，保留原来的站点、TLS与后端配置。<code>/v2ray</code>只用于本例入口分类，应替换或扩展为实际需要的固定类别；不要把<code>default</code>改为原始URL。若站点另有<code>access_log</code>覆盖、继承或并行日志，应逐层核对，防止另一份combined日志仍记录全部请求。</p>
+<p><code>escape=json</code>避免字符串中的引号、反斜线和控制字符破坏JSON边界，但它不负责脱敏，也不能保证所有字段都可信。<code>status</code>是HTTP响应状态，<code>bytes</code>是发送给客户端的响应正文口径，<code>duration</code>是请求处理时间；都不能直接当作代理用户的双向流量或计费依据。</p>
+<p>WebSocket等长连接的访问记录通常在请求结束后写入，因此连接持续期间的流量不会实时反映在日志行数中。时间采用带时区偏移的ISO 8601格式，汇总时应统一时区，不能按本地显示字符串混合比较。</p>
+<p>启用前先核对日志目录、文件的既有用途与权限。对于日志用户为<code>www-data</code>、读取组为<code>adm</code>的Debian或Ubuntu发行包示例，可在可信目录中准备这个文件；<code>touch</code>不截断已有内容，不要改成从<code>/dev/null</code>覆盖：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>touch<span class="w"> </span>/var/log/nginx/guide-access.jsonl
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>www-data:adm<span class="w"> </span>/var/log/nginx/guide-access.jsonl
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">0640</span><span class="w"> </span>/var/log/nginx/guide-access.jsonl
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx.service
+</span></code></pre></div>
+<p>其他服务用户应替换所有权设置，确认父目录不可被非授权用户写入，文件只能由必要主体读取。检查并应用配置后，在批准的测试入口验证实际字段，避免首次写入时沿用过宽的默认权限。</p>
+<p>需要完全关闭某个已配置入口的访问记录时，可以在对应<code>server</code>或<code>location</code>内使用<code>access_log off;</code>，但仍应核对其他日志层。错误日志可能包含连接上下文；直接将其写入<code>/dev/null</code>会同时丢失诊断能力，不能与“保留受限错误日志”等同。不要为关闭日志另建一个不完整的代理<code>location</code>，破坏原有WebSocket或gRPC配置。</p>
+<h3 id="1614">16.1.4 轮转、容量与保留<a class="headerlink" href="#1614" title="Permanent link">&para;</a></h3>
+<p><strong>由journal管理核心输出</strong></p>
+<p>采用控制台输出的核心，可以由journal统一管理，不再对同一输出安排文件轮转。下面是默认journal实例的系统级策略示例，保存为<code>/etc/systemd/journald.conf.d/60-resource-limits.conf</code>；它会影响该实例接收的其他服务，不能当作只约束V2Ray的配置。容量与期限需按磁盘和诊断需求调整。</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[Journal]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">Storage</span><span class="o">=</span><span class="s">persistent</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">SystemMaxUse</span><span class="o">=</span><span class="s">100M</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="na">RuntimeMaxUse</span><span class="o">=</span><span class="s">25M</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="na">SystemKeepFree</span><span class="o">=</span><span class="s">1G</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="na">MaxRetentionSec</span><span class="o">=</span><span class="s">7day</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="na">MaxFileSec</span><span class="o">=</span><span class="s">1day</span>
+</span></code></pre></div>
+<p><code>Storage=persistent</code>优先使用持久存储，在某些启动或存储不可用阶段仍可能使用运行时目录。大小、时间和可用空间共同影响实际保留量，不能保证始终有完整7天；删除通常以归档journal文件为单位，也不等于对每条记录精确执行到期删除。需要按服务隔离策略时，应评估所用systemd版本支持的日志命名空间或独立采集方案。</p>
+<p>核对覆盖配置后，按系统变更流程应用并检查：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>systemd-analyze<span class="w"> </span>cat-config<span class="w"> </span>systemd/journald.conf
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-journald.service
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--disk-usage
+</span></code></pre></div>
+<p>journal的限流、服务级日志速率限制和采集器队列都可能丢弃消息。应监控丢失提示和接收状态，不能把日志变少直接解释为攻击减少。</p>
+<p><strong>为Nginx文件日志安排重新打开</strong></p>
+<p>下面仅用于Debian或Ubuntu发行包管理的Nginx示例：已确认主进程、PID路径及<code>/usr/sbin/nginx</code>与运行实例匹配，日志用户为<code>www-data</code>、读取组为<code>adm</code>。其他安装方式须替换。先检查系统既有轮转配置，确保它不再匹配这个文件；不要重复接管同一个日志。</p>
+<p>保存为<code>/etc/logrotate.d/guide-nginx</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/var/log/nginx/guide-access.jsonl {
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    daily
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    rotate 7
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    maxsize 20M
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    missingok
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    notifempty
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    compress
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    delaycompress
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    create 0640 www-data adm
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    sharedscripts
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    postrotate
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        /usr/sbin/nginx -s reopen
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    endscript
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>}
+</span></code></pre></div>
+<p><code>rotate 7</code>保留7份轮转文件，可能少于或多于7天；<code>maxsize</code>只在logrotate被调度执行时检查，不是实时容量上限。<code>delaycompress</code>把最近一份轮转文件的压缩推迟到下次轮转，不提供一致性快照。实际保留还需考虑频率、增长速度和归档副本。</p>
+<p>Nginx支持通过USR1重新打开日志，<code>nginx -s reopen</code>用于向匹配的主进程发送相应信号。若日志被重命名而进程没有重新打开，它可能继续写旧文件。不得用<code>|| true</code>隐藏失败，也不对未知PID文件直接拼接kill命令。</p>
+<p>先做不执行轮转的检查：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>logrotate<span class="w"> </span>--debug<span class="w"> </span>/etc/logrotate.d/guide-nginx
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>systemctl<span class="w"> </span>list-timers<span class="w"> </span>--all<span class="w"> </span><span class="s1">'logrotate*'</span>
+</span></code></pre></div>
+<p>检查通过后，在受控环境观察一次正常轮转，确认新文件权限、持续写入和归档状态。无法重新打开文件的程序应采用其支持的日志机制；<code>copytruncate</code>在复制与截断间可能丢记录，不是无损替代。不要对正在写入的日志同时使用独立清空、压缩和删除任务。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[确认谁接收和写入日志] --&gt; B{输出进入journal还是独立文件?}
+    B --&gt;|journal| C[配置实例容量、期限与接收监控]
+    B --&gt;|独立文件| D[确认轮转所有者和程序重新打开方法]
+    D --&gt; E[检查规则并验证新旧文件写入]
+    C --&gt; F[核对实际保留量与丢失情况]
+    E --&gt; F</code></pre>
+<p><em>图16-2 轮转必须与日志写入者配合，容量限制和保留天数也需分别验证</em></p>
+<h2 id="162">16.2 流量分析工具<a class="headerlink" href="#162" title="Permanent link">&para;</a></h2>
+<h3 id="1621">16.2.1 接口与进程监控<a class="headerlink" href="#1621" title="Permanent link">&para;</a></h3>
+<p>vnStat从系统接口计数器保存流量统计，通常不需要保存数据包正文，适合观察接口的历史用量。它不知道每个加密代理账号的实际身份，也不能自动与云厂商账单完全一致。</p>
+<p>在Debian或Ubuntu环境可安装工具，先核对实际网卡名称：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vnstat<span class="w"> </span>iftop<span class="w"> </span>nethogs
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ip<span class="w"> </span>-br<span class="w"> </span>link
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>vnstat<span class="w"> </span>--version
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>vnstat<span class="w"> </span>--iflist
+</span></code></pre></div>
+<p>下面以已确认的<code>ens3</code>为例，使用vnStat 2.x支持的命令。先检查服务和已有数据库，不沿用旧版<code>--create</code>初始化方式：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>vnstat.service
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>vnstat<span class="w"> </span>-i<span class="w"> </span>ens3
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>vnstat<span class="w"> </span>-i<span class="w"> </span>ens3<span class="w"> </span>--hours
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>vnstat<span class="w"> </span>-i<span class="w"> </span>ens3<span class="w"> </span>--days
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>vnstat<span class="w"> </span>-i<span class="w"> </span>ens3<span class="w"> </span>--months
+</span></code></pre></div>
+<p>守护进程的接口自动加入行为取决于版本和启动选项。若确认<code>ens3</code>尚未纳入数据库，再按该版本帮助使用<code>vnstat --add -i ens3</code>，并检查守护进程是否需要重读接口；不要重复初始化已有统计。系统启动、数据库丢失、接口重建和采样间隔都会影响结果。</p>
+<p>临时查看主机对之间的流量时，可以使用：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>iftop<span class="w"> </span>-i<span class="w"> </span>ens3<span class="w"> </span>-n<span class="w"> </span>-N<span class="w"> </span>-P
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>nethogs<span class="w"> </span>ens3
+</span></code></pre></div>
+<p>iftop的<code>-n</code>关闭主机名解析，<code>-N</code>关闭端口名转换，<code>-P</code>显示端口；这些选项减少额外解析与显示转换，不会隐藏IP。<code>-b</code>是关闭条形图，<code>-B</code>才是以字节每秒显示速率。nethogs的进程归属也会受到权限、容器和连接生命周期影响，不是精确的用户计费系统。</p>
+<p>这些工具通常需要查看接口或进程的权限，终端输出可能包含真实地址、端口和进程信息。仅在必要范围运行，不把长期抓包或公开截图当作默认监控方式。</p>
+<h3 id="1622">16.2.2 统计口径与结构化数据<a class="headerlink" href="#1622" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>数据来源</th>
+<th>主要计量对象</th>
+<th>常见偏差来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云提供商账单</td>
+<td>产品定义的计费方向、周期和流量</td>
+<td>免费额度、区域、协议与计量规则</td>
+</tr>
+<tr>
+<td>vnStat接口统计</td>
+<td>系统接口接收和发送计数</td>
+<td>隧道封装、同机其他服务、多个接口重复统计</td>
+</tr>
+<tr>
+<td>代理核心或面板</td>
+<td>实现定义的账号、入口及方向计数</td>
+<td>采集延迟、重启、重置与跨节点汇总</td>
+</tr>
+<tr>
+<td>Nginx访问日志</td>
+<td>请求状态及相应HTTP字节字段</td>
+<td>长连接结束才记录、日志丢失、字段不含全部传输成本</td>
+</tr>
+</tbody>
+</table>
+<p>GB通常按十进制计量，GiB按二进制计量；bit/s与byte/s还相差8倍。应保存原始字节数、明确方向和周期，再转换展示。月度限额尤其需要核对账期起点、时区、重置方式及厂商计费口径。</p>
+<p>第13章说明了面板选型和统计口径。统计查询应以实际配置的管理入口和权限为准，不把示例公网HTTP地址、端口或默认账号当作部署值。监控接口、客户端用量与计费数据不是同一种权限和统计来源，不能假定<code>monitor</code>令牌可以读取全部用户信息。</p>
+<p>不要通过搜索<code>accepted</code>行、固定取第4列来计算“流量”或“用户数”。一行可能代表事件或请求，不是字节；同一用户可能有多个地址，多个用户也可能共享NAT或CDN地址。</p>
+<p>自动化读取vnStat时，优先使用所用版本的<code>--json</code>输出，核对模式、字段、单位与接口，不按<code>--oneline</code>的固定列号截取带单位文本。计算速率时，要比较同一计数器在两个时刻的差值，识别重置和采集间隔；缺失数据或负差值应标记异常，不能直接转成负流量或忽略后继续扣费。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[选择统计来源与对象] --&gt; B[确认单位、方向、周期和时区]
+    B --&gt; C[读取结构化计数并记录采集时间]
+    C --&gt; D{计数是否连续且状态已知?}
+    D --&gt;|否| E[标记重置、缺失或采集故障]
+    D --&gt;|是| F[计算差值、速率或周期汇总]
+    E --&gt; G[人工核对后再用于配额或告警]
+    F --&gt; G</code></pre>
+<p><em>图16-3 流量分析先明确计量口径，不能从日志行数直接推导用量</em></p>
+<h3 id="1623">16.2.3 限速与限额的区别<a class="headerlink" href="#1623" title="Permanent link">&para;</a></h3>
+<p>限速限制单位时间的传输能力，限额限制某个周期的累计用量。并发连接上限、握手超时、缓冲区大小和访问事件计数也各有含义，不能互相替代。</p>
+<p>iptables的<code>limit</code>主要按报文匹配速率工作，不接受“10mbit/s”作为通用带宽限制方式；<code>hashlimit</code>虽然可在相应模式下按字节匹配并配合丢包，但仍不是具有排队与公平调度的通用流量整形。错误链路或全局规则可能误伤SSH及所有用户。</p>
+<p>Linux的tc通常在出口队列实施整形，入口方向则涉及监管、重定向或IFB等另外设计。服务器网卡发送方向不等于客户端所有业务的“上传”，代理用户流量还可能是本机进程产生，不经过预想的FORWARD链。</p>
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th>优先核对的实现位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单账号周期配额</td>
+<td>核心或面板明确支持的账号计数与停用机制</td>
+</tr>
+<tr>
+<td>单账号速率限制</td>
+<td>已核实的核心、管理层或可识别账号的调度方案</td>
+</tr>
+<tr>
+<td>接口总出口整形</td>
+<td>经过测试的tc或提供商网络能力</td>
+</tr>
+<tr>
+<td>HTTP请求速率</td>
+<td>Nginx等兼容入口的请求级限制，非隧道总带宽</td>
+</tr>
+<tr>
+<td>应用并发或连接寿命</td>
+<td>协议与服务实现的对应限制</td>
+</tr>
+</tbody>
+</table>
+<p>V2Ray的<code>handshake</code>、<code>connIdle</code>、<code>uplinkOnly</code>、<code>downlinkOnly</code>是超时类参数，<code>statsUserUplink/Downlink</code>用于统计，<code>bufferSize</code>不是用户带宽上限。不能给出一组policy参数就声称实现了用户限速。</p>
+<p>实施整形前先读取<code>tc -s qdisc show dev ens3</code>等现状，明确现有管理者、受影响方向和恢复方法。不要先删除root qdisc再试验，避免破坏云网络、容器或已有QoS。自动化限速必须有幂等状态和回退，不能在每次扫描时重复添加同一根队列。</p>
+<h2 id="163">16.3 异常检测机制<a class="headerlink" href="#163" title="Permanent link">&para;</a></h2>
+<h3 id="1631">16.3.1 连接、资源与采集异常<a class="headerlink" href="#1631" title="Permanent link">&para;</a></h3>
+<p>异常是与基线或明确策略不符，不等于已经确认攻击。备份、软件更新、通话、自动重连和共享出口都可能产生高连接数或集中流量，不能仅凭“访问时间固定”或“目标单一”判断恶意。</p>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>应同时观察的上下文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新连接或失败率突增</td>
+<td>是否有部署、证书过期、网络抖动或探活变更</td>
+</tr>
+<tr>
+<td>出口用量或速率上升</td>
+<td>周期、接口、备份任务与账号计量口径</td>
+</tr>
+<tr>
+<td>CPU、文件描述符或队列压力</td>
+<td>进程、连接状态、并发和资源限制</td>
+</tr>
+<tr>
+<td>错误日志突然减少</td>
+<td>服务是否停止、采集是否丢失、是否触发限流</td>
+</tr>
+<tr>
+<td>管理操作异常</td>
+<td>操作主体、权限、来源与预期变更窗口</td>
+</tr>
+</tbody>
+</table>
+<p>滚动“最近一小时”应按带时区的事件时间比较明确区间，例如当前UTC时刻之前60分钟至当前时刻，而不是grep上一个整点小时。还要处理迟到事件、时钟偏差、轮转后的多个文件和重复采集。</p>
+<p>计数窗口、阈值、最少样本量和恢复条件应一起定义。告警可按持续时间或连续多个窗口触发，并设置恢复阈值减少反复抖动；缺失数据单独告警，不作为零次失败。第16.4.2节给出按整点小时汇总的离线示例，它不是实时滑动窗口检测器。</p>
+<h3 id="1632">16.3.2 探测与认证失败检测<a class="headerlink" href="#1632" title="Permanent link">&para;</a></h3>
+<p>端口扫描、认证失败和正常重试应分别识别。只访问SSH一个端口达到某次数，不能据此证明扫描了多个端口；丢包重传与共享出口也可能提高计数。对已执行DROP的流量，位于其后的LOG规则通常不会再匹配，同一套规则的顺序必须核对。</p>
+<p>Fail2Ban依赖可靠日志、时间解析、可信来源地址和实际生效的封禁动作。优先沿用第10章已验证的SSH过滤器和jail，不为所有代理协议套用<code>rejected.*from &lt;HOST&gt;</code>一条表达式。不同版本、传输与TLS失败可能根本不产生对应格式的日志。</p>
+<p>自定义过滤器应先对受控样本离线测试。以已准备的SSH测试日志为例：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>fail2ban-regex<span class="w"> </span>./ssh-failure-sample.log<span class="w"> </span>/etc/fail2ban/filter.d/sshd.conf
+</span></code></pre></div>
+<p>该命令检查匹配，不直接修改防火墙。样本应包含成功、失败、IPv4、IPv6、无关事件及恶意构造内容，核对时间和捕获地址；日志字段来自不可信请求时，还需防止日志注入或把目标地址误当成来源。</p>
+<p>经CDN、反向代理或端口分流后，服务可能只看到中间节点。真实IP头只应信任明确的代理来源，不能相信任意客户端提交的<code>X-Forwarded-For</code>。否则自动响应可能封禁整个CDN、共享网关或被伪造的第三方地址。</p>
+<h3 id="1633">16.3.3 分级响应与可撤销变更<a class="headerlink" href="#1633" title="Permanent link">&para;</a></h3>
+<p>自动响应应由已确认的事件和明确权限驱动，先做只读告警，再考虑范围有限、持续时间明确的处置。不得把日志最后一列未经解析就拼接进防火墙命令，也不根据历史文件里的全部失败记录反复累加封禁。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[检测到指标或审计事件异常] --&gt; B[核对时间、来源与采集完整性]
+    B --&gt; C[关联部署、资源和认证状态]
+    C --&gt; D{是否满足已定义的响应条件?}
+    D --&gt;|否或未知| E[记录并安排人工核对]
+    D --&gt;|是| F[生成限定对象、期限与恢复方法的动作]
+    F --&gt; G[按唯一事件执行并核对实际状态]
+    G --&gt; H[去重告警并按条件解除或升级处置]</code></pre>
+<p><em>图16-4 自动响应需要可信证据、范围限制、去重和恢复能力</em></p>
+<table>
+<thead>
+<tr>
+<th>控制点</th>
+<th>实施要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对象校验</td>
+<td>使用明确账号或经解析验证的地址，不接受任意命令文本</td>
+</tr>
+<tr>
+<td>权限与范围</td>
+<td>专用最小权限，保留管理通道，避免跨服务误伤</td>
+</tr>
+<tr>
+<td>幂等与并发</td>
+<td>唯一事件、状态核对和到期时间，不重复追加同一动作</td>
+</tr>
+<tr>
+<td>通知</td>
+<td>明确接收方与必要摘要，不附完整日志、令牌或订阅</td>
+</tr>
+<tr>
+<td>回退</td>
+<td>记录原状态、解除条件和人工接管方法</td>
+</tr>
+</tbody>
+</table>
+<p>接近用量限额时，应先核对账期和采集状态，再选择通知、限制或暂停。执行失败与结果未知需要区别处理，重试前读取当前状态。审计记录应说明规则版本、执行主体、目标、原因和结果，秘密字段只记录“已轮换”等状态，不保存新旧明文。</p>
+<h2 id="164">16.4 日志隐私平衡<a class="headerlink" href="#164" title="Permanent link">&para;</a></h2>
+<h3 id="1641">16.4.1 按用途选择保存策略<a class="headerlink" href="#1641" title="Permanent link">&para;</a></h3>
+<p>“隐私优先”应体现为减少字段、限制读取和缩短不必要保留，而不是统一关闭所有安全记录。不同服务和事件的重要性不同，不按个人、小规模共享或商业运营简单指定同一个保留天数。</p>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>适用条件与代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不记录核心访问事件，保留有限运行消息</td>
+<td>减少目标信息，仍需验证错误日志与其他采集层</td>
+</tr>
+<tr>
+<td>源头最小字段日志</td>
+<td>支持状态与容量分析，避免保留不必要身份及请求内容</td>
+</tr>
+<tr>
+<td>短期详细调试</td>
+<td>限定对象、时间和接收权限，事先安排退出与处置</td>
+</tr>
+<tr>
+<td>运行时journal</td>
+<td>减少常规持久副本，但重启后诊断能力下降</td>
+</tr>
+<tr>
+<td>独立管理审计</td>
+<td>支持权限与配置追溯，需要独立保护和适当留存</td>
+</tr>
+</tbody>
+</table>
+<p>journal的<code>Storage=volatile</code>将日志写入运行时目录，不等于整个系统从未持久记录。tmpfs可能受交换空间影响，远程转发、容器日志、崩溃转储、虚拟机快照和终端记录也可能形成副本。核心文件日志、journal与远端存储应作为一条完整链路检查。</p>
+<p>调试开始前记录批准范围、预期结束时间和负责人员，确认磁盘空间与脱敏要求；结束后恢复原级别，再按保留策略处理资料。疑似入侵时，应先保全必要证据和时间线，而不是立即清空记录。</p>
+<pre class="mermaid"><code>flowchart LR
+    A[核心或入口产生日志] --&gt; B[控制台、文件或journal]
+    B --&gt; C[采集器与传输队列]
+    C --&gt; D[远端平台、归档与备份]
+    B --&gt; E[本机权限与保留策略]
+    D --&gt; F[接收方权限、期限与恢复副本]</code></pre>
+<p><em>图16-5 保存策略必须覆盖接收与转发链路，单个应用关闭日志并不删除其他副本</em></p>
+<h3 id="1642">16.4.2 最小字段汇总与去标识化<a class="headerlink" href="#1642" title="Permanent link">&para;</a></h3>
+<p>IP截断、时间粗化和假名化可以减少细节，但不自动实现不可逆匿名。保留IPv4的某个前缀或IPv6的某个网段，仍可能识别网络或家庭；固定哈希也可能被枚举或跨记录关联。需要关联同一来源时，可评估带密钥的假名标识与定期轮换，但必须另行保护密钥和映射关系。</p>
+<p>处理地址应使用<code>ipaddress</code>等能理解IPv4、IPv6、压缩写法及映射地址的库，不用按冒号或点号随意截断。URI、账号、时间及其他字段也可能重新识别对象，不能只替换IP后把原始日志当作完全匿名资料分享。</p>
+<p>更少披露的做法是生成用途明确的汇总。下面的Python 3.11及以上示例读取17.1.3的Nginx JSONL，按UTC整点小时、固定入口类别和HTTP状态类别汇总请求数及响应正文字节。它不输出原始行或额外字段，不发送通知，也不据此封禁用户。保存为<code>summarize-nginx.py</code>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">summarize</span><span class="p">(</span><span class="n">source_name</span><span class="p">,</span> <span class="n">output_name</span><span class="p">):</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">source</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">source_name</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="n">output</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_name</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"输出目录必须事先准备"</span><span class="p">)</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    <span class="n">groups</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    <span class="n">records</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>    <span class="k">with</span> <span class="n">source</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>            <span class="n">raw</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="mi">65537</span><span class="p">)</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">raw</span><span class="p">:</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>                <span class="k">break</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">65536</span><span class="p">:</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"日志行超过处理上限"</span><span class="p">)</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>            <span class="n">item</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"需要JSON对象"</span><span class="p">)</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>            <span class="n">stamp</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>            <span class="n">route</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"route"</span><span class="p">)</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>            <span class="n">status</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">)</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>            <span class="n">size</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bytes"</span><span class="p">)</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stamp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"缺少有效时间"</span><span class="p">)</span>
+</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>            <span class="n">moment</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">stamp</span><span class="p">)</span>
+</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>            <span class="k">if</span> <span class="n">moment</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">moment</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"时间必须包含时区"</span><span class="p">)</span>
+</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">route</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="n">route</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"web"</span><span class="p">,</span> <span class="s2">"proxy"</span><span class="p">}:</span>
+</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"入口类别不在允许范围"</span><span class="p">)</span>
+</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">status</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span> <span class="ow">or</span> <span class="ow">not</span> <span class="mi">100</span> <span class="o">&lt;=</span> <span class="n">status</span> <span class="o">&lt;=</span> <span class="mi">599</span><span class="p">:</span>
+</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"HTTP状态无效"</span><span class="p">)</span>
+</span><span id="__span-13-42"><a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span> <span class="ow">or</span> <span class="n">size</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-13-43"><a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"字节数无效"</span><span class="p">)</span>
+</span><span id="__span-13-44"><a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
+</span><span id="__span-13-45"><a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>            <span class="n">hour</span> <span class="o">=</span> <span class="n">moment</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+</span><span id="__span-13-46"><a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>                <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span>
+</span><span id="__span-13-47"><a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>            <span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+</span><span id="__span-13-48"><a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">status</span> <span class="o">//</span> <span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-13-49"><a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a>            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">groups</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">20000</span><span class="p">:</span>
+</span><span id="__span-13-50"><a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"汇总分组超过处理上限"</span><span class="p">)</span>
+</span><span id="__span-13-51"><a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>            <span class="n">groups</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-13-52"><a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>            <span class="n">groups</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">size</span>
+</span><span id="__span-13-53"><a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>            <span class="n">records</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-13-54"><a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>
+</span><span id="__span-13-55"><a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>    <span class="k">if</span> <span class="n">records</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-13-56"><a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"没有可汇总的记录"</span><span class="p">)</span>
+</span><span id="__span-13-57"><a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a>
+</span><span id="__span-13-58"><a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>    <span class="n">descriptor</span><span class="p">,</span> <span class="n">temporary_name</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkstemp</span><span class="p">(</span>
+</span><span id="__span-13-59"><a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a>        <span class="n">prefix</span><span class="o">=</span><span class="s2">".summary-"</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="n">output</span><span class="o">.</span><span class="n">parent</span>
+</span><span id="__span-13-60"><a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a>    <span class="p">)</span>
+</span><span id="__span-13-61"><a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a>    <span class="n">temporary</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">temporary_name</span><span class="p">)</span>
+</span><span id="__span-13-62"><a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-13-63"><a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a>        <span class="k">with</span> <span class="n">os</span><span class="o">.</span><span class="n">fdopen</span><span class="p">(</span><span class="n">descriptor</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+</span><span id="__span-13-64"><a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>            <span class="k">for</span> <span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">category</span><span class="p">),</span> <span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+</span><span id="__span-13-65"><a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a>                <span class="n">row</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-13-66"><a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a>                    <span class="s2">"hour_utc"</span><span class="p">:</span> <span class="n">hour</span><span class="p">,</span>
+</span><span id="__span-13-67"><a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a>                    <span class="s2">"route"</span><span class="p">:</span> <span class="n">route</span><span class="p">,</span>
+</span><span id="__span-13-68"><a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a>                    <span class="s2">"status_class"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">xx"</span><span class="p">,</span>
+</span><span id="__span-13-69"><a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a>                    <span class="s2">"requests"</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span>
+</span><span id="__span-13-70"><a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a>                    <span class="s2">"response_body_bytes"</span><span class="p">:</span> <span class="n">size</span>
+</span><span id="__span-13-71"><a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a>                <span class="p">}</span>
+</span><span id="__span-13-72"><a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a>                <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-13-73"><a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a>        <span class="n">os</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">temporary</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+</span><span id="__span-13-74"><a id="__codelineno-13-74" name="__codelineno-13-74" href="#__codelineno-13-74"></a>    <span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-13-75"><a id="__codelineno-13-75" name="__codelineno-13-75" href="#__codelineno-13-75"></a>        <span class="n">temporary</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-13-76"><a id="__codelineno-13-76" name="__codelineno-13-76" href="#__codelineno-13-76"></a>    <span class="k">return</span> <span class="n">records</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+</span><span id="__span-13-77"><a id="__codelineno-13-77" name="__codelineno-13-77" href="#__codelineno-13-77"></a>
+</span><span id="__span-13-78"><a id="__codelineno-13-78" name="__codelineno-13-78" href="#__codelineno-13-78"></a>
+</span><span id="__span-13-79"><a id="__codelineno-13-79" name="__codelineno-13-79" href="#__codelineno-13-79"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+</span><span id="__span-13-80"><a id="__codelineno-13-80" name="__codelineno-13-80" href="#__codelineno-13-80"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-13-81"><a id="__codelineno-13-81" name="__codelineno-13-81" href="#__codelineno-13-81"></a>        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="s2">"用法：summarize-nginx.py 输入JSONL 新输出文件"</span><span class="p">)</span>
+</span><span id="__span-13-82"><a id="__codelineno-13-82" name="__codelineno-13-82" href="#__codelineno-13-82"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-13-83"><a id="__codelineno-13-83" name="__codelineno-13-83" href="#__codelineno-13-83"></a>        <span class="n">records</span><span class="p">,</span> <span class="n">buckets</span> <span class="o">=</span> <span class="n">summarize</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span><span id="__span-13-84"><a id="__codelineno-13-84" name="__codelineno-13-84" href="#__codelineno-13-84"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">OverflowError</span><span class="p">):</span>
+</span><span id="__span-13-85"><a id="__codelineno-13-85" name="__codelineno-13-85" href="#__codelineno-13-85"></a>        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="s2">"汇总失败，请在受控环境核对输入、权限及输出状态"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+</span><span id="__span-13-86"><a id="__codelineno-13-86" name="__codelineno-13-86" href="#__codelineno-13-86"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"已汇总</span><span class="si">{</span><span class="n">records</span><span class="si">}</span><span class="s2">条记录，生成</span><span class="si">{</span><span class="n">buckets</span><span class="si">}</span><span class="s2">个分组"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>该脚本先检查输入，再在输出目录创建受限临时文件，完成写入后用硬链接发布；这要求本地文件系统支持同目录硬链接。已有输出文件不会被覆盖，失败时清理临时文件。输出目录应由可信管理者维护，不是公开可写目录。</p>
+<p>执行前选用**已经完成轮转且不再写入**的未压缩日志，或者由日志接收系统导出的稳定副本。脚本不负责协调轮转，不解压归档，也不把读取正在变化的文件称为一致性采集。</p>
+<p>审阅脚本后，可按第14章的方法安装至受控位置，准备报告目录：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>install<span class="w"> </span>-d<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>/usr/local/libexec
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0750</span><span class="w"> </span>summarize-nginx.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span>/usr/local/libexec/summarize-nginx.py
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>sudo<span class="w"> </span>install<span class="w"> </span>-d<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0700</span><span class="w"> </span>/var/lib/proxy-reports
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>sudo<span class="w"> </span>python3<span class="w"> </span>/usr/local/libexec/summarize-nginx.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span>/var/log/nginx/guide-access.jsonl.1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span>/var/lib/proxy-reports/summary-review.jsonl
+</span></code></pre></div>
+<p>文件名与入口类别须按实际轮转和分类修改，重复运行应使用新的明确输出名。输入不符合约定时程序停止，不把解析失败当作零次请求；错误提示不会回显原始行。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[取得稳定的结构化日志副本] --&gt; B[校验时间、固定类别、状态与字节]
+    B --&gt; C[按UTC小时和固定维度汇总]
+    C --&gt; D[只生成允许的汇总字段]
+    D --&gt; E[受限发布新文件并核对结果]
+    E --&gt; F[按用途保存汇总，原始资料另行到期处置]</code></pre>
+<p><em>图16-6 结构化汇总通过减少输出维度降低披露，不等于证明数据完全匿名</em></p>
+<p>汇总结果仍可能在样本很小时揭示活动时间，应按需要进一步扩大时间窗口、合并类别或限制小样本输出。请求数与HTTP字节也不代表代理账号用量，不能拿这份离线报告直接执行配额扣减。</p>
+<h3 id="1643">16.4.3 加密、完整性与访问隔离<a class="headerlink" href="#1643" title="Permanent link">&para;</a></h3>
+<p>加密保护相应锁定状态下的内容，不替代权限和保留策略。已挂载并解锁的加密卷仍可被有权限的进程读取；主机失守时，日志内容与解密材料也可能同时暴露。存储加密应通过已核对的设备部署流程完成，不在日志教程中直接对示例块设备执行格式化命令。</p>
+<p>归档加密前先确认日志已经关闭、轮转完成且内容稳定。压缩不等于加密；普通摘要可用于检查变化，但没有可信基准时不能单独证明来源，公钥加密也不自动证明发送者身份。需要来源验证时，可另行设计签名及受保护的采集链路。</p>
+<p>以下使用GnuPG 2.x演示加密一个**已经核对的独立归档**，保留原件。<code>REPLACE_WITH_VERIFIED_FULL_FINGERPRINT</code>必须替换成通过可信渠道核对的接收方完整公钥指纹；只使用邮箱名称不足以确认具体密钥。所有输出文件应事先不存在。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>gpg<span class="w"> </span>--batch<span class="w"> </span>--no-tty<span class="w"> </span>--encrypt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span>--recipient<span class="w"> </span>REPLACE_WITH_VERIFIED_FULL_FINGERPRINT<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span>--output<span class="w"> </span>guide-access.jsonl.2.gz.gpg<span class="w"> </span>--<span class="w"> </span>guide-access.jsonl.2.gz
+</span></code></pre></div>
+<p>确认加密成功后，再为密文生成摘要：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sha256sum<span class="w"> </span>guide-access.jsonl.2.gz.gpg
+</span></code></pre></div>
+<p>分别检查每条命令的退出状态；不要让后续摘要命令掩盖加密失败。使用不受信任的公钥、缺失接收方密钥或已有输出时，应核对原因，不为了让脚本继续而跳过身份确认或覆盖文件。</p>
+<p>恢复演练应在受限目录进行，使用对应私钥：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gpg<span class="w"> </span>--batch<span class="w"> </span>--no-tty<span class="w"> </span>--output<span class="w"> </span>recovered-guide-access.jsonl.2.gz<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span>--decrypt<span class="w"> </span>guide-access.jsonl.2.gz.gpg
+</span></code></pre></div>
+<p>确认解密成功后，再检查压缩归档：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>gzip<span class="w"> </span>-t<span class="w"> </span>recovered-guide-access.jsonl.2.gz
+</span></code></pre></div>
+<p>解密成功与归档检查通过后，还应核对内容及所需恢复信息。密钥恢复、密码和备份权限需独立规划；没有私钥恢复方法的密文不构成可恢复备份。示例不会自动删除明文，演练得到的明文副本也应纳入保留策略。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[确认稳定归档与保存用途] --&gt; B[核对接收方公钥指纹和权限]
+    B --&gt; C[加密为新的独立文件]
+    C --&gt; D[检查退出状态并记录受保护摘要]
+    D --&gt; E[在受限环境解密验证并核对内容]
+    E --&gt; F[按策略分别管理明文、密文与密钥副本]</code></pre>
+<p><em>图16-7 加密归档必须包含恢复验证，不能先删除明文再判断是否成功</em></p>
+<p>日志传输还需验证接收端身份和加密通道，限制采集凭据用途、发送范围与接收端权限。远端管理员、本机服务用户和日常分析人员不应天然共享全部读取及删除权限；需防篡改时可评估独立账号、追加写入或受控保留存储，同时监控传输失败和队列积压。</p>
+<h3 id="1644">16.4.4 到期处置与恢复验证<a class="headerlink" href="#1644" title="Permanent link">&para;</a></h3>
+<p>保留策略应按数据类别定义期限、容量、接收方、备份范围及例外处理。到期处置由明确任务负责，避免logrotate、采集平台、定时脚本和人工清理相互竞争。</p>
+<p>journal清理针对journal文件，普通<code>journalctl -u</code>查询过滤不能被当作按某个服务单独删除日志的方法；vacuum主要处理归档文件，活动文件和其他副本仍需核对。文件轮转中的<code>maxage</code>也只在相应轮转检查时生效，并非持续运行的精确销毁计时器。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>到期处理前的核对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>活动日志</td>
+<td>写入者和重新打开机制，不能直接删除或截断代替轮转</td>
+</tr>
+<tr>
+<td>已关闭归档</td>
+<td>范围、权限、保留期限和是否需要暂缓删除</td>
+</tr>
+<tr>
+<td>密文与解密材料</td>
+<td>保存目的、恢复依赖及密钥生命周期</td>
+</tr>
+<tr>
+<td>远端平台</td>
+<td>平台留存、导出、索引、队列与管理员权限</td>
+</tr>
+<tr>
+<td>备份和快照</td>
+<td>独立保留周期、历史副本及实际恢复能力</td>
+</tr>
+</tbody>
+</table>
+<p>先生成候选文件清单并核对范围，再交给已有管理机制执行。不采用每月通配删除日志目录并重启核心的做法，也不把清空当前文件当作成功轮转。日志仍被进程打开时，删除路径可能不立即释放空间，应先定位写入者，而不是继续重复删除。</p>
+<p>覆盖文件和多遍<code>shred</code>不能保证SSD、写时复制、快照或备份中的所有副本不可恢复。设备处置沿用第15章的介质与密钥生命周期设计，运行中的日志服务则重点控制新增数据、权限、轮转和已知副本。</p>
+<pre class="mermaid"><code>flowchart TD
+    A[到达保留期限或容量条件] --&gt; B[生成明确对象清单]
+    B --&gt; C[核对活动文件、备份依赖与事件保全需求]
+    C --&gt; D[按现有管理机制处置符合条件的对象]
+    D --&gt; E[记录范围、结果与失败对象]
+    E --&gt; F[验证持续写入、可用空间与必要恢复能力]</code></pre>
+<p><em>图16-8 到期处置既要减少不必要副本，也要保留运行和恢复能力</em></p>
+<p>定期演练至少覆盖日志接收失败、磁盘接近满、轮转失败、时钟偏差和密文恢复。审计记录应能说明哪些数据实际产生、传输和删除过；仅有“清理成功”的一句输出，不能代替对目标范围和执行结果的核对。</p>
+<h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>日志管理的基础是用途明确、字段最少、权限受限和可验证的生命周期。访问记录、运行消息、用量统计与管理审计应分别设计；控制台输出不等于不落盘，错误级别也不等于没有敏感信息。</p>
+<p>统计与异常检测需要明确单位、时间窗口、采集状态和来源可信度。轮转配合实际写入者，加密配合恢复验证，到期处置覆盖已知副本。至此，安全与隐私篇完成了从入口防护、客户端隐私到运维记录管理的主要内容，后续章节将进一步讨论故障诊断。</p>
+<p><strong>实践任务：</strong></p>
+<ol>
+<li>列出当前部署的核心、Nginx、journal、面板与远端采集位置，说明每类记录的用途、字段和保留责任。</li>
+<li>在测试入口验证最小字段JSON日志，检查查询参数、路径凭据及并行日志是否仍有记录。</li>
+<li>完成一次受控轮转，核对新文件权限、旧文件写入状态与实际保留份数。</li>
+<li>比较接口计数、核心账号统计与HTTP日志，说明单位、方向和周期差异，不以日志行数计费。</li>
+<li>用受控样本运行离线汇总，验证时区、无效输入、已有输出及小样本披露边界。</li>
+<li>对独立测试归档完成加密与恢复演练，设计采集失效、误报和清理失败的告警与回退方法。</li>
+</ol>
+<p><strong>参考资料：</strong></p>
+<ul>
+<li><a href="https://github.com/v2fly/v2ray-core/blob/v5.53.0/infra/conf/synthetic/log/log.go">V2Ray v5.53.0日志配置实现</a></li>
+<li><a href="https://github.com/XTLS/Xray-core/blob/v26.10.21/infra/conf/log.go">Xray v26.10.21日志配置实现</a></li>
+<li><a href="https://nginx.org/en/docs/http/ngx_http_log_module.html">Nginx HTTP日志模块</a></li>
+<li><a href="https://nginx.org/en/docs/control.html">Nginx进程控制与日志重新打开</a></li>
+<li><a href="https://www.freedesktop.org/software/systemd/man/latest/journald.conf.html">systemd journal配置</a></li>
+<li><a href="https://www.freedesktop.org/software/systemd/man/latest/journalctl.html">journalctl查询与归档清理</a></li>
+<li><a href="https://man7.org/linux/man-pages/man8/logrotate.8.html">logrotate配置与轮转语义</a></li>
+<li><a href="https://humdi.net/vnstat/man/vnstat.html">vnStat命令说明</a></li>
+<li><a href="https://humdi.net/vnstat/man/vnstatd.html">vnStat守护进程</a></li>
+<li><a href="https://manpages.debian.org/trixie/iftop/iftop.8.en.html">iftop选项说明</a></li>
+<li><a href="https://man7.org/linux/man-pages/man8/tc.8.html">Linux tc流量控制</a></li>
+<li><a href="https://man7.org/linux/man-pages/man8/iptables-extensions.8.html">iptables匹配扩展</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP日志管理建议</a></li>
+<li><a href="https://docs.python.org/3/library/ipaddress.html">Python ipaddress库</a></li>
+<li><a href="https://www.gnupg.org/documentation/manuals/gnupg/">GnuPG文档</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！我们会持续改进。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../%E7%AC%AC15%E7%AB%A0-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%AE%9E%E8%B7%B5/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 第15章 隐私保护实践">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                第15章 隐私保护实践
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86-%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5%E7%AF%87/%E7%AC%AC17%E7%AB%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第17章 常见问题诊断">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                第17章 常见问题诊断
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 科学上网完全指南
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ihmily/network-proxy-guide" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
