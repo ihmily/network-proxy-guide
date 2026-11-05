@@ -1,388 +1,71 @@
-# 附录D：参考文献
+# 附录D：参考文献与核对方法
 
-本附录列出了编写本书时参考的技术文档、RFC标准、开源项目等资料。
+本附录优先列出标准制定机构、项目维护者和官方法规数据库的原始资料。**列出入口不代表书中所有示例已按最新版本重新验证**；涉及具体字段、安装命令、项目维护状态或法律条文时，应在相关章节直接标注所依据的版本与核对日期。
 
----
+## D.1 网络与安全标准
 
-## 一、RFC 标准文档
+| 文档 | 主题 | 原文 |
+|------|------|------|
+| RFC 1035 | DNS实现与规范 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc1035) |
+| RFC 1928 | SOCKS5 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc1928) |
+| RFC 6455 | WebSocket | [RFC Editor](https://www.rfc-editor.org/rfc/rfc6455) |
+| RFC 8446 | TLS 1.3 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc8446) |
+| RFC 8484 | DNS over HTTPS | [RFC Editor](https://www.rfc-editor.org/rfc/rfc8484) |
+| RFC 9000 | QUIC传输 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc9000) |
+| RFC 9110 | HTTP语义 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc9110) |
+| RFC 9112 | HTTP/1.1 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc9112) |
+| RFC 9113 | HTTP/2 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc9113) |
+| RFC 9114 | HTTP/3 | [RFC Editor](https://www.rfc-editor.org/rfc/rfc9114) |
+| RFC 9250 | DNS over QUIC | [RFC Editor](https://www.rfc-editor.org/rfc/rfc9250) |
 
-### 核心网络协议
+同一主题可能有早期RFC、更新与勘误。查阅时以RFC Editor页面中的状态和更新关系为准，不单凭本书列出的编号判断某份文档是否仍为现行依据。
 
-1. **RFC 791** - Internet Protocol (IP)  
-   https://www.rfc-editor.org/rfc/rfc791
+## D.2 软件项目原始资料
 
-2. **RFC 793** - Transmission Control Protocol (TCP)  
-   https://www.rfc-editor.org/rfc/rfc793
+| 项目 | 原始资料入口 | 阅读时要核对 |
+|------|--------------|--------------|
+| Xray-core | [项目仓库](https://github.com/XTLS/Xray-core)、[安装器仓库](https://github.com/XTLS/Xray-install) | 核心版本、配置格式、安装器提交 |
+| V2Fly | [项目仓库](https://github.com/v2fly/v2ray-core) | 与Xray的实现差异 |
+| mihomo | [项目仓库](https://github.com/MetaCubeX/mihomo) | 规则、DNS和接口字段 |
+| Shadowsocks Rust | [项目仓库](https://github.com/shadowsocks/shadowsocks-rust) | 协议实现及密钥格式 |
+| Hysteria | [项目仓库](https://github.com/apernet/hysteria) | 主要版本与对应配置 |
+| WireGuard | [官方网站](https://www.wireguard.com/) | 系统平台与路由示例 |
 
-3. **RFC 768** - User Datagram Protocol (UDP)  
-   https://www.rfc-editor.org/rfc/rfc768
+项目仓库与其镜像、分支和衍生客户端并非同一份文档。引用软件行为时，最好同时记录项目名称、文档页、软件版本或提交号，以及访问日期。客户端检索入口见[附录C 资源索引](附录C-资源索引.md)。
 
-4. **RFC 1035** - Domain Names (DNS)  
-   https://www.rfc-editor.org/rfc/rfc1035
+## D.3 安全与隐私资料
 
-### HTTP 相关
+| 来源 | 用途 |
+|------|------|
+| [NIST密码学标准与指南](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines) | 核对密码学标准的现行版本与状态 |
+| [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | 查找应用与部署安全检查项 |
+| [Mozilla TLS配置指南](https://ssl-config.mozilla.org/) | 对照具体服务器版本检查TLS配置 |
+| [EFF Cover Your Tracks](https://coveryourtracks.eff.org/) | 了解浏览器可观察的跟踪信号；测试结果不构成匿名保证 |
 
-5. **RFC 2616** - HTTP/1.1  
-   https://www.rfc-editor.org/rfc/rfc2616
+这些资料的适用范围各不相同。规范、检查清单和在线测试工具不能替代对实际部署的安全评估。
 
-6. **RFC 7540** - HTTP/2  
-   https://www.rfc-editor.org/rfc/rfc7540
+## D.4 法规与政策来源
 
-7. **RFC 6455** - WebSocket Protocol  
-   https://www.rfc-editor.org/rfc/rfc6455
+| 来源 | 检索用途 |
+|------|----------|
+| [司法部国家行政法规库](https://xzfg.moj.gov.cn/) | 查询中国大陆行政法规的现行文本与修订信息 |
+| [国家法律法规数据库](https://flk.npc.gov.cn/) | 查询中国大陆法律及相关规范性文件 |
 
-### 代理与安全
+不同国家和地区应使用当地官方数据库。引用法律时写明完整名称、发布机关、修订或生效日期、具体条款和访问日期；不能仅用“1996年发布”等历史信息替代现行文本。第21章给出[合规核对框架](../第七部分-最佳实践篇/第21章-合规使用建议.md)。
 
-8. **RFC 1928** - SOCKS Protocol Version 5  
-   https://www.rfc-editor.org/rfc/rfc1928
+## D.5 本书的引用规则
 
-9. **RFC 2818** - HTTP Over TLS (HTTPS)  
-   https://www.rfc-editor.org/rfc/rfc2818
+1. **稳定原理**：优先引用RFC或标准制定机构资料；如果标准被更新，说明所用版本。
+2. **软件行为**：在命令或配置附近标注项目、版本和对应官方文档，避免把不同核心的字段混用。
+3. **时效性判断**：对维护状态、价格、下载位置和平台支持注明核对日期，不使用无期限的“最新”“最佳”结论。
+4. **法律与政策**：直接指向官方现行文本，区分条文、解释和实际场景判断；不以缺乏来源的个案比例概括执法实践。
+5. **二手资料**：保留作者、完整标题、发表年份和可访问链接；信息不全时暂不列为可靠依据。
 
-10. **RFC 5246** - TLS Protocol Version 1.2  
-    https://www.rfc-editor.org/rfc/rfc5246
+可复制的记录格式：
 
-11. **RFC 8446** - TLS Protocol Version 1.3  
-    https://www.rfc-editor.org/rfc/rfc8446
+```text
+作者或机构：《文档完整标题》，版本/修订日期，具体章节或条款，官方URL；访问日期：YYYY-MM-DD。
+适用范围与本书引用位置：
+```
 
-12. **RFC 7539** - ChaCha20 and Poly1305  
-    https://www.rfc-editor.org/rfc/rfc7539
-
-### 现代协议
-
-13. **RFC 9000** - QUIC Protocol  
-    https://www.rfc-editor.org/rfc/rfc9000
-
-14. **RFC 9114** - HTTP/3  
-    https://www.rfc-editor.org/rfc/rfc9114
-
-15. **RFC 8484** - DNS over HTTPS (DoH)  
-    https://www.rfc-editor.org/rfc/rfc8484
-
-16. **RFC 7858** - DNS over TLS (DoT)  
-    https://www.rfc-editor.org/rfc/rfc7858
-
-17. **RFC 9250** - DNS over Dedicated QUIC (DoQ)  
-    https://www.rfc-editor.org/rfc/rfc9250
-
----
-
-## 二、官方技术文档
-
-### 代理协议
-
-1. **V2Ray 官方文档**  
-   https://www.v2ray.com/  
-   https://guide.v2fly.org/
-
-2. **Xray 文档**  
-   https://xtls.github.io/
-
-3. **Reality 协议文档** (2023+)  
-   https://github.com/XTLS/REALITY  
-   作者：RPRX
-
-4. **Hysteria 2 文档** (2024+)  
-   https://v2.hysteria.network/  
-   https://github.com/apernet/hysteria
-
-5. **Shadowsocks 文档**  
-   https://shadowsocks.org/
-
-6. **Trojan 协议**  
-   https://trojan-gfw.github.io/trojan/
-
-7. **Clash 文档**  
-   https://github.com/Dreamacro/clash/wiki  
-   注：原项目已归档
-
-8. **Clash Meta (mihomo) 文档**  
-   https://wiki.metacubex.one/
-
-9. **WireGuard 文档**  
-   https://www.wireguard.com/
-
----
-
-## 三、开源项目
-
-### 核心项目
-
-1. **V2Ray-Core**  
-   https://github.com/v2fly/v2ray-core  
-   许可：MIT License
-
-2. **Xray-Core**  
-   https://github.com/XTLS/Xray-core  
-   许可：MPL-2.0 License
-
-3. **Reality** (2023+)  
-   https://github.com/XTLS/REALITY  
-   作者：RPRX  
-   许可：MPL-2.0 License
-
-4. **Hysteria 2** (2024+)  
-   https://github.com/apernet/hysteria  
-   许可：MIT License
-
-5. **Clash**  
-   https://github.com/Dreamacro/clash  
-   许可：GPL-3.0 License  
-   状态：已归档(2023)
-
-6. **Clash Meta (mihomo)**  
-   https://github.com/MetaCubeX/mihomo  
-   许可：GPL-3.0 License
-
-7. **Shadowsocks-Rust**  
-   https://github.com/shadowsocks/shadowsocks-rust  
-   许可：MIT License
-
-8. **Trojan-Go**  
-   https://github.com/p4gefau1t/trojan-go  
-   许可：GPL-3.0 License
-
-9. **WireGuard**  
-   https://git.zx2c4.com/wireguard-linux  
-   许可：GPL-2.0 License
-
-### 客户端项目
-
-7. **Clash for Windows**  
-   https://github.com/Fndroid/clash_for_windows_pkg  
-   状态：已停止维护(2023.11)
-
-8. **Clash Verge Rev** (2024+)  
-   https://github.com/clash-verge-rev/clash-verge-rev  
-   许可：GPL-3.0 License
-
-9. **V2RayN**  
-   https://github.com/2dust/v2rayN  
-   持续维护中
-
-10. **ClashX**  
-    https://github.com/yichengchen/clashX
-
-11. **Clash Meta for Android**  
-    https://github.com/MetaCubeX/ClashMetaForAndroid
-
-12. **NekoBox for Android** (2024+)  
-    https://github.com/MatsuriDayo/NekoBoxForAndroid
-
-13. **Qv2ray**  
-    https://github.com/Qv2ray/Qv2ray  
-    状态：已停止维护
-
-### 工具项目
-
-14. **acme.sh** (证书工具)  
-    https://github.com/acmesh-official/acme.sh
-
-15. **subconverter** (订阅转换)  
-    https://github.com/tindy2013/subconverter
-
-16. **X-UI** (面板)  
-    https://github.com/vaxilu/x-ui  
-    状态：已停止维护
-
-17. **3X-UI** (面板，2024+)  
-    https://github.com/MHSanaei/3x-ui  
-    支持Reality协议
-
----
-
-## 四、技术白皮书与设计文档
-
-1. **Shadowsocks 设计文档**  
-   https://shadowsocks.org/en/spec/Protocol.html
-
-2. **V2Ray 开发者文档**  
-   https://www.v2ray.com/developer/
-
-3. **Trojan 协议设计**  
-   https://trojan-gfw.github.io/trojan/protocol
-
-4. **Reality 协议技术原理** (2023)  
-   作者：RPRX  
-   https://github.com/XTLS/REALITY#readme
-
-5. **Hysteria 2 协议设计** (2024)  
-   https://v2.hysteria.network/docs/advanced/Full-Server-Config/
-
-6. **WireGuard 白皮书**  
-   作者：Jason A. Donenfeld  
-   https://www.wireguard.com/papers/wireguard.pdf
-
-7. **BBR 拥塞控制算法**  
-   作者：Neal Cardwell, Google Team  
-   https://queue.acm.org/detail.cfm?id=3022184
-
-8. **XTLS Vision 技术文档** (2022)  
-   https://github.com/XTLS/Xray-core/discussions/1295
-
----
-
-## 五、学术研究
-
-### 网络审查研究
-
-1. **"How the Great Firewall of China is Blocking Tor"**  
-   USENIX FOCI 2012
-
-2. **"Empirical Analysis of Internet Filtering in China"**  
-   University of Cambridge
-
-### 加密与安全
-
-3. **NIST SP 800-38D** - AES-GCM 加密模式  
-   https://csrc.nist.gov/publications/detail/sp/800-38d/final
-
-4. **FIPS 197** - AES 标准  
-   https://csrc.nist.gov/publications/detail/fips/197/final
-
-5. **NIST SP 800-81 Revision 3** - DNS Security 
-   https://csrc.nist.gov/publications/detail/sp/800-81/3/final
-
----
-
-## 六、技术博客与教程
-
-1. **V2Ray 白话文教程**  
-   https://toutyrater.github.io/  
-   作者：ToutyRater
-
-2. **233boy 博客**  
-   https://233boy.com/
-
-3. **秋水逸冰**  
-   https://teddysun.com/
-
-4. **荒岛博客**  
-   https://lala.im/
-
----
-
-## 七、安全与隐私最佳实践
-
-1. **Mozilla SSL Configuration**  
-   https://ssl-config.mozilla.org/
-
-2. **OWASP TLS Cheat Sheet**  
-   https://cheatsheetseries.owasp.org/
-
-3. **NIST Cryptographic Standards**  
-   https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines
-
-4. **EFF - Cover Your Tracks** (浏览器指纹防护)  
-   https://coveryourtracks.eff.org/
-
-5. **Mozilla Firefox Enhanced Tracking Protection** 
-   https://support.mozilla.org/kb/enhanced-tracking-protection-firefox-desktop
-
-6. **US Executive Order on DNS Encryption** 
-   "Strengthening and Promoting Innovation in the Nation's Cybersecurity"  
----
-
-## 八、相关书籍
-
-### 网络协议
-
-1. **《TCP/IP详解 卷1：协议》**  
-   作者：W. Richard Stevens  
-   ISBN：978-7-111-07566-0
-
-2. **《HTTP权威指南》**  
-   作者：David Gourley, Brian Totty  
-   ISBN：978-7-115-28188-0
-
-### 网络安全
-
-3. **《密码学原理与实践》**  
-   作者：Douglas R. Stinson  
-   ISBN：978-7-121-13386-0
-
-4. **《应用密码学》**  
-   作者：Bruce Schneier  
-   ISBN：978-7-111-07393-2
-
-### Linux 系统
-
-5. **《鸟哥的Linux私房菜》**  
-   作者：鸟哥  
-   ISBN：978-7-115-22626-3
-
----
-
-## 九、法律法规
-
-### 中国相关法律
-
-1. **《中华人民共和国网络安全法》**  
-   实施时间：2017年6月1日
-
-2. **《计算机信息网络国际联网管理暂行规定》**  
-   发布机构：国务院，1996年
-
-3. **《中华人民共和国刑法》相关条款**  
-   第285、286、287条
-
-### 国际法规
-
-4. **GDPR** - 欧盟数据保护法规  
-   实施时间：2018年5月25日
-
-5. **CCPA** - 加州消费者隐私法  
-   实施时间：2020年1月1日
-
----
-
-## 📌 引用说明
-
-本书在编写过程中参考了以上资料，在此表示感谢。
-
-**引用格式：**
-
-- RFC文档：`[RFC编号] 标题, URL`
-- 开源项目：`项目名, GitHub URL, 许可证`
-- 学术论文：`作者. "标题". 会议/期刊, 年份`
-- 书籍：`作者. 书名. 出版社, ISBN`
-
-**致歉说明：**
-
-由于本书涉及内容广泛，编写过程中可能参考了诸多网络文章、博客、教程等资料。尽管我们已尽力列出所有引用来源，但仍可能存在疏漏或遗漏标注的情况。如果您发现本书引用了您的作品但未在此处列出，我们深表歉意，请通过反馈渠道联系我们，我们会及时补充标注。
-
----
-
-## ⚠️ 版权说明
-
-1. 所有参考文献版权归原作者所有
-2. RFC文档为公共领域标准
-3. 开源项目遵循各自许可证
-4. 引用内容仅供学习研究使用
-5. 请遵守相关版权和许可协议
-
----
-
-## 💬 补充与完善
-
-如果您发现本书引用了某些资料但未在此处列出，或者您认为有重要的参考资料应当添加到本附录中，欢迎通过以下方式反馈：
-
-- 📧 发送邮件说明文献信息
-- 💬 在社区讨论中提出建议
-- 🐛 提交问题报告并注明文献来源
-
-我们会认真审核并将有价值的参考文献添加到本附录中，以便为更多读者提供完整的学习资源。
-
-**提交格式建议：**
-- 文献类型（RFC/开源项目/博客/书籍等）
-- 标题或项目名称
-- 作者或维护者
-- 链接地址（如有）
-- 简要说明其价值
-
----
-
-*最后更新：2025年1月*  
-*注：链接可能随时变化，建议访问官方渠道获取最新信息*
-
----
+本附录于2026年11月重整书目结构。外部页面、软件版本与法规仍须在使用时逐项复核。

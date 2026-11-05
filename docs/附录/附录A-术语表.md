@@ -26,7 +26,7 @@
 | 传输层安全 | Transport Layer Security | TLS | 加密传输协议 |
 | 安全套接字层 | Secure Sockets Layer | SSL | TLS的前身 |
 
-### 代理协议
+### 代理协议与相关机制
 
 | 中文 | 英文 | 缩写 | 说明 |
 |------|------|------|------|
@@ -35,7 +35,7 @@
 | - | VMess | - | V2Ray的原创协议 |
 | - | VLESS | - | 轻量级的VMess |
 | - | Trojan | - | 模仯HTTPS的协议 |
-| - | Reality | - | 无需域名证书的TLS协议(2023+) |
+| - | REALITY | - | Xray生态中的传输安全机制，常与VLESS等代理协议组合使用 |
 | - | Hysteria | - | 基于QUIC的高性能代理 |
 | - | Hysteria 2 | - | Hysteria的第二代(2024+) |
 | - | WireGuard | WG | 现代VPN协议 |
@@ -81,8 +81,8 @@
 | CN2全球互联精品网 | CN2 Global Internet Access | CN2 GIA | CN2最高级别 |
 | 国际私有租用线路 | International Private Leased Circuit | IPLC | 国际专线 |
 | 国际以太网专线 | International Ethernet Private Line | IEPL | 以太网专线 |
-| - | X-UI | - | 多用户管理面板 |
-| - | 3X-UI | - | X-UI增强版(支持Reality) |
+| - | X-UI | - | 旧版Xray多用户面板；本书仅作迁移参考 |
+| - | 3X-UI | - | 持续更新的Xray服务端管理面板，支持Reality与多用户管理 |
 | - | mack-a | - | V2Ray/Xray一键脚本 |
 | - | Xray-core | - | V2Ray分支,支持XTLS |
 
