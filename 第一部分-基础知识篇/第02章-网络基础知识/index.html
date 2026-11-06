@@ -2209,7 +2209,7 @@
 </tr>
 </tbody>
 </table>
-<p>先认识**A、AAAA、CNAME**即可，其余类型用到时再查。遇到CNAME时，解析服务会继续查找别名目标的地址。</p>
+<p>先认识 <strong>A、AAAA、CNAME</strong> 即可，其余类型用到时再查。遇到CNAME时，解析服务会继续查找别名目标的地址。</p>
 <p><strong>DNS污染与解析安全</strong></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>正常解析：域名 → 正确地址 → 尝试连接目标网站
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>受到干扰：域名 → 错误地址或错误结果 → 可能无法访问
@@ -2551,7 +2551,7 @@
     C-&gt;&gt;S: 发送加密请求
     S--&gt;&gt;C: 返回加密响应</code></pre>
 <p><em>图2-3 TLS 1.3完整握手的简化过程</em></p>
-<p>**先记目的：确认身份、协商密钥、加密传输。**证书在浏览器本地验证，握手中的计算和验证会交错进行。</p>
+<p><strong>先记目的：确认身份、协商密钥、加密传输。</strong> 证书在浏览器本地验证，握手中的计算和验证会交错进行。</p>
 <p><strong>HTTPS也有保护边界：</strong></p>
 <ul>
 <li>钓鱼网站也可能有有效证书，不能仅凭“连接安全”判断网站可信。</li>
@@ -2621,7 +2621,7 @@
 </tr>
 </tbody>
 </table>
-<p>**DV、OV、EV主要区别在身份核验，加密不因此变强。**EV也不再普遍显示绿色地址栏。</p>
+<p><strong>DV、OV、EV主要区别在身份核验，加密不因此变强。</strong> EV也不再普遍显示绿色地址栏。</p>
 <h2 id="23-tcpudp">2.3 TCP/UDP传输协议<a class="headerlink" href="#23-tcpudp" title="Permanent link">&para;</a></h2>
 <h3 id="231-tcp">2.3.1 TCP协议详解<a class="headerlink" href="#231-tcp" title="Permanent link">&para;</a></h3>
 <p><strong>TCP是什么？</strong></p>
@@ -3131,9 +3131,9 @@
 </tr>
 </tbody>
 </table>
-<p>**AEAD**指带关联数据的认证加密。密钥及nonce等参数应由成熟协议实现管理，避免自行拼装。</p>
+<p><strong>AEAD</strong> 指带关联数据的认证加密。密钥及nonce等参数应由成熟协议实现管理，避免自行拼装。</p>
 <h3 id="253">2.5.3 非对称加密<a class="headerlink" href="#253" title="Permanent link">&para;</a></h3>
-<p>**公钥密码使用一对密钥：公钥可以公开，私钥必须保密。**不同算法分别用于加密、签名或密钥协商。</p>
+<p><strong>公钥密码使用一对密钥：公钥可以公开，私钥必须保密。</strong> 不同算法分别用于加密、签名或密钥协商。</p>
 <table>
 <thead>
 <tr>

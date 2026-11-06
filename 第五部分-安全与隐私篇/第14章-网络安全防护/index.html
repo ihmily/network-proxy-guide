@@ -2163,7 +2163,7 @@
 <p>路径分流处理的是可解析的HTTP请求。直接Trojan或VLESS字节不会因为写了<code>/trojan</code>、<code>/vmess</code>就变成HTTP路径。<code>xver</code>表示传递PROXY protocol的版本；只有后端显式支持并配置该协议时才能启用，不需要传递时保持关闭。错误的PROXY头会破坏后端握手，它也不提供新的加密或认证。</p>
 <h3 id="1423-sniech">14.2.3 SNI分流与ECH<a class="headerlink" href="#1423-sniech" title="Permanent link">&para;</a></h3>
 <p>Nginx <code>stream</code>层的<code>ssl_preread</code>可以在不终止TLS的情况下读取可见ClientHello中的SNI，将原始连接转发给相应后端。后端必须自行终止TLS；不能把完整TLS字节流交给只监听明文HTTP的端口。</p>
-<p>下面是与15.2.2**二选一**的拓扑片段。需要安装并加载stream及ssl_preread模块；<code>stream</code>与<code>http</code>同属Nginx主配置下的上下文，不能把它放进仅从<code>http</code>包含的站点文件。</p>
+<p>下面是与15.2.2 <strong>二选一</strong> 的拓扑片段。需要安装并加载stream及ssl_preread模块；<code>stream</code>与<code>http</code>同属Nginx主配置下的上下文，不能把它放进仅从<code>http</code>包含的站点文件。</p>
 <div class="language-nginx highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">stream</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kn">map</span><span class="w"> </span><span class="nv">$ssl_preread_server_name</span><span class="w"> </span><span class="nv">$guide_tls_backend</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="kn">proxy.example.com</span><span class="w"> </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">10443</span><span class="p">;</span>
@@ -2357,7 +2357,7 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>aideinit
 </span></code></pre></div>
 <p>不要固定复制某个<code>aide.db.new</code>文件覆盖基线，也不要发现差异就自动接受。后续检查使用该发行包提供的检查任务或已核实配置路径的<code>aide --check</code>；确认是否有预置timer，避免重复安排。证书续期、日志和缓存等正常变化应通过适当规则处理，而不是全部忽略。</p>
-<p>auditd用于记录所选文件和系统操作，不能代替防火墙或完整性检查。下例仅用于**x86-64原生进程、实际存在第12章V2Ray配置目录**的Linux测试机；保存为<code>/etc/audit/rules.d/proxy-config.rules</code>：</p>
+<p>auditd用于记录所选文件和系统操作，不能代替防火墙或完整性检查。下例仅用于 <strong>x86-64原生进程、实际存在第12章V2Ray配置目录</strong> 的Linux测试机；保存为<code>/etc/audit/rules.d/proxy-config.rules</code>：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>-a always,exit -F arch=b64 -F dir=/usr/local/etc/v2ray/ -F perm=wa -k proxy_config
 </span></code></pre></div>
 <p>这是系统调用形式的目录审计规则，用于写入和属性变更，避免沿用已弃用的<code>-w</code>形式。若需要覆盖32位兼容进程或其他架构，应核对内核支持后补齐对应规则；跨挂载点和目录替换也需单独验证。不要把只读配置目录与高频日志目录一起无范围审计。</p>

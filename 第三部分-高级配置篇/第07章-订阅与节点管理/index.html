@@ -1825,7 +1825,7 @@
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;节点B的Base64编码16字节随机密钥&gt;"</span>
 </span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nt">udp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </span></code></pre></div>
-<p>上面是**代理集合**，只提供节点；**完整配置**还会包含本地监听、DNS、代理组和分流规则。两者的加载入口不同，导入时应选择客户端支持的格式与入口，不能仅凭订阅URL的名称判断。</p>
+<p>上面是 <strong>代理集合</strong>，只提供节点；<strong>完整配置</strong> 还会包含本地监听、DNS、代理组和分流规则。两者的加载入口不同，导入时应选择客户端支持的格式与入口，不能仅凭订阅URL的名称判断。</p>
 <h3 id="713">7.1.3 订阅更新机制<a class="headerlink" href="#713" title="Permanent link">&para;</a></h3>
 <p>服务方可能新增、删除节点，或调整服务器地址与认证参数。更新订阅就是重新获取这些信息，并让客户端加载最新配置。</p>
 <p><strong>更新流程：</strong></p>

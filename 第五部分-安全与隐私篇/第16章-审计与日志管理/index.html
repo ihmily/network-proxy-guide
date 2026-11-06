@@ -2342,7 +2342,7 @@
 </span><span id="__span-13-86"><a id="__codelineno-13-86" name="__codelineno-13-86" href="#__codelineno-13-86"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"已汇总</span><span class="si">{</span><span class="n">records</span><span class="si">}</span><span class="s2">条记录，生成</span><span class="si">{</span><span class="n">buckets</span><span class="si">}</span><span class="s2">个分组"</span><span class="p">)</span>
 </span></code></pre></div>
 <p>该脚本先检查输入，再在输出目录创建受限临时文件，完成写入后用硬链接发布；这要求本地文件系统支持同目录硬链接。已有输出文件不会被覆盖，失败时清理临时文件。输出目录应由可信管理者维护，不是公开可写目录。</p>
-<p>执行前选用**已经完成轮转且不再写入**的未压缩日志，或者由日志接收系统导出的稳定副本。脚本不负责协调轮转，不解压归档，也不把读取正在变化的文件称为一致性采集。</p>
+<p>执行前选用 <strong>已经完成轮转且不再写入</strong> 的未压缩日志，或者由日志接收系统导出的稳定副本。脚本不负责协调轮转，不解压归档，也不把读取正在变化的文件称为一致性采集。</p>
 <p>审阅脚本后，可按第14章的方法安装至受控位置，准备报告目录：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>install<span class="w"> </span>-d<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>/usr/local/libexec
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0750</span><span class="w"> </span>summarize-nginx.py<span class="w"> </span><span class="se">\</span>
@@ -2364,7 +2364,7 @@
 <h3 id="1643">16.4.3 加密、完整性与访问隔离<a class="headerlink" href="#1643" title="Permanent link">&para;</a></h3>
 <p>加密保护相应锁定状态下的内容，不替代权限和保留策略。已挂载并解锁的加密卷仍可被有权限的进程读取；主机失守时，日志内容与解密材料也可能同时暴露。存储加密应通过已核对的设备部署流程完成，不在日志教程中直接对示例块设备执行格式化命令。</p>
 <p>归档加密前先确认日志已经关闭、轮转完成且内容稳定。压缩不等于加密；普通摘要可用于检查变化，但没有可信基准时不能单独证明来源，公钥加密也不自动证明发送者身份。需要来源验证时，可另行设计签名及受保护的采集链路。</p>
-<p>以下使用GnuPG 2.x演示加密一个**已经核对的独立归档**，保留原件。<code>REPLACE_WITH_VERIFIED_FULL_FINGERPRINT</code>必须替换成通过可信渠道核对的接收方完整公钥指纹；只使用邮箱名称不足以确认具体密钥。所有输出文件应事先不存在。</p>
+<p>以下使用GnuPG 2.x演示加密一个 <strong>已经核对的独立归档</strong>，保留原件。<code>REPLACE_WITH_VERIFIED_FULL_FINGERPRINT</code>必须替换成通过可信渠道核对的接收方完整公钥指纹；只使用邮箱名称不足以确认具体密钥。所有输出文件应事先不存在。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>gpg<span class="w"> </span>--batch<span class="w"> </span>--no-tty<span class="w"> </span>--encrypt<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span>--recipient<span class="w"> </span>REPLACE_WITH_VERIFIED_FULL_FINGERPRINT<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span>--output<span class="w"> </span>guide-access.jsonl.2.gz.gpg<span class="w"> </span>--<span class="w"> </span>guide-access.jsonl.2.gz

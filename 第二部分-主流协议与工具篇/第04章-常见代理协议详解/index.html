@@ -2189,9 +2189,9 @@
 <p><em>图4-2 Shadowsocks与外部传输插件的组合</em></p>
 <p>常见插件及其边界如下：</p>
 <ul>
-<li>**v2ray-plugin**可提供WebSocket等承载，并可配合TLS。使用WebSocket经反向代理或CDN转发时，需匹配路径、Host、证书与服务商支持条件。</li>
-<li>**simple-obfs**提供历史上的HTTP或TLS外观混淆。其TLS外观不等于真实TLS握手，不能替代证书校验与现代加密协议。</li>
-<li>**kcptun**以UDP承载可靠字节流。重传与拥塞控制可能改变特定链路的表现，也会增加流量和调参成本。</li>
+<li><strong>v2ray-plugin</strong> 可提供WebSocket等承载，并可配合TLS。使用WebSocket经反向代理或CDN转发时，需匹配路径、Host、证书与服务商支持条件。</li>
+<li><strong>simple-obfs</strong> 提供历史上的HTTP或TLS外观混淆。其TLS外观不等于真实TLS握手，不能替代证书校验与现代加密协议。</li>
+<li><strong>kcptun</strong> 以UDP承载可靠字节流。重传与拥塞控制可能改变特定链路的表现，也会增加流量和调参成本。</li>
 </ul>
 <p>SIP003插件通常处理TCP，原生Shadowsocks UDP不会自动进入同一插件通道。部署前应分别确认TCP与UDP的路径。插件也不会自动让任意协议获得CDN支持，是否可转发取决于外层协议及中间服务的能力。</p>
 <h2 id="42-v2rayxray">4.2 V2Ray/Xray协议族<a class="headerlink" href="#42-v2rayxray" title="Permanent link">&para;</a></h2>
@@ -2245,7 +2245,7 @@
 <p>旧教程中的<code>alterId</code>属于历史认证机制。现代配置不应通过增大该值来增强安全；兼容客户端若仍保留该字段，通常以<code>0</code>表示使用AEAD。是否能够连接，还需核对双方的认证机制、传输和TLS设置。</p>
 <h3 id="423-vless">4.2.3 VLESS协议<a class="headerlink" href="#423-vless" title="Permanent link">&para;</a></h3>
 <p>VLESS以较精简的结构描述用户、命令和目标，并通过扩展机制支持不同功能。常见的VLESS配置使用<code>encryption: "none"</code>和<code>decryption: "none"</code>，表示不启用VLESS自身的加密层，需要由TLS或REALITY等提供客户端到服务器的保护。</p>
-<p>Xray还提供了**VLESS Encryption**扩展，可通过<code>xray vlessenc</code>生成配对参数。它与设置为<code>none</code>的传统用法不同，使用包括ML-KEM-768与X25519在内的密钥协商机制。配置时应遵循所用版本的配对结果，核对认证、填充及会话参数，不能只把<code>none</code>替换为某个算法名。该扩展的存在也意味着，不能笼统地把所有VLESS连接描述为“协议本身永远不加密”。</p>
+<p>Xray还提供了 <strong>VLESS Encryption</strong> 扩展，可通过<code>xray vlessenc</code>生成配对参数。它与设置为<code>none</code>的传统用法不同，使用包括ML-KEM-768与X25519在内的密钥协商机制。配置时应遵循所用版本的配对结果，核对认证、填充及会话参数，不能只把<code>none</code>替换为某个算法名。该扩展的存在也意味着，不能笼统地把所有VLESS连接描述为“协议本身永远不加密”。</p>
 <table>
 <thead>
 <tr>
@@ -2367,7 +2367,7 @@
     B --&gt;|未通过且符合转发条件| E[转交配置的TLS目标]</code></pre>
 <p><em>图4-5 REALITY握手的概念性处理路径</em></p>
 <p>REALITY不会隐藏代理端点的IP，也不能保证所有探测、流量统计和访问限制都失效。目标选择需要满足所用版本的要求，例如TLS 1.3、相应的HTTP/2支持与域名匹配，并从代理服务器实际检查连通性。不能仅凭网站知名度认定其适合。</p>
-<p>如需把前面的TLS配置改为REALITY，应保留VLESS用户及Vision设置，并分别用下面的对象**替换两端的整个<code>streamSettings</code>**。<code>cover.example.com</code>只是目标占位域名，必须换成经验证符合要求的实际目标。</p>
+<p>如需把前面的TLS配置改为REALITY，应保留VLESS用户及Vision设置，并分别用下面的对象 <strong>替换两端的整个<code>streamSettings</code></strong>。<code>cover.example.com</code>只是目标占位域名，必须换成经验证符合要求的实际目标。</p>
 <p>服务端替换对象：</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"raw"</span><span class="p">,</span>
@@ -2484,7 +2484,7 @@
 </tbody>
 </table>
 <p>Xray已移除旧的<code>network: "h2"</code>、<code>httpSettings</code>对应传输及旧<code>quicSettings</code>传输，应按现有实现选择XHTTP等支持的方案。这不代表HTTP/2或QUIC标准被淘汰，也不代表V2Fly等其他核心具有相同配置变化。</p>
-<p>以Xray的WebSocket加TLS为例，以下仅为**客户端<code>streamSettings</code>片段**：</p>
+<p>以Xray的WebSocket加TLS为例，以下仅为 <strong>客户端<code>streamSettings</code>片段</strong>：</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"websocket"</span><span class="p">,</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">"security"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tls"</span><span class="p">,</span>
@@ -2932,7 +2932,7 @@
 <p>选择WireGuard时，应先确认业务需要网络层互联还是应用层代理，再评估路由、DNS、IPv6与防火墙配置。它与规则代理可以配合使用，但需明确谁负责接管、谁负责路由，以避免循环转发或同一流量重复进入隧道。</p>
 <h2 id="45">4.5 其他协议对比<a class="headerlink" href="#45" title="Permanent link">&para;</a></h2>
 <h3 id="451">4.5.1 协议综合对比<a class="headerlink" href="#451" title="Permanent link">&para;</a></h3>
-<p>协议的速度、连接成功率和流量特征会受到线路、实现和配置影响。下面的星级只用于**入门时快速扫读**，不是绝对排名，也不代表匿名保证。</p>
+<p>协议的速度、连接成功率和流量特征会受到线路、实现和配置影响。下面的星级只用于 <strong>入门时快速扫读</strong>，不是绝对排名，也不代表匿名保证。</p>
 <table>
 <thead>
 <tr>

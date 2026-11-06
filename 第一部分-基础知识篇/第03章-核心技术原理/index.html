@@ -2017,8 +2017,8 @@
 </table>
 <h2 id="31">3.1 代理服务器工作原理<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
 <h3 id="311">3.1.1 正向代理与反向代理<a class="headerlink" href="#311" title="Permanent link">&para;</a></h3>
-<p>**正向代理**位于客户端和目标服务之间，代表客户端访问外部资源。客户端通常需要主动配置代理地址，或者由系统、网关把流量交给代理。</p>
-<p>**反向代理**位于用户和网站后端之间，代表网站接收外部访问。用户访问网站公开的入口，通常不知道后面是哪台后端服务器。</p>
+<p><strong>正向代理</strong> 位于客户端和目标服务之间，代表客户端访问外部资源。客户端通常需要主动配置代理地址，或者由系统、网关把流量交给代理。</p>
+<p><strong>反向代理</strong> 位于用户和网站后端之间，代表网站接收外部访问。用户访问网站公开的入口，通常不知道后面是哪台后端服务器。</p>
 <table>
 <thead>
 <tr>
@@ -2095,7 +2095,7 @@
 <p><em>图3-2 正向代理连接目标并转发数据</em></p>
 <p>客户端到代理、代理到目标通常是两段独立连接。代理可能看到客户端IP、目标地址、连接时间和流量大小；目标通常看到代理出口IP。账号、Cookie和设备特征仍可能把访问与用户关联起来。</p>
 <h3 id="313-httpconnect">3.1.3 HTTP代理与CONNECT隧道<a class="headerlink" href="#313-httpconnect" title="Permanent link">&para;</a></h3>
-<p>**访问明文HTTP网站**时，客户端可以把完整网址交给代理：</p>
+<p><strong>访问明文HTTP网站</strong> 时，客户端可以把完整网址交给代理：</p>
 <div class="language-http highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">GET</span> <span class="nn">http://www.example.com/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
 </span></code></pre></div>
@@ -2104,7 +2104,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
 </span></code></pre></div>
 <p>此时代理能够读取HTTP内容，也可能按策略进行认证、缓存或过滤。</p>
-<p>**访问HTTPS网站**时，客户端通常先使用<code>CONNECT</code>请求代理建立一条TCP隧道：</p>
+<p><strong>访问HTTPS网站</strong> 时，客户端通常先使用<code>CONNECT</code>请求代理建立一条TCP隧道：</p>
 <div class="language-http highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">CONNECT</span> <span class="nn">www.example.com:443</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com:443</span>
 </span></code></pre></div>
@@ -2178,7 +2178,7 @@
 </tbody>
 </table>
 <p>SOCKS5本身不提供通用的流量加密。用户名密码认证也不等于加密；是否安全，要看外层连接是否受到保护。</p>
-<p>**SOCKS5 UDP转发**需要先用TCP控制连接建立关联，再通过协商出的UDP中继地址发送数据：</p>
+<p><strong>SOCKS5 UDP转发</strong> 需要先用TCP控制连接建立关联，再通过协商出的UDP中继地址发送数据：</p>
 <pre class="mermaid"><code>flowchart LR
     C["应用与SOCKS5客户端"] --&gt;|"TCP控制连接"| P["SOCKS5服务器"]
     C --&gt;|"UDP数据报"| R["UDP中继"] --&gt; T["目标UDP服务"]
@@ -2348,9 +2348,9 @@
 </table>
 <p><strong>协议、核心和客户端不是一回事：</strong></p>
 <ul>
-<li>**协议：**规定通信双方如何协商、认证和传输数据，例如SOCKS5、VLESS、WireGuard。</li>
-<li>**代理核心或实现：**负责真正处理协议和路由，例如Xray、sing-box、mihomo、V2Ray。</li>
-<li>**图形客户端：**提供节点导入、规则设置和状态查看界面，背后通常调用一个或多个核心。</li>
+<li><strong>协议：</strong> 规定通信双方如何协商、认证和传输数据，例如SOCKS5、VLESS、WireGuard。</li>
+<li><strong>代理核心或实现：</strong> 负责真正处理协议和路由，例如Xray、sing-box、mihomo、V2Ray。</li>
+<li><strong>图形客户端：</strong> 提供节点导入、规则设置和状态查看界面，背后通常调用一个或多个核心。</li>
 </ul>
 <p>协议名称也不能直接决定速度。吞吐量、延迟和稳定性还受到线路、MTU、设备性能、软件版本和流量类型影响。</p>
 <h3 id="324-wireguard">3.2.4 WireGuard入门<a class="headerlink" href="#324-wireguard" title="Permanent link">&para;</a></h3>
@@ -2504,7 +2504,7 @@
 </tbody>
 </table>
 <p>这些信息只能作为判断线索。单个端口、证书或指纹不能单独证明某个连接属于某种应用。</p>
-<p>**伪装/承载的目标**是减少明显差异，让连接遵守某种常见协议的格式或行为。它不能保证不可识别，也不能替代正确的认证和安全更新。</p>
+<p><strong>伪装/承载的目标</strong> 是减少明显差异，让连接遵守某种常见协议的格式或行为。它不能保证不可识别，也不能替代正确的认证和安全更新。</p>
 <h3 id="342">3.4.2 常见承载方式<a class="headerlink" href="#342" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2575,7 +2575,7 @@
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>路径只是路由条件，不是凭据；认证仍由代理协议或服务端配置负责。</p>
-<p>**REALITY**是Xray生态中的传输安全机制，VLESS、REALITY和XTLS Vision承担不同职责。具体配置依赖版本、密钥、SNI、shortId和目标服务要求；服务端IP、连接时间和流量元数据仍可能被观察。</p>
+<p><strong>REALITY</strong> 是Xray生态中的传输安全机制，VLESS、REALITY和XTLS Vision承担不同职责。具体配置依赖版本、密钥、SNI、shortId和目标服务要求；服务端IP、连接时间和流量元数据仍可能被观察。</p>
 <h2 id="35">3.5 加密传输机制<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
 <h3 id="351">3.5.1 先看加密边界<a class="headerlink" href="#351" title="Permanent link">&para;</a></h3>
 <p>“端到端”必须先说清楚是哪两个端点。普通HTTPS代理中，网站TLS通常仍是浏览器到目标网站；代理隧道则是客户端到远端代理服务器。</p>
@@ -2760,12 +2760,12 @@
 <hr />
 <h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li>**正向代理**代表客户端访问外部服务；**反向代理**代表网站接收用户访问。</li>
-<li>**HTTP CONNECT和SOCKS5**先协商目标，再建立连接或转发数据；协议本身是否加密要单独确认。</li>
-<li>**VPN**通常处理IP包，流量范围由系统路由和安全策略决定，也可以分流。</li>
-<li>**隧道**负责封装和传输，封装本身不等于加密；额外头部会影响MTU。</li>
-<li>**承载和伪装**改变连接呈现方式，但不能保证不可识别或自动匿名。</li>
-<li>**AEAD、防重放、密钥派生和PFS**解决的是不同问题，不能相互替代。</li>
+<li><strong>正向代理</strong> 代表客户端访问外部服务；<strong>反向代理</strong> 代表网站接收用户访问。</li>
+<li><strong>HTTP CONNECT和SOCKS5</strong> 先协商目标，再建立连接或转发数据；协议本身是否加密要单独确认。</li>
+<li><strong>VPN</strong> 通常处理IP包，流量范围由系统路由和安全策略决定，也可以分流。</li>
+<li><strong>隧道</strong> 负责封装和传输，封装本身不等于加密；额外头部会影响MTU。</li>
+<li><strong>承载和伪装</strong> 改变连接呈现方式，但不能保证不可识别或自动匿名。</li>
+<li><strong>AEAD、防重放、密钥派生和PFS</strong> 解决的是不同问题，不能相互替代。</li>
 </ol>
 <p>排查一次连接时，可以按这个顺序思考：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>应用是否把请求交给了正确的代理？
